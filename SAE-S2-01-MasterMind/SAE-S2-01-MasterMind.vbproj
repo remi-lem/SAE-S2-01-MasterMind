@@ -73,11 +73,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Form_Accueil.Designer.vb">
+      <DependentUpon>Form_Accueil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Accueil.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Form_Faire_Deviner.Designer.vb">
+      <DependentUpon>Form_Faire_Deviner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Faire_Deviner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Tableau_Score.Designer.vb">
+      <DependentUpon>Form_Tableau_Score.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Tableau_Score.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -95,6 +106,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Personne.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
