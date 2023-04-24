@@ -15,17 +15,18 @@
     Sub Main()
         Dim nombre As Integer = 20
         ReDim joueurs(nombre)
+        Application.Run(Form_Accueil)
     End Sub
 
     Private compteur As Integer = 0
 
-    Sub Ajout(p As Joueur)
+    Sub Ajout(j As Joueur)
 
         If compteur >= joueurs.Length Then
             ReDim joueurs(compteur + pasExtension)
 
         End If
-        joueurs(compteur) = p
+        joueurs(compteur) = j
         compteur += 1
 
     End Sub
@@ -34,8 +35,28 @@
         Return compteur
     End Function
 
-    Public Function getPers(i As Integer) As Joueur
+    Public Function getPlayer(i As Integer) As Joueur
         Debug.Assert(i <= compteur)
         Return joueurs(i)
     End Function
+
+    Public Function containsPlayer(nom As String) As Boolean
+        Dim contient As Boolean = False
+        For i As Integer = 0 To getNb() - 1
+            If getPlayer(i).nom = nom Then
+                contient = True
+            End If
+        Next
+        Return contient
+    End Function
+
+    Public Function JoueurCourant(nom As String) As Joueur
+        For i As Integer = 0 To getNb() - 1
+            If getPlayer(i).nom = nom Then
+                Return getPlayer(i)
+            End If
+        Next
+    End Function
+
+
 End Module

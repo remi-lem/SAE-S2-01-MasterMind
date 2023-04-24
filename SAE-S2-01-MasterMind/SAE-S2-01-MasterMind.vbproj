@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FD5E7BC4-A1C4-4A5C-BD87-07AABE221658}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SAE_S2_01_MasterMind.My.MyApplication</StartupObject>
+    <StartupObject>SAE_S2_01_MasterMind.Personne</StartupObject>
     <RootNamespace>SAE_S2_01_MasterMind</RootNamespace>
     <AssemblyName>SAE-S2-01-MasterMind</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>

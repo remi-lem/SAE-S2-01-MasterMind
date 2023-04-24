@@ -33,6 +33,8 @@ Partial Class Form_Tableau_Score
         Me.lbl_TempsCumulé = New System.Windows.Forms.Label()
         Me.lbl_Nom = New System.Windows.Forms.Label()
         Me.cbx_NomSelec = New System.Windows.Forms.ComboBox()
+        Me.lst_SecondPlayer = New System.Windows.Forms.ListBox()
+        Me.lst_FirstPLayer = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'lbl_Titre
@@ -95,7 +97,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Score.AutoSize = True
         Me.lbl_Score.Location = New System.Drawing.Point(388, 108)
         Me.lbl_Score.Name = "lbl_Score"
-        Me.lbl_Score.Size = New System.Drawing.Size(43, 16)
+        Me.lbl_Score.Size = New System.Drawing.Size(45, 17)
         Me.lbl_Score.TabIndex = 6
         Me.lbl_Score.Text = "Score"
         '
@@ -104,7 +106,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_BestTime.AutoSize = True
         Me.lbl_BestTime.Location = New System.Drawing.Point(598, 108)
         Me.lbl_BestTime.Name = "lbl_BestTime"
-        Me.lbl_BestTime.Size = New System.Drawing.Size(100, 16)
+        Me.lbl_BestTime.Size = New System.Drawing.Size(104, 17)
         Me.lbl_BestTime.TabIndex = 7
         Me.lbl_BestTime.Text = "Meilleur Temps"
         '
@@ -113,7 +115,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_TempsCumulé.AutoSize = True
         Me.lbl_TempsCumulé.Location = New System.Drawing.Point(845, 108)
         Me.lbl_TempsCumulé.Name = "lbl_TempsCumulé"
-        Me.lbl_TempsCumulé.Size = New System.Drawing.Size(98, 16)
+        Me.lbl_TempsCumulé.Size = New System.Drawing.Size(102, 17)
         Me.lbl_TempsCumulé.TabIndex = 8
         Me.lbl_TempsCumulé.Text = "Temps Cumulé"
         '
@@ -122,7 +124,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Nom.AutoSize = True
         Me.lbl_Nom.Location = New System.Drawing.Point(140, 108)
         Me.lbl_Nom.Name = "lbl_Nom"
-        Me.lbl_Nom.Size = New System.Drawing.Size(36, 16)
+        Me.lbl_Nom.Size = New System.Drawing.Size(37, 17)
         Me.lbl_Nom.TabIndex = 9
         Me.lbl_Nom.Text = "Nom"
         '
@@ -134,11 +136,31 @@ Partial Class Form_Tableau_Score
         Me.cbx_NomSelec.Size = New System.Drawing.Size(121, 24)
         Me.cbx_NomSelec.TabIndex = 10
         '
+        'lst_SecondPlayer
+        '
+        Me.lst_SecondPlayer.FormattingEnabled = True
+        Me.lst_SecondPlayer.ItemHeight = 16
+        Me.lst_SecondPlayer.Location = New System.Drawing.Point(354, 329)
+        Me.lst_SecondPlayer.Name = "lst_SecondPlayer"
+        Me.lst_SecondPlayer.Size = New System.Drawing.Size(120, 84)
+        Me.lst_SecondPlayer.TabIndex = 16
+        '
+        'lst_FirstPLayer
+        '
+        Me.lst_FirstPLayer.FormattingEnabled = True
+        Me.lst_FirstPLayer.ItemHeight = 16
+        Me.lst_FirstPLayer.Location = New System.Drawing.Point(112, 329)
+        Me.lst_FirstPLayer.Name = "lst_FirstPLayer"
+        Me.lst_FirstPLayer.Size = New System.Drawing.Size(120, 84)
+        Me.lst_FirstPLayer.TabIndex = 17
+        '
         'Form_Tableau_Score
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1189, 471)
+        Me.Controls.Add(Me.lst_FirstPLayer)
+        Me.Controls.Add(Me.lst_SecondPlayer)
         Me.Controls.Add(Me.cbx_NomSelec)
         Me.Controls.Add(Me.lbl_Nom)
         Me.Controls.Add(Me.lbl_TempsCumulé)
@@ -168,4 +190,6 @@ Partial Class Form_Tableau_Score
     Friend WithEvents lbl_TempsCumulé As Label
     Friend WithEvents lbl_Nom As Label
     Friend WithEvents cbx_NomSelec As ComboBox
+    Friend WithEvents lst_SecondPlayer As ListBox
+    Friend WithEvents lst_FirstPLayer As ListBox
 End Class
