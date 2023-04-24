@@ -39,7 +39,7 @@ Partial Class Form_Faire_Deviner
         Me.txt_Symb5.MaxLength = 1
         Me.txt_Symb5.Name = "txt_Symb5"
         Me.txt_Symb5.Size = New System.Drawing.Size(48, 22)
-        Me.txt_Symb5.TabIndex = 0
+        Me.txt_Symb5.TabIndex = 5
         Me.txt_Symb5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_Symb4
@@ -48,7 +48,7 @@ Partial Class Form_Faire_Deviner
         Me.txt_Symb4.MaxLength = 1
         Me.txt_Symb4.Name = "txt_Symb4"
         Me.txt_Symb4.Size = New System.Drawing.Size(48, 22)
-        Me.txt_Symb4.TabIndex = 1
+        Me.txt_Symb4.TabIndex = 4
         Me.txt_Symb4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_Symb3
@@ -57,7 +57,7 @@ Partial Class Form_Faire_Deviner
         Me.txt_Symb3.MaxLength = 1
         Me.txt_Symb3.Name = "txt_Symb3"
         Me.txt_Symb3.Size = New System.Drawing.Size(48, 22)
-        Me.txt_Symb3.TabIndex = 2
+        Me.txt_Symb3.TabIndex = 3
         Me.txt_Symb3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_Symb2
@@ -66,7 +66,7 @@ Partial Class Form_Faire_Deviner
         Me.txt_Symb2.MaxLength = 1
         Me.txt_Symb2.Name = "txt_Symb2"
         Me.txt_Symb2.Size = New System.Drawing.Size(48, 22)
-        Me.txt_Symb2.TabIndex = 3
+        Me.txt_Symb2.TabIndex = 2
         Me.txt_Symb2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_Symb1
@@ -75,7 +75,7 @@ Partial Class Form_Faire_Deviner
         Me.txt_Symb1.MaxLength = 1
         Me.txt_Symb1.Name = "txt_Symb1"
         Me.txt_Symb1.Size = New System.Drawing.Size(48, 22)
-        Me.txt_Symb1.TabIndex = 4
+        Me.txt_Symb1.TabIndex = 1
         Me.txt_Symb1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btn_Ok
@@ -83,7 +83,7 @@ Partial Class Form_Faire_Deviner
         Me.btn_Ok.Location = New System.Drawing.Point(290, 67)
         Me.btn_Ok.Name = "btn_Ok"
         Me.btn_Ok.Size = New System.Drawing.Size(73, 23)
-        Me.btn_Ok.TabIndex = 5
+        Me.btn_Ok.TabIndex = 6
         Me.btn_Ok.Text = "OK"
         Me.btn_Ok.UseVisualStyleBackColor = True
         '
@@ -93,8 +93,8 @@ Partial Class Form_Faire_Deviner
         Me.lbl_Titre.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Titre.Location = New System.Drawing.Point(119, 9)
         Me.lbl_Titre.Name = "lbl_Titre"
-        Me.lbl_Titre.Size = New System.Drawing.Size(96, 17)
-        Me.lbl_Titre.TabIndex = 6
+        Me.lbl_Titre.Size = New System.Drawing.Size(91, 16)
+        Me.lbl_Titre.TabIndex = 0
         Me.lbl_Titre.Text = "Master Mind"
         '
         'lbl_CarJouables
@@ -103,7 +103,7 @@ Partial Class Form_Faire_Deviner
         Me.lbl_CarJouables.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_CarJouables.Location = New System.Drawing.Point(175, 118)
         Me.lbl_CarJouables.Name = "lbl_CarJouables"
-        Me.lbl_CarJouables.Size = New System.Drawing.Size(153, 17)
+        Me.lbl_CarJouables.Size = New System.Drawing.Size(147, 16)
         Me.lbl_CarJouables.TabIndex = 7
         Me.lbl_CarJouables.Text = "Caractères jouables"
         '
@@ -112,7 +112,7 @@ Partial Class Form_Faire_Deviner
         Me.lbl_CarJouables2.AutoSize = True
         Me.lbl_CarJouables2.Location = New System.Drawing.Point(175, 150)
         Me.lbl_CarJouables2.Name = "lbl_CarJouables2"
-        Me.lbl_CarJouables2.Size = New System.Drawing.Size(0, 17)
+        Me.lbl_CarJouables2.Size = New System.Drawing.Size(0, 16)
         Me.lbl_CarJouables2.TabIndex = 8
         '
         'Form_Faire_Deviner

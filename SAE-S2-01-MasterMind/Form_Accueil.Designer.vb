@@ -49,7 +49,7 @@ Partial Class Form_Accueil
         Me.lbl_Joueur1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Joueur1.Location = New System.Drawing.Point(112, 86)
         Me.lbl_Joueur1.Name = "lbl_Joueur1"
-        Me.lbl_Joueur1.Size = New System.Drawing.Size(72, 17)
+        Me.lbl_Joueur1.Size = New System.Drawing.Size(66, 16)
         Me.lbl_Joueur1.TabIndex = 1
         Me.lbl_Joueur1.Text = "Joueur 1"
         '
@@ -59,7 +59,7 @@ Partial Class Form_Accueil
         Me.lbl_Joueur2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Joueur2.Location = New System.Drawing.Point(510, 86)
         Me.lbl_Joueur2.Name = "lbl_Joueur2"
-        Me.lbl_Joueur2.Size = New System.Drawing.Size(72, 17)
+        Me.lbl_Joueur2.Size = New System.Drawing.Size(66, 16)
         Me.lbl_Joueur2.TabIndex = 2
         Me.lbl_Joueur2.Text = "Joueur 2"
         '
@@ -85,7 +85,7 @@ Partial Class Form_Accueil
         Me.lbl_Nom.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Nom.Location = New System.Drawing.Point(21, 128)
         Me.lbl_Nom.Name = "lbl_Nom"
-        Me.lbl_Nom.Size = New System.Drawing.Size(45, 17)
+        Me.lbl_Nom.Size = New System.Drawing.Size(42, 16)
         Me.lbl_Nom.TabIndex = 5
         Me.lbl_Nom.Text = "Nom :"
         '
@@ -94,7 +94,7 @@ Partial Class Form_Accueil
         Me.btn_Start.Location = New System.Drawing.Point(298, 312)
         Me.btn_Start.Name = "btn_Start"
         Me.btn_Start.Size = New System.Drawing.Size(121, 45)
-        Me.btn_Start.TabIndex = 6
+        Me.btn_Start.TabIndex = 7
         Me.btn_Start.Text = "JOUER"
         Me.btn_Start.UseVisualStyleBackColor = True
         '
@@ -103,7 +103,7 @@ Partial Class Form_Accueil
         Me.btn_Quitter.Location = New System.Drawing.Point(96, 312)
         Me.btn_Quitter.Name = "btn_Quitter"
         Me.btn_Quitter.Size = New System.Drawing.Size(121, 45)
-        Me.btn_Quitter.TabIndex = 7
+        Me.btn_Quitter.TabIndex = 6
         Me.btn_Quitter.Text = "QUITTER"
         Me.btn_Quitter.UseVisualStyleBackColor = True
         '

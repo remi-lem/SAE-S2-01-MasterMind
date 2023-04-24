@@ -86,7 +86,7 @@ Partial Class Form_Tableau_Score
         Me.btn_Accueil.Location = New System.Drawing.Point(990, 389)
         Me.btn_Accueil.Name = "btn_Accueil"
         Me.btn_Accueil.Size = New System.Drawing.Size(124, 50)
-        Me.btn_Accueil.TabIndex = 5
+        Me.btn_Accueil.TabIndex = 15
         Me.btn_Accueil.Text = "Accueil"
         Me.btn_Accueil.UseVisualStyleBackColor = True
         '
@@ -95,7 +95,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Score.AutoSize = True
         Me.lbl_Score.Location = New System.Drawing.Point(388, 108)
         Me.lbl_Score.Name = "lbl_Score"
-        Me.lbl_Score.Size = New System.Drawing.Size(45, 17)
+        Me.lbl_Score.Size = New System.Drawing.Size(43, 16)
         Me.lbl_Score.TabIndex = 6
         Me.lbl_Score.Text = "Score"
         '
@@ -104,7 +104,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_BestTime.AutoSize = True
         Me.lbl_BestTime.Location = New System.Drawing.Point(598, 108)
         Me.lbl_BestTime.Name = "lbl_BestTime"
-        Me.lbl_BestTime.Size = New System.Drawing.Size(104, 17)
+        Me.lbl_BestTime.Size = New System.Drawing.Size(100, 16)
         Me.lbl_BestTime.TabIndex = 7
         Me.lbl_BestTime.Text = "Meilleur Temps"
         '
@@ -113,7 +113,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_TempsCumulé.AutoSize = True
         Me.lbl_TempsCumulé.Location = New System.Drawing.Point(845, 108)
         Me.lbl_TempsCumulé.Name = "lbl_TempsCumulé"
-        Me.lbl_TempsCumulé.Size = New System.Drawing.Size(102, 17)
+        Me.lbl_TempsCumulé.Size = New System.Drawing.Size(98, 16)
         Me.lbl_TempsCumulé.TabIndex = 8
         Me.lbl_TempsCumulé.Text = "Temps Cumulé"
         '
@@ -122,7 +122,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Nom.AutoSize = True
         Me.lbl_Nom.Location = New System.Drawing.Point(140, 108)
         Me.lbl_Nom.Name = "lbl_Nom"
-        Me.lbl_Nom.Size = New System.Drawing.Size(37, 17)
+        Me.lbl_Nom.Size = New System.Drawing.Size(36, 16)
         Me.lbl_Nom.TabIndex = 9
         Me.lbl_Nom.Text = "Nom"
         '

@@ -95,6 +95,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -109,6 +110,15 @@
     <Compile Include="Personne.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form_Accueil.resx">
+      <DependentUpon>Form_Accueil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Faire_Deviner.resx">
+      <DependentUpon>Form_Faire_Deviner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Tableau_Score.resx">
+      <DependentUpon>Form_Tableau_Score.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
