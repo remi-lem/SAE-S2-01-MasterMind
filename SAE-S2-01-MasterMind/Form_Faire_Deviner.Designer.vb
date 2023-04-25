@@ -112,8 +112,9 @@ Partial Class Form_Faire_Deviner
         Me.lbl_CarJouables2.AutoSize = True
         Me.lbl_CarJouables2.Location = New System.Drawing.Point(175, 150)
         Me.lbl_CarJouables2.Name = "lbl_CarJouables2"
-        Me.lbl_CarJouables2.Size = New System.Drawing.Size(0, 16)
+        Me.lbl_CarJouables2.Size = New System.Drawing.Size(108, 16)
         Me.lbl_CarJouables2.TabIndex = 8
+        Me.lbl_CarJouables2.Text = "ici les caracteres"
         '
         'Form_Faire_Deviner
         '

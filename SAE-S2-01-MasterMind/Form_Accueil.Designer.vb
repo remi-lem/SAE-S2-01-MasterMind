@@ -27,10 +27,11 @@ Partial Class Form_Accueil
         Me.lbl_Joueur2 = New System.Windows.Forms.Label()
         Me.cbx_Joueur1 = New System.Windows.Forms.ComboBox()
         Me.cbx_Joueur2 = New System.Windows.Forms.ComboBox()
-        Me.lbl_Nom = New System.Windows.Forms.Label()
+        Me.lbl_NomJ1 = New System.Windows.Forms.Label()
         Me.btn_Start = New System.Windows.Forms.Button()
         Me.btn_Quitter = New System.Windows.Forms.Button()
         Me.btn_Score = New System.Windows.Forms.Button()
+        Me.lbl_NomJ2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_Titre
@@ -49,7 +50,7 @@ Partial Class Form_Accueil
         Me.lbl_Joueur1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Joueur1.Location = New System.Drawing.Point(112, 86)
         Me.lbl_Joueur1.Name = "lbl_Joueur1"
-        Me.lbl_Joueur1.Size = New System.Drawing.Size(72, 17)
+        Me.lbl_Joueur1.Size = New System.Drawing.Size(66, 16)
         Me.lbl_Joueur1.TabIndex = 1
         Me.lbl_Joueur1.Text = "Joueur 1"
         '
@@ -59,7 +60,7 @@ Partial Class Form_Accueil
         Me.lbl_Joueur2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Joueur2.Location = New System.Drawing.Point(510, 86)
         Me.lbl_Joueur2.Name = "lbl_Joueur2"
-        Me.lbl_Joueur2.Size = New System.Drawing.Size(72, 17)
+        Me.lbl_Joueur2.Size = New System.Drawing.Size(66, 16)
         Me.lbl_Joueur2.TabIndex = 2
         Me.lbl_Joueur2.Text = "Joueur 2"
         '
@@ -79,15 +80,15 @@ Partial Class Form_Accueil
         Me.cbx_Joueur2.Size = New System.Drawing.Size(121, 24)
         Me.cbx_Joueur2.TabIndex = 4
         '
-        'lbl_Nom
+        'lbl_NomJ1
         '
-        Me.lbl_Nom.AutoSize = True
-        Me.lbl_Nom.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Nom.Location = New System.Drawing.Point(21, 128)
-        Me.lbl_Nom.Name = "lbl_Nom"
-        Me.lbl_Nom.Size = New System.Drawing.Size(45, 17)
-        Me.lbl_Nom.TabIndex = 5
-        Me.lbl_Nom.Text = "Nom :"
+        Me.lbl_NomJ1.AutoSize = True
+        Me.lbl_NomJ1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_NomJ1.Location = New System.Drawing.Point(21, 128)
+        Me.lbl_NomJ1.Name = "lbl_NomJ1"
+        Me.lbl_NomJ1.Size = New System.Drawing.Size(42, 16)
+        Me.lbl_NomJ1.TabIndex = 5
+        Me.lbl_NomJ1.Text = "Nom :"
         '
         'btn_Start
         '
@@ -116,15 +117,26 @@ Partial Class Form_Accueil
         Me.btn_Score.Text = "Tableau des scores"
         Me.btn_Score.UseVisualStyleBackColor = True
         '
+        'lbl_NomJ2
+        '
+        Me.lbl_NomJ2.AutoSize = True
+        Me.lbl_NomJ2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_NomJ2.Location = New System.Drawing.Point(418, 128)
+        Me.lbl_NomJ2.Name = "lbl_NomJ2"
+        Me.lbl_NomJ2.Size = New System.Drawing.Size(42, 16)
+        Me.lbl_NomJ2.TabIndex = 9
+        Me.lbl_NomJ2.Text = "Nom :"
+        '
         'Form_Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lbl_NomJ2)
         Me.Controls.Add(Me.btn_Score)
         Me.Controls.Add(Me.btn_Quitter)
         Me.Controls.Add(Me.btn_Start)
-        Me.Controls.Add(Me.lbl_Nom)
+        Me.Controls.Add(Me.lbl_NomJ1)
         Me.Controls.Add(Me.cbx_Joueur2)
         Me.Controls.Add(Me.cbx_Joueur1)
         Me.Controls.Add(Me.lbl_Joueur2)
@@ -142,8 +154,9 @@ Partial Class Form_Accueil
     Friend WithEvents lbl_Joueur2 As Label
     Friend WithEvents cbx_Joueur1 As ComboBox
     Friend WithEvents cbx_Joueur2 As ComboBox
-    Friend WithEvents lbl_Nom As Label
+    Friend WithEvents lbl_NomJ1 As Label
     Friend WithEvents btn_Start As Button
     Friend WithEvents btn_Quitter As Button
     Friend WithEvents btn_Score As Button
+    Friend WithEvents lbl_NomJ2 As Label
 End Class
