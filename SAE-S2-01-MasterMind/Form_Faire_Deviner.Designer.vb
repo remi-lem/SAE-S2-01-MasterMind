@@ -31,6 +31,7 @@ Partial Class Form_Faire_Deviner
         Me.lbl_Titre = New System.Windows.Forms.Label()
         Me.lbl_CarJouables = New System.Windows.Forms.Label()
         Me.lbl_CarJouables2 = New System.Windows.Forms.Label()
+        Me.lbl_only_j1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txt_Symb5
@@ -103,9 +104,9 @@ Partial Class Form_Faire_Deviner
         Me.lbl_CarJouables.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_CarJouables.Location = New System.Drawing.Point(175, 118)
         Me.lbl_CarJouables.Name = "lbl_CarJouables"
-        Me.lbl_CarJouables.Size = New System.Drawing.Size(147, 16)
+        Me.lbl_CarJouables.Size = New System.Drawing.Size(155, 16)
         Me.lbl_CarJouables.TabIndex = 7
-        Me.lbl_CarJouables.Text = "Caractères jouables"
+        Me.lbl_CarJouables.Text = "Caractères possibles"
         '
         'lbl_CarJouables2
         '
@@ -116,11 +117,21 @@ Partial Class Form_Faire_Deviner
         Me.lbl_CarJouables2.TabIndex = 8
         Me.lbl_CarJouables2.Text = "ici les caracteres"
         '
+        'lbl_only_j1
+        '
+        Me.lbl_only_j1.AutoSize = True
+        Me.lbl_only_j1.Location = New System.Drawing.Point(25, 36)
+        Me.lbl_only_j1.Name = "lbl_only_j1"
+        Me.lbl_only_j1.Size = New System.Drawing.Size(297, 16)
+        Me.lbl_only_j1.TabIndex = 9
+        Me.lbl_only_j1.Text = "ATTENTION : seul le joueur 1 doit voir cet écran !"
+        '
         'Form_Faire_Deviner
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(381, 197)
+        Me.Controls.Add(Me.lbl_only_j1)
         Me.Controls.Add(Me.lbl_CarJouables2)
         Me.Controls.Add(Me.lbl_CarJouables)
         Me.Controls.Add(Me.lbl_Titre)
@@ -131,7 +142,7 @@ Partial Class Form_Faire_Deviner
         Me.Controls.Add(Me.txt_Symb4)
         Me.Controls.Add(Me.txt_Symb5)
         Me.Name = "Form_Faire_Deviner"
-        Me.Text = "Form1"
+        Me.Text = "Pattern à deviner"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -146,4 +157,5 @@ Partial Class Form_Faire_Deviner
     Friend WithEvents lbl_Titre As Label
     Friend WithEvents lbl_CarJouables As Label
     Friend WithEvents lbl_CarJouables2 As Label
+    Friend WithEvents lbl_only_j1 As Label
 End Class

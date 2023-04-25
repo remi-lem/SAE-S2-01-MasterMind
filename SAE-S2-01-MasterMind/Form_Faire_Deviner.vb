@@ -18,6 +18,19 @@
         End If
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        init_char_jouables()
+        lbl_only_j1.Text = "ATTENTION : seul " & Form_Accueil.cbx_Joueur1.Text & " doit voir cet écran !"
+
+        If DEBUG_MODE Then
+            txt_Symb1.Text = "#"
+            txt_Symb2.Text = "#"
+            txt_Symb3.Text = "#"
+            txt_Symb4.Text = "#"
+            txt_Symb5.Text = "#"
+        End If
+    End Sub
+
+    Private Sub init_char_jouables()
         Dim str_char_jouables As String = ""
         Dim first As Boolean = True
         For Each charJouable As String In symbParDefaut
@@ -31,7 +44,12 @@
         lbl_CarJouables2.Text = str_char_jouables
     End Sub
 
-    Private Sub lbl_CarJouables_Click(sender As Object, e As EventArgs) Handles lbl_CarJouables.Click
 
+    Private Sub btn_Ok_Click(sender As Object, e As EventArgs) Handles btn_Ok.Click
+        If txt_Symb1.Text = "" Or txt_Symb2.Text = "" Or txt_Symb3.Text = "" Or txt_Symb4.Text = "" Or txt_Symb5.Text = "" Then
+            MsgBox("Merci de remplir tous les caractères")
+        Else
+            Form_Essais_Joueur_2.Show()
+        End If
     End Sub
 End Class

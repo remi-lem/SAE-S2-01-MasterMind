@@ -53,6 +53,11 @@
 
     Private Sub Form_Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        If DEBUG_MODE Then
+            cbx_Joueur1.Text = "Pass"
+            cbx_Joueur2.Text = "Tèk"
+        End If
+
         For i As Integer = 0 To getNb() - 1
             If Not cbx_Joueur1.Items.Contains(getPlayer(i).nom) Then
                 cbx_Joueur1.Items.Add(getPlayer(i).nom)

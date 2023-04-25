@@ -32,6 +32,8 @@ Partial Class Form_Accueil
         Me.btn_Quitter = New System.Windows.Forms.Button()
         Me.btn_Score = New System.Windows.Forms.Button()
         Me.lbl_NomJ2 = New System.Windows.Forms.Label()
+        Me.pic_mastermind = New System.Windows.Forms.PictureBox()
+        CType(Me.pic_mastermind, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_Titre
@@ -127,11 +129,22 @@ Partial Class Form_Accueil
         Me.lbl_NomJ2.TabIndex = 9
         Me.lbl_NomJ2.Text = "Nom :"
         '
+        'pic_mastermind
+        '
+        Me.pic_mastermind.Image = Global.SAE_S2_01_MasterMind.My.Resources.Resources.logo_mastermind
+        Me.pic_mastermind.Location = New System.Drawing.Point(661, 13)
+        Me.pic_mastermind.Name = "pic_mastermind"
+        Me.pic_mastermind.Size = New System.Drawing.Size(127, 120)
+        Me.pic_mastermind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_mastermind.TabIndex = 10
+        Me.pic_mastermind.TabStop = False
+        '
         'Form_Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.pic_mastermind)
         Me.Controls.Add(Me.lbl_NomJ2)
         Me.Controls.Add(Me.btn_Score)
         Me.Controls.Add(Me.btn_Quitter)
@@ -144,6 +157,7 @@ Partial Class Form_Accueil
         Me.Controls.Add(Me.lbl_Titre)
         Me.Name = "Form_Accueil"
         Me.Text = "Bienvenue !"
+        CType(Me.pic_mastermind, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -159,4 +173,5 @@ Partial Class Form_Accueil
     Friend WithEvents btn_Quitter As Button
     Friend WithEvents btn_Score As Button
     Friend WithEvents lbl_NomJ2 As Label
+    Friend WithEvents pic_mastermind As PictureBox
 End Class

@@ -1,4 +1,7 @@
 ﻿Module Personne
+
+    Public DEBUG_MODE = True ' METTRE FALSE AVANT DE RENDRE !!!!
+
     Public Structure Joueur
         Dim nom As String
         Dim score As Integer
