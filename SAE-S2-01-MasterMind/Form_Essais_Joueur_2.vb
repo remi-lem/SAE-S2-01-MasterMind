@@ -116,16 +116,17 @@
             End If
         Next
 
-        Dim prop As String = ""
+        Dim coloredStrings As New List(Of String)
         For Each txt_box As TextBox In lst_symb
             If txt_box.BackColor = Color.Green Then
-                prop = prop & txt_box.Text & " "
+                coloredStrings.Add(<font color=red>Exemple de texte en rouge.</font>)
             ElseIf txt_box.BackColor = Color.Blue Then
-                prop = prop & txt_box.Text & " "
+                coloredStrings.Add(<font color=blue>Exemple de texte en bleu.</font>)
             Else
-                prop = prop & txt_box.Text & " "
+                coloredStrings.Add(txt_box.Text)
             End If
         Next
+        Dim prop As String = String.Join("", coloredStrings)
         lstbx_coups_prec.Items.Add(prop)
 
         If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
