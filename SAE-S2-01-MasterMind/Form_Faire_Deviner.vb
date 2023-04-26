@@ -52,4 +52,9 @@
             Form_Essais_Joueur_2.Show()
         End If
     End Sub
+
+    Public Function get_choisi() As List(Of String)
+        Dim symbChoisi As List(Of String) = New List(Of String) From {txt_Symb1.Text, txt_Symb2.Text, txt_Symb3.Text, txt_Symb4.Text, txt_Symb5.Text}
+        Return symbChoisi
+    End Function
 End Class

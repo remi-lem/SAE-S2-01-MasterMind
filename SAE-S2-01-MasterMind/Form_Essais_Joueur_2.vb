@@ -22,6 +22,7 @@
         nb_coups_restants = MAX_NB_COUP_RESTANTS
         temps_restant = New TimeSpan(MAX_TEMPS_COUP.Ticks)
 
+        lbl_trouve.Visible = False
         'If DEBUG_MODE Then
         'temps_restant = New TimeSpan(UNE_SECONDE.Ticks)
         'End If
@@ -52,7 +53,7 @@
         If temps_restant.TotalSeconds <= 0 Then
             tmr_temps_restant.Stop()
             MsgBox("temps écoulé !")
-            'TODO
+            'TODO                       'ça se Me.Close() mais faut pas en ouvrir un autre ?
             Me.Close()
         Else
             temps_restant = temps_restant.Subtract(UNE_SECONDE)
@@ -98,7 +99,39 @@
     Private Sub verif_proposition()
         Dim prop As String = txt_symb1.Text & " " & txt_symb2.Text & " " & txt_symb3.Text & " " & txt_symb4.Text & " " & txt_symb5.Text
         lstbx_coups_prec.Items.Add(prop)
+        Dim symbChoisi As List(Of String) = Form_Faire_Deviner.get_choisi()
+        Dim lst_symb As List(Of TextBox) = New List(Of TextBox) From {txt_symb1, txt_symb2, txt_symb3, txt_symb4, txt_symb5}
+
+        For Each txt_box As TextBox In lst_symb
+            If InList(symbChoisi, txt_box.Text) Then
+                txt_box.ForeColor = Color.Blue
+            End If
+        Next
+        For i As Integer = 0 To symbChoisi.Capacity
+            If lst_symb.Item(i).Text = symbChoisi.Item(i) Then
+                lst_symb.Item(i).ForeColor = Color.Green
+            End If
+        Next
+
+        If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
+            a_gagner()
+        End If
         ' TODO
         ' ANTOINE VIENS ICI
     End Sub
+
+    Private Sub a_gagner()
+        lbl_trouve.Visible = True
+        'TODO
+    End Sub
+
+    Private Function InList(List As List(Of String), symbole As String) As Boolean
+        For Each s As String In List
+            If s = symbole Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
 End Class

@@ -14,7 +14,6 @@
             MsgBox("Les joueurs ne peuvent avoir le même nom")
         Else
             Form_Faire_Deviner.Show()
-
         End If
 
         Dim joueurSelec1 As String = cbx_Joueur1.Text

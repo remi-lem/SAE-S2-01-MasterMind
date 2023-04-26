@@ -41,6 +41,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_coups_restants = New System.Windows.Forms.Label()
         Me.lbl_temps_restant = New System.Windows.Forms.Label()
         Me.lstbx_coups_prec = New System.Windows.Forms.ListBox()
+        Me.lbl_trouve = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'tmr_temps_restant
@@ -206,11 +207,21 @@ Partial Class Form_Essais_Joueur_2
         Me.lstbx_coups_prec.Size = New System.Drawing.Size(120, 244)
         Me.lstbx_coups_prec.TabIndex = 16
         '
+        'lbl_trouve
+        '
+        Me.lbl_trouve.AutoSize = True
+        Me.lbl_trouve.Location = New System.Drawing.Point(239, 349)
+        Me.lbl_trouve.Name = "lbl_trouve"
+        Me.lbl_trouve.Size = New System.Drawing.Size(53, 16)
+        Me.lbl_trouve.TabIndex = 17
+        Me.lbl_trouve.Text = "Trouvé!"
+        '
         'Form_Essais_Joueur_2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(423, 426)
+        Me.Controls.Add(Me.lbl_trouve)
         Me.Controls.Add(Me.lstbx_coups_prec)
         Me.Controls.Add(Me.lbl_temps_restant)
         Me.Controls.Add(Me.lbl_coups_restants)
@@ -253,4 +264,5 @@ Partial Class Form_Essais_Joueur_2
     Friend WithEvents lbl_coups_restants As Label
     Friend WithEvents lbl_temps_restant As Label
     Friend WithEvents lstbx_coups_prec As ListBox
+    Friend WithEvents lbl_trouve As Label
 End Class
