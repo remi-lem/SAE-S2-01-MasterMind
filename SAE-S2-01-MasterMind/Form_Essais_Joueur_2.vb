@@ -22,7 +22,6 @@
         nb_coups_restants = MAX_NB_COUP_RESTANTS
         temps_restant = New TimeSpan(MAX_TEMPS_COUP.Ticks)
 
-        lbl_trouve.Visible = False
         'If DEBUG_MODE Then
         'temps_restant = New TimeSpan(UNE_SECONDE.Ticks)
         'End If
@@ -123,6 +122,7 @@
 
     Private Sub a_gagner()
         lbl_trouve.Visible = True
+        btn_partir.Visible = True
         tmr_temps_restant.Stop()
         'TODO
     End Sub
@@ -159,5 +159,8 @@
     Private Sub txt_symb5_Click(sender As Object, e As EventArgs) Handles txt_symb5.Click
         txt_symb5.Text = ""
         txt_symb5.BackColor = Color.White
+    End Sub
+    Private Sub btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
+        Me.Close()
     End Sub
 End Class

@@ -49,6 +49,7 @@
         If txt_Symb1.Text = "" Or txt_Symb2.Text = "" Or txt_Symb3.Text = "" Or txt_Symb4.Text = "" Or txt_Symb5.Text = "" Then
             MsgBox("Merci de remplir tous les caractères")
         Else
+            Me.Hide()
             Form_Essais_Joueur_2.Show()
         End If
     End Sub
