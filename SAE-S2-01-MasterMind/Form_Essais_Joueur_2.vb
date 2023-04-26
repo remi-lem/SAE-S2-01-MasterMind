@@ -103,6 +103,7 @@
         Dim lst_symb As List(Of TextBox) = New List(Of TextBox) From {txt_symb1, txt_symb2, txt_symb3, txt_symb4, txt_symb5}
 
         For Each txt_box As TextBox In lst_symb
+            txt_box.BackColor = Color.White
             If InList(symbChoisi, txt_box.Text) Then
                 txt_box.BackColor = Color.Blue
             End If
