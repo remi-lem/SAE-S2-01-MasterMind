@@ -42,6 +42,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_temps_restant = New System.Windows.Forms.Label()
         Me.lstbx_coups_prec = New System.Windows.Forms.ListBox()
         Me.lbl_trouve = New System.Windows.Forms.Label()
+        Me.btn_partir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'tmr_temps_restant
@@ -215,12 +216,24 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_trouve.Size = New System.Drawing.Size(53, 16)
         Me.lbl_trouve.TabIndex = 17
         Me.lbl_trouve.Text = "Trouvé!"
+        Me.lbl_trouve.Visible = False
+        '
+        'btn_partir
+        '
+        Me.btn_partir.Location = New System.Drawing.Point(242, 369)
+        Me.btn_partir.Name = "btn_partir"
+        Me.btn_partir.Size = New System.Drawing.Size(75, 23)
+        Me.btn_partir.TabIndex = 18
+        Me.btn_partir.Text = "Partir"
+        Me.btn_partir.UseVisualStyleBackColor = True
+        Me.btn_partir.Visible = False
         '
         'Form_Essais_Joueur_2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(423, 426)
+        Me.Controls.Add(Me.btn_partir)
         Me.Controls.Add(Me.lbl_trouve)
         Me.Controls.Add(Me.lstbx_coups_prec)
         Me.Controls.Add(Me.lbl_temps_restant)
@@ -265,4 +278,5 @@ Partial Class Form_Essais_Joueur_2
     Friend WithEvents lbl_temps_restant As Label
     Friend WithEvents lstbx_coups_prec As ListBox
     Friend WithEvents lbl_trouve As Label
+    Friend WithEvents btn_partir As Button
 End Class

@@ -22,7 +22,6 @@
         nb_coups_restants = MAX_NB_COUP_RESTANTS
         temps_restant = New TimeSpan(MAX_TEMPS_COUP.Ticks)
 
-        lbl_trouve.Visible = False
         'If DEBUG_MODE Then
         'temps_restant = New TimeSpan(UNE_SECONDE.Ticks)
         'End If
@@ -122,6 +121,7 @@
 
     Private Sub a_gagner()
         lbl_trouve.Visible = True
+        btn_partir.Visible = True
         'TODO
     End Sub
 
@@ -134,4 +134,7 @@
         Return False
     End Function
 
+    Private Sub btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
+        Me.Close()
+    End Sub
 End Class
