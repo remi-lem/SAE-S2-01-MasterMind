@@ -104,12 +104,12 @@
 
         For Each txt_box As TextBox In lst_symb
             If InList(symbChoisi, txt_box.Text) Then
-                txt_box.ForeColor = Color.Blue
+                txt_box.BackColor = Color.Blue
             End If
         Next
-        For i As Integer = 0 To symbChoisi.Capacity
+        For i As Integer = 0 To symbChoisi.Count - 1
             If lst_symb.Item(i).Text = symbChoisi.Item(i) Then
-                lst_symb.Item(i).ForeColor = Color.Green
+                lst_symb.Item(i).BackColor = Color.Green
             End If
         Next
 
@@ -122,6 +122,7 @@
 
     Private Sub a_gagner()
         lbl_trouve.Visible = True
+        tmr_temps_restant.Stop()
         'TODO
     End Sub
 
@@ -134,4 +135,28 @@
         Return False
     End Function
 
+    Private Sub txt_symb1_Click(sender As Object, e As EventArgs) Handles txt_symb1.Click
+        txt_symb1.Text = ""
+        txt_symb1.BackColor = Color.White
+    End Sub
+
+    Private Sub txt_symb2_Click(sender As Object, e As EventArgs) Handles txt_symb2.Click
+        txt_symb2.Text = ""
+        txt_symb2.BackColor = Color.White
+    End Sub
+
+    Private Sub txt_symb3_Click(sender As Object, e As EventArgs) Handles txt_symb3.Click
+        txt_symb3.Text = ""
+        txt_symb3.BackColor = Color.White
+    End Sub
+
+    Private Sub txt_symb4_Click(sender As Object, e As EventArgs) Handles txt_symb4.Click
+        txt_symb4.Text = ""
+        txt_symb4.BackColor = Color.White
+    End Sub
+
+    Private Sub txt_symb5_Click(sender As Object, e As EventArgs) Handles txt_symb5.Click
+        txt_symb5.Text = ""
+        txt_symb5.BackColor = Color.White
+    End Sub
 End Class
