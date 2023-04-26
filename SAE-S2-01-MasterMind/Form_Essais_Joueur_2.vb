@@ -117,17 +117,20 @@
         Next
 
         Dim coloredStrings As New List(Of String)
+        Dim prop As String = ""
+        Dim richTextBox As New RichTextBox()
         For Each txt_box As TextBox In lst_symb
+            richTextBox.AppendText(txt_box.Text)
             If txt_box.BackColor = Color.Green Then
-                coloredStrings.Add(<font color=red>Exemple de texte en rouge.</font>)
+                richTextBox.Select(0, 1)
+                richTextBox.SelectionColor = Color.Green
             ElseIf txt_box.BackColor = Color.Blue Then
-                coloredStrings.Add(<font color=blue>Exemple de texte en bleu.</font>)
-            Else
-                coloredStrings.Add(txt_box.Text)
+                richTextBox.Select(0, 1)
+                richTextBox.SelectionColor = Color.Blue
             End If
+            richTextBox.AppendText(" ")
         Next
-        Dim prop As String = String.Join("", coloredStrings)
-        lstbx_coups_prec.Items.Add(prop)
+        lstbx_coups_prec.Items.Add(richTextBox.Text)
 
         If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
             a_gagner()
