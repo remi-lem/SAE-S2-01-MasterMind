@@ -156,11 +156,14 @@
         txt_symb4.BackColor = Color.White
     End Sub
 
-    Private Sub txt_symb5_Click(sender As Object, e As EventArgs) Handles txt_symb5.Click
+    Private Sub txt_symb5_GotFocus(sender As Object, e As EventArgs) Handles txt_symb5.GotFocus
         txt_symb5.Text = ""
         txt_symb5.BackColor = Color.White
     End Sub
     Private Sub btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
         Me.Close()
+        Form_Faire_Deviner.Show()
     End Sub
+
+
 End Class
