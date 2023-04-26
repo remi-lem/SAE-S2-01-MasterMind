@@ -96,8 +96,8 @@
     End Sub
 
     Private Sub verif_proposition()
-        Dim prop As String = txt_symb1.Text & " " & txt_symb2.Text & " " & txt_symb3.Text & " " & txt_symb4.Text & " " & txt_symb5.Text
-        lstbx_coups_prec.Items.Add(prop)
+        'Dim prop As String = txt_symb1.Text & " " & txt_symb2.Text & " " & txt_symb3.Text & " " & txt_symb4.Text & " " & txt_symb5.Text
+        'lstbx_coups_prec.Items.Add(prop)
         Dim symbChoisi As List(Of String) = Form_Faire_Deviner.get_choisi()
         Dim lst_symb As List(Of TextBox) = New List(Of TextBox) From {txt_symb1, txt_symb2, txt_symb3, txt_symb4, txt_symb5}
 
@@ -112,6 +112,18 @@
                 lst_symb.Item(i).BackColor = Color.Green
             End If
         Next
+
+        Dim prop As String = ""
+        For Each txt_box As TextBox In lst_symb
+            If txt_box.BackColor = Color.Green Then
+                prop = prop & txt_box.Text & " "
+            ElseIf txt_box.BackColor = Color.Blue Then
+                prop = prop & txt_box.Text & " "
+            Else
+                prop = prop & txt_box.Text & " "
+            End If
+        Next
+        lstbx_coups_prec.Items.Add(prop)
 
         If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
             a_gagner()
@@ -165,5 +177,23 @@
         Form_Faire_Deviner.Show()
     End Sub
 
+    Private Sub txt_symb1_TextChanged(sender As Object, e As EventArgs) Handles txt_symb1.TextChanged
+        txt_symb1.BackColor = Color.White
+    End Sub
 
+    Private Sub txt_symb2_TextChanged(sender As Object, e As EventArgs) Handles txt_symb2.TextChanged
+        txt_symb2.BackColor = Color.White
+    End Sub
+
+    Private Sub txt_symb3_TextChanged(sender As Object, e As EventArgs) Handles txt_symb3.TextChanged
+        txt_symb3.BackColor = Color.White
+    End Sub
+
+    Private Sub txt_symb4_TextChanged(sender As Object, e As EventArgs) Handles txt_symb4.TextChanged
+        txt_symb4.BackColor = Color.White
+    End Sub
+
+    Private Sub txt_symb5_TextChanged(sender As Object, e As EventArgs) Handles txt_symb5.TextChanged
+        txt_symb5.BackColor = Color.White
+    End Sub
 End Class
