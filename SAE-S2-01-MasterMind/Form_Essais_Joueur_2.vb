@@ -61,6 +61,9 @@
     End Sub
 
     Private Sub txtSymb1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_symb1.KeyPress, txt_symb2.KeyPress, txt_symb3.KeyPress, txt_symb4.KeyPress, txt_symb5.KeyPress
+        sender.Text = ""
+        sender.BackColor = Color.White
+
         If e.KeyChar = vbBack Then
             Exit Sub
         End If
@@ -148,52 +151,14 @@
         Return False
     End Function
 
-    Private Sub txt_symb1_Click(sender As Object, e As EventArgs) Handles txt_symb1.Click
-        txt_symb1.Text = ""
-        txt_symb1.BackColor = Color.White
+    Private Sub txt_symb_Click(sender As Object, e As EventArgs) Handles txt_symb1.Click, txt_symb2.Click, txt_symb3.Click, txt_symb4.Click, txt_symb5.Click
+        sender.Text = ""
+        sender.BackColor = Color.White
     End Sub
 
-    Private Sub txt_symb2_Click(sender As Object, e As EventArgs) Handles txt_symb2.Click
-        txt_symb2.Text = ""
-        txt_symb2.BackColor = Color.White
-    End Sub
-
-    Private Sub txt_symb3_Click(sender As Object, e As EventArgs) Handles txt_symb3.Click
-        txt_symb3.Text = ""
-        txt_symb3.BackColor = Color.White
-    End Sub
-
-    Private Sub txt_symb4_Click(sender As Object, e As EventArgs) Handles txt_symb4.Click
-        txt_symb4.Text = ""
-        txt_symb4.BackColor = Color.White
-    End Sub
-
-    Private Sub txt_symb5_GotFocus(sender As Object, e As EventArgs) Handles txt_symb5.GotFocus
-        txt_symb5.Text = ""
-        txt_symb5.BackColor = Color.White
-    End Sub
     Private Sub btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
         Me.Close()
         Form_Faire_Deviner.Show()
     End Sub
 
-    Private Sub txt_symb1_TextChanged(sender As Object, e As EventArgs) Handles txt_symb1.TextChanged
-        txt_symb1.BackColor = Color.White
-    End Sub
-
-    Private Sub txt_symb2_TextChanged(sender As Object, e As EventArgs) Handles txt_symb2.TextChanged
-        txt_symb2.BackColor = Color.White
-    End Sub
-
-    Private Sub txt_symb3_TextChanged(sender As Object, e As EventArgs) Handles txt_symb3.TextChanged
-        txt_symb3.BackColor = Color.White
-    End Sub
-
-    Private Sub txt_symb4_TextChanged(sender As Object, e As EventArgs) Handles txt_symb4.TextChanged
-        txt_symb4.BackColor = Color.White
-    End Sub
-
-    Private Sub txt_symb5_TextChanged(sender As Object, e As EventArgs) Handles txt_symb5.TextChanged
-        txt_symb5.BackColor = Color.White
-    End Sub
 End Class

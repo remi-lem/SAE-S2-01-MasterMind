@@ -23,8 +23,8 @@
 
         If DEBUG_MODE Then
             txt_Symb1.Text = "#"
-            txt_Symb2.Text = "#"
-            txt_Symb3.Text = "#"
+            txt_Symb2.Text = "@"
+            txt_Symb3.Text = "%"
             txt_Symb4.Text = "#"
             txt_Symb5.Text = "#"
         End If
