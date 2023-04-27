@@ -68,6 +68,8 @@ Partial Class Form_Accueil
         '
         'cbx_Joueur1
         '
+        Me.cbx_Joueur1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cbx_Joueur1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbx_Joueur1.FormattingEnabled = True
         Me.cbx_Joueur1.Location = New System.Drawing.Point(96, 125)
         Me.cbx_Joueur1.Name = "cbx_Joueur1"
@@ -76,6 +78,8 @@ Partial Class Form_Accueil
         '
         'cbx_Joueur2
         '
+        Me.cbx_Joueur2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cbx_Joueur2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbx_Joueur2.FormattingEnabled = True
         Me.cbx_Joueur2.Location = New System.Drawing.Point(484, 125)
         Me.cbx_Joueur2.Name = "cbx_Joueur2"
