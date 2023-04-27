@@ -21,16 +21,16 @@
     Private Sub Form_Tableau_Score_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         For i As Integer = 0 To getNb() - 1
-            If Not cbx_NomSelec.Items.Contains(getPlayer(i).nom) Then
-                cbx_NomSelec.Items.Add(getPlayer(i).nom)
+            If Not cbx_NomSelec.Items.Contains(Personne.getNomPlayer(i)) Then
+                cbx_NomSelec.Items.Add(Personne.getNomPlayer(i))
             End If
-            If Not lst_Nom.Items.Contains(getPlayer(i).nom) Then
-                lst_Nom.Items.Add(getPlayer(i).nom)
-                lst_Score.Items.Add(getPlayer(i).score)
-                lst_BestTime.Items.Add(getPlayer(i).bestTime)
-                lst_TempsCumulé.Items.Add(getPlayer(i).timeCumulé)
-                lst_FirstPLayer.Items.Add(getPlayer(i).nbFirstPlayer)
-                lst_SecondPlayer.Items.Add(getPlayer(i).nbSecondPlayer)
+            If Not lst_Nom.Items.Contains(Personne.getNomPlayer(i)) Then
+                lst_Nom.Items.Add(Personne.getNomPlayer(i))
+                lst_Score.Items.Add(Personne.getScorePlayer(i))
+                lst_BestTime.Items.Add(Personne.getBestTimePlayer(i))
+                lst_TempsCumulé.Items.Add(Personne.getTimeCumulePlayer(i))
+                lst_FirstPLayer.Items.Add(Personne.getNbJ1Player(i))
+                lst_SecondPlayer.Items.Add(Personne.getNbJ2Player(i))
 
             End If
         Next

@@ -38,8 +38,9 @@
     Private Sub recalc_coups_restants()
         If nb_coups_restants <= 0 Then
             MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text, vbOKOnly, "Perdu !")
+            a_perdu()
             Me.Close()
-            Form_Faire_Deviner.Close()
+
         Else
             Me.Text = "Il vous reste " & nb_coups_restants & " coups"
             lbl_coups_restants.Text = nb_coups_restants & " coups restants"
@@ -55,7 +56,7 @@
         If temps_restant.TotalSeconds >= MAX_TEMPS_COUP.TotalSeconds Then
             tmr_temps_restant.Stop()
             MsgBox("temps écoulé !")
-            'TODO
+            a_perdu()
             Me.Close()
         Else
             temps_restant = temps_restant.Add(UNE_SECONDE)
@@ -144,7 +145,12 @@
         lbl_trouve.Visible = True
         btn_partir.Visible = True
         tmr_temps_restant.Stop()
-        'TODO : enregistrement
+        Personne.AjouteUnPointA(Form_Accueil.cbx_Joueur2.Text)
+    End Sub
+
+    Private Sub a_perdu()
+        joueur_a_gagne = False
+        Personne.AjouteUnPointA(Form_Accueil.cbx_Joueur1.Text)
     End Sub
 
     Private Function InList(List As List(Of String), symbole As String) As Boolean
@@ -163,11 +169,12 @@
 
     Private Sub btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
         Me.Close()
-        Form_Accueil.Show()
     End Sub
 
     Private Sub Form_Essais_Joueur_2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         tmr_temps_restant.Stop() ' utile ?
+        Form_Faire_Deviner.Close()
+        Form_Accueil.inverser_joueurs()
         Form_Accueil.Show()
     End Sub
 
