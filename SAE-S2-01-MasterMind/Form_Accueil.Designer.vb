@@ -134,7 +134,7 @@ Partial Class Form_Accueil
         Me.pic_mastermind.Image = Global.SAE_S2_01_MasterMind.My.Resources.Resources.logo_mastermind
         Me.pic_mastermind.Location = New System.Drawing.Point(661, 13)
         Me.pic_mastermind.Name = "pic_mastermind"
-        Me.pic_mastermind.Size = New System.Drawing.Size(127, 120)
+        Me.pic_mastermind.Size = New System.Drawing.Size(127, 127)
         Me.pic_mastermind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pic_mastermind.TabIndex = 10
         Me.pic_mastermind.TabStop = False
