@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form_Essais_Joueur_2
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form_Essais_Joueur_2
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.tmr_temps_restant = New System.Windows.Forms.Timer(Me.components)
@@ -55,7 +55,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_titre.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_titre.Location = New System.Drawing.Point(105, 9)
         Me.lbl_titre.Name = "lbl_titre"
-        Me.lbl_titre.Size = New System.Drawing.Size(91, 16)
+        Me.lbl_titre.Size = New System.Drawing.Size(96, 17)
         Me.lbl_titre.TabIndex = 0
         Me.lbl_titre.Text = "Master Mind"
         '
@@ -119,7 +119,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_prec_essais.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_prec_essais.Location = New System.Drawing.Point(13, 102)
         Me.lbl_prec_essais.Name = "lbl_prec_essais"
-        Me.lbl_prec_essais.Size = New System.Drawing.Size(136, 16)
+        Me.lbl_prec_essais.Size = New System.Drawing.Size(141, 17)
         Me.lbl_prec_essais.TabIndex = 7
         Me.lbl_prec_essais.Text = "Précédents essais"
         '
@@ -129,7 +129,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_code_couleur.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_code_couleur.Location = New System.Drawing.Point(214, 102)
         Me.lbl_code_couleur.Name = "lbl_code_couleur"
-        Me.lbl_code_couleur.Size = New System.Drawing.Size(101, 16)
+        Me.lbl_code_couleur.Size = New System.Drawing.Size(106, 17)
         Me.lbl_code_couleur.TabIndex = 8
         Me.lbl_code_couleur.Text = "Code Couleur"
         '
@@ -139,7 +139,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_char_jouables_titre.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_char_jouables_titre.Location = New System.Drawing.Point(217, 189)
         Me.lbl_char_jouables_titre.Name = "lbl_char_jouables_titre"
-        Me.lbl_char_jouables_titre.Size = New System.Drawing.Size(147, 16)
+        Me.lbl_char_jouables_titre.Size = New System.Drawing.Size(153, 17)
         Me.lbl_char_jouables_titre.TabIndex = 9
         Me.lbl_char_jouables_titre.Text = "Caractères jouables"
         '
@@ -148,7 +148,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_char_jouables.AutoSize = True
         Me.lbl_char_jouables.Location = New System.Drawing.Point(217, 209)
         Me.lbl_char_jouables.Name = "lbl_char_jouables"
-        Me.lbl_char_jouables.Size = New System.Drawing.Size(108, 16)
+        Me.lbl_char_jouables.Size = New System.Drawing.Size(114, 17)
         Me.lbl_char_jouables.TabIndex = 10
         Me.lbl_char_jouables.Text = "ici les caracteres"
         '
@@ -157,7 +157,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_code_abs.AutoSize = True
         Me.lbl_code_abs.Location = New System.Drawing.Point(217, 122)
         Me.lbl_code_abs.Name = "lbl_code_abs"
-        Me.lbl_code_abs.Size = New System.Drawing.Size(49, 16)
+        Me.lbl_code_abs.Size = New System.Drawing.Size(52, 17)
         Me.lbl_code_abs.TabIndex = 11
         Me.lbl_code_abs.Text = "Absent"
         '
@@ -167,7 +167,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_code_present.ForeColor = System.Drawing.Color.Blue
         Me.lbl_code_present.Location = New System.Drawing.Point(217, 138)
         Me.lbl_code_present.Name = "lbl_code_present"
-        Me.lbl_code_present.Size = New System.Drawing.Size(53, 16)
+        Me.lbl_code_present.Size = New System.Drawing.Size(57, 17)
         Me.lbl_code_present.TabIndex = 12
         Me.lbl_code_present.Text = "Présent"
         '
@@ -177,7 +177,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_code_present_bien_place.ForeColor = System.Drawing.Color.Green
         Me.lbl_code_present_bien_place.Location = New System.Drawing.Point(217, 154)
         Me.lbl_code_present_bien_place.Name = "lbl_code_present_bien_place"
-        Me.lbl_code_present_bien_place.Size = New System.Drawing.Size(133, 16)
+        Me.lbl_code_present_bien_place.Size = New System.Drawing.Size(142, 17)
         Me.lbl_code_present_bien_place.TabIndex = 13
         Me.lbl_code_present_bien_place.Text = "Présent et bien placé"
         '
@@ -186,7 +186,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_coups_restants.AutoSize = True
         Me.lbl_coups_restants.Location = New System.Drawing.Point(217, 264)
         Me.lbl_coups_restants.Name = "lbl_coups_restants"
-        Me.lbl_coups_restants.Size = New System.Drawing.Size(110, 16)
+        Me.lbl_coups_restants.Size = New System.Drawing.Size(118, 17)
         Me.lbl_coups_restants.TabIndex = 14
         Me.lbl_coups_restants.Text = "coups restants ici"
         '
@@ -195,24 +195,24 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_temps_restant.AutoSize = True
         Me.lbl_temps_restant.Location = New System.Drawing.Point(217, 294)
         Me.lbl_temps_restant.Name = "lbl_temps_restant"
-        Me.lbl_temps_restant.Size = New System.Drawing.Size(103, 48)
+        Me.lbl_temps_restant.Size = New System.Drawing.Size(111, 17)
         Me.lbl_temps_restant.TabIndex = 15
-        Me.lbl_temps_restant.Text = "temps restant ici" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & ".." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & ".."
+        Me.lbl_temps_restant.Text = "temps restant ici"
         '
         'lbl_trouve
         '
         Me.lbl_trouve.AutoSize = True
-        Me.lbl_trouve.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_trouve.Location = New System.Drawing.Point(271, 355)
+        Me.lbl_trouve.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_trouve.Location = New System.Drawing.Point(187, 341)
         Me.lbl_trouve.Name = "lbl_trouve"
-        Me.lbl_trouve.Size = New System.Drawing.Size(72, 20)
+        Me.lbl_trouve.Size = New System.Drawing.Size(102, 29)
         Me.lbl_trouve.TabIndex = 17
         Me.lbl_trouve.Text = "Trouvé!"
         Me.lbl_trouve.Visible = False
         '
         'btn_partir
         '
-        Me.btn_partir.Location = New System.Drawing.Point(268, 391)
+        Me.btn_partir.Location = New System.Drawing.Point(295, 382)
         Me.btn_partir.Name = "btn_partir"
         Me.btn_partir.Size = New System.Drawing.Size(75, 23)
         Me.btn_partir.TabIndex = 18
@@ -222,8 +222,6 @@ Partial Class Form_Essais_Joueur_2
         '
         'rtb_essais_prec
         '
-        Me.rtb_essais_prec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.rtb_essais_prec.Cursor = System.Windows.Forms.Cursors.Default
         Me.rtb_essais_prec.Enabled = False
         Me.rtb_essais_prec.Location = New System.Drawing.Point(16, 129)
         Me.rtb_essais_prec.Name = "rtb_essais_prec"

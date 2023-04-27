@@ -97,4 +97,46 @@
         Return joueurs(i).timeCumulé
     End Function
 
+
+    Public Sub ajouterPoint(nom As String)
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).nom = nom Then
+                joueurs(i).score += 1
+            End If
+        Next
+    End Sub
+    Public Sub ajouternBFirstPlayer(nom As String)
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).nom = nom Then
+                joueurs(i).nbFirstPlayer += 1
+            End If
+        Next
+    End Sub
+    Public Sub ajouternBSecondPlayer(nom As String)
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).nom = nom Then
+                joueurs(i).nbSecondPlayer += 1
+            End If
+        Next
+    End Sub
+    Public Function getPoints(nom As String) As Integer
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).nom = nom Then
+                Return joueurs(i).score
+            End If
+        Next
+    End Function
+    Public Function getBestTime(nom As String) As TimeSpan
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).nom = nom Then
+                Return joueurs(i).bestTime
+            End If
+        Next
+    End Function
+
 End Module
