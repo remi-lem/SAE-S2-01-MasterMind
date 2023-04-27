@@ -10,11 +10,27 @@
         Dim nbSecondPlayer As Integer
         Dim timeCumulé As TimeSpan
 
-        Public Function AjouteUnPoint()
+        Public Sub AjouteUnPoint()
             Me.score += 1
-        End Function
+        End Sub
 
-        Public Function getNom()
+        Public Sub AjouterTemps(temps As TimeSpan)
+            Me.timeCumulé.Add(temps)
+        End Sub
+
+        Public Sub AjoutenbFirstPlayer()
+            Me.nbFirstPlayer += 1
+        End Sub
+
+        Public Sub AjoutenbSecondPlayer()
+            Me.nbSecondPlayer += 1
+        End Sub
+
+        Public Sub setBestTime(meilleurTemps As TimeSpan)
+            Me.bestTime = meilleurTemps
+        End Sub
+
+        Public Function getNom() As String
             Return Me.nom
         End Function
 
@@ -69,13 +85,30 @@
         Return contient
     End Function
 
-    Public Function AjouteUnPointA(nom As String)
+    Public Sub AjouteUnPointA(nom As String)
         For i As Integer = 0 To getNb() - 1
             If getPlayer(i).nom = nom Then
                 getPlayer(i).AjouteUnPoint()
             End If
         Next
-    End Function
+    End Sub
+
+    Public Sub ajouternBFirstPlayer(nom As String)
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).nom = nom Then
+                joueurs(i).AjoutenbFirstPlayer()
+            End If
+        Next
+    End Sub
+    Public Sub ajouternBSecondPlayer(nom As String)
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).nom = nom Then
+                joueurs(i).AjoutenbSecondPlayer()
+            End If
+        Next
+    End Sub
 
     Public Function getNomPlayer(i As Integer) As String
         Return joueurs(i).nom
@@ -98,30 +131,8 @@
     End Function
 
 
-    Public Sub ajouterPoint(nom As String)
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).nom = nom Then
-                joueurs(i).score += 1
-            End If
-        Next
-    End Sub
-    Public Sub ajouternBFirstPlayer(nom As String)
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).nom = nom Then
-                joueurs(i).nbFirstPlayer += 1
-            End If
-        Next
-    End Sub
-    Public Sub ajouternBSecondPlayer(nom As String)
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).nom = nom Then
-                joueurs(i).nbSecondPlayer += 1
-            End If
-        Next
-    End Sub
+
+
     Public Function getPoints(nom As String) As Integer
         Debug.Assert(containsPlayer(nom))
         For i As Integer = 0 To getNb() - 1
