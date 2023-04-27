@@ -37,6 +37,7 @@
         If nb_coups_restants <= 0 Then
             MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text, vbOKOnly, "Perdu !")
             Me.Close()
+            Form_Accueil.Show()
         Else
             Me.Text = "Il vous reste " & nb_coups_restants & " coups"
             lbl_coups_restants.Text = nb_coups_restants & " coups restants"
