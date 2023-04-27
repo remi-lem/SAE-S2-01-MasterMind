@@ -16,7 +16,9 @@
     Dim symbParDefaut5 As String = "@"
 
     Dim symbParDefaut As List(Of String) = New List(Of String) From {symbParDefaut1, symbParDefaut2, symbParDefaut3, symbParDefaut4, symbParDefaut5}
+    ' TODO mettre en commun
 
+    Private joueur_a_gagne As Boolean = False
 
     Private Sub Form_Essais_Joueur_2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nb_coups_restants = MAX_NB_COUP_RESTANTS
@@ -95,7 +97,11 @@
             verif_proposition()
             nb_coups_restants -= 1
             recalc_coups_restants()
-            txt_symb1.Focus()
+            If Not joueur_a_gagne Then
+                txt_symb1.Focus()
+            Else
+                btn_partir.Focus()
+            End If
         End If
     End Sub
 
@@ -122,6 +128,8 @@
                 rtb_essais_prec.SelectionColor = Color.Green
             ElseIf txt_box.BackColor = Color.Blue Then
                 rtb_essais_prec.SelectionColor = Color.Blue
+            Else
+                rtb_essais_prec.SelectionColor = Color.Black
             End If
             rtb_essais_prec.AppendText(txt_box.Text)
             rtb_essais_prec.AppendText(" ")
@@ -131,16 +139,14 @@
         If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
             a_gagner()
         End If
-        ' TODO
-        ' ANTOINE VIENS ICI
     End Sub
 
     Private Sub a_gagner()
+        joueur_a_gagne = True
         lbl_trouve.Visible = True
         btn_partir.Visible = True
         tmr_temps_restant.Stop()
-        btn_partir.Focus()
-        'TODO
+        'TODO : enregistrement
     End Sub
 
     Private Function InList(List As List(Of String), symbole As String) As Boolean
@@ -163,6 +169,7 @@
     End Sub
 
     Private Sub Form_Essais_Joueur_2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        tmr_temps_restant.Stop() ' utile ?
         Form_Accueil.Show()
     End Sub
 End Class

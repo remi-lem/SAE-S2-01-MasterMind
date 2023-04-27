@@ -195,23 +195,24 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_temps_restant.AutoSize = True
         Me.lbl_temps_restant.Location = New System.Drawing.Point(217, 294)
         Me.lbl_temps_restant.Name = "lbl_temps_restant"
-        Me.lbl_temps_restant.Size = New System.Drawing.Size(103, 16)
+        Me.lbl_temps_restant.Size = New System.Drawing.Size(103, 48)
         Me.lbl_temps_restant.TabIndex = 15
-        Me.lbl_temps_restant.Text = "temps restant ici"
+        Me.lbl_temps_restant.Text = "temps restant ici" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & ".." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & ".."
         '
         'lbl_trouve
         '
         Me.lbl_trouve.AutoSize = True
-        Me.lbl_trouve.Location = New System.Drawing.Point(239, 349)
+        Me.lbl_trouve.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_trouve.Location = New System.Drawing.Point(271, 355)
         Me.lbl_trouve.Name = "lbl_trouve"
-        Me.lbl_trouve.Size = New System.Drawing.Size(53, 16)
+        Me.lbl_trouve.Size = New System.Drawing.Size(72, 20)
         Me.lbl_trouve.TabIndex = 17
         Me.lbl_trouve.Text = "Trouvé!"
         Me.lbl_trouve.Visible = False
         '
         'btn_partir
         '
-        Me.btn_partir.Location = New System.Drawing.Point(242, 369)
+        Me.btn_partir.Location = New System.Drawing.Point(268, 391)
         Me.btn_partir.Name = "btn_partir"
         Me.btn_partir.Size = New System.Drawing.Size(75, 23)
         Me.btn_partir.TabIndex = 18
@@ -221,6 +222,8 @@ Partial Class Form_Essais_Joueur_2
         '
         'rtb_essais_prec
         '
+        Me.rtb_essais_prec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.rtb_essais_prec.Cursor = System.Windows.Forms.Cursors.Default
         Me.rtb_essais_prec.Enabled = False
         Me.rtb_essais_prec.Location = New System.Drawing.Point(16, 129)
         Me.rtb_essais_prec.Name = "rtb_essais_prec"

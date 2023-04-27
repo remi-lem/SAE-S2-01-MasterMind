@@ -13,6 +13,7 @@
         ElseIf cbx_Joueur1.Text = cbx_Joueur2.Text Then
             MsgBox("Les joueurs ne peuvent avoir le même nom")
         Else
+            Form_Faire_Deviner.Close()
             Form_Faire_Deviner.Show()
             Me.Hide()
         End If
