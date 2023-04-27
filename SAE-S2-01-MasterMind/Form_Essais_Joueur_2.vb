@@ -118,21 +118,16 @@
             End If
         Next
 
-        Dim coloredStrings As New List(Of String)
-        Dim prop As String = ""
-        Dim richTextBox As New RichTextBox()
         For Each txt_box As TextBox In lst_symb
-            richTextBox.AppendText(txt_box.Text)
             If txt_box.BackColor = Color.Green Then
-                richTextBox.Select(0, 1)
-                richTextBox.SelectionColor = Color.Green
+                rtb_essais_prec.SelectionColor = Color.Green
             ElseIf txt_box.BackColor = Color.Blue Then
-                richTextBox.Select(0, 1)
-                richTextBox.SelectionColor = Color.Blue
+                rtb_essais_prec.SelectionColor = Color.Blue
             End If
-            richTextBox.AppendText(" ")
+            rtb_essais_prec.AppendText(txt_box.Text)
+            rtb_essais_prec.AppendText(" ")
         Next
-        lstbx_coups_prec.Items.Add(richTextBox.Text)
+        rtb_essais_prec.AppendText(vbCrLf)
 
         If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
             a_gagner()

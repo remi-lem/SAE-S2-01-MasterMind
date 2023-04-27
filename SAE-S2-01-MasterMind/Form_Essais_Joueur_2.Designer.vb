@@ -40,9 +40,9 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_code_present_bien_place = New System.Windows.Forms.Label()
         Me.lbl_coups_restants = New System.Windows.Forms.Label()
         Me.lbl_temps_restant = New System.Windows.Forms.Label()
-        Me.lstbx_coups_prec = New System.Windows.Forms.ListBox()
         Me.lbl_trouve = New System.Windows.Forms.Label()
         Me.btn_partir = New System.Windows.Forms.Button()
+        Me.rtb_essais_prec = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'tmr_temps_restant
@@ -199,15 +199,6 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_temps_restant.TabIndex = 15
         Me.lbl_temps_restant.Text = "temps restant ici"
         '
-        'lstbx_coups_prec
-        '
-        Me.lstbx_coups_prec.FormattingEnabled = True
-        Me.lstbx_coups_prec.ItemHeight = 16
-        Me.lstbx_coups_prec.Location = New System.Drawing.Point(16, 138)
-        Me.lstbx_coups_prec.Name = "lstbx_coups_prec"
-        Me.lstbx_coups_prec.Size = New System.Drawing.Size(120, 244)
-        Me.lstbx_coups_prec.TabIndex = 16
-        '
         'lbl_trouve
         '
         Me.lbl_trouve.AutoSize = True
@@ -228,14 +219,22 @@ Partial Class Form_Essais_Joueur_2
         Me.btn_partir.UseVisualStyleBackColor = True
         Me.btn_partir.Visible = False
         '
+        'rtb_essais_prec
+        '
+        Me.rtb_essais_prec.Location = New System.Drawing.Point(16, 129)
+        Me.rtb_essais_prec.Name = "rtb_essais_prec"
+        Me.rtb_essais_prec.Size = New System.Drawing.Size(144, 263)
+        Me.rtb_essais_prec.TabIndex = 19
+        Me.rtb_essais_prec.Text = ""
+        '
         'Form_Essais_Joueur_2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(423, 426)
+        Me.Controls.Add(Me.rtb_essais_prec)
         Me.Controls.Add(Me.btn_partir)
         Me.Controls.Add(Me.lbl_trouve)
-        Me.Controls.Add(Me.lstbx_coups_prec)
         Me.Controls.Add(Me.lbl_temps_restant)
         Me.Controls.Add(Me.lbl_coups_restants)
         Me.Controls.Add(Me.lbl_code_present_bien_place)
@@ -276,7 +275,7 @@ Partial Class Form_Essais_Joueur_2
     Friend WithEvents lbl_code_present_bien_place As Label
     Friend WithEvents lbl_coups_restants As Label
     Friend WithEvents lbl_temps_restant As Label
-    Friend WithEvents lstbx_coups_prec As ListBox
     Friend WithEvents lbl_trouve As Label
     Friend WithEvents btn_partir As Button
+    Friend WithEvents rtb_essais_prec As RichTextBox
 End Class
