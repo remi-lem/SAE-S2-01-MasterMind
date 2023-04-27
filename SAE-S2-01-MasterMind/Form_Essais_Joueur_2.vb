@@ -100,8 +100,6 @@
     End Sub
 
     Private Sub verif_proposition()
-        'Dim prop As String = txt_symb1.Text & " " & txt_symb2.Text & " " & txt_symb3.Text & " " & txt_symb4.Text & " " & txt_symb5.Text
-        'lstbx_coups_prec.Items.Add(prop)
         Dim symbChoisi As List(Of String) = Form_Faire_Deviner.get_choisi()
         Dim lst_symb As List(Of TextBox) = New List(Of TextBox) From {txt_symb1, txt_symb2, txt_symb3, txt_symb4, txt_symb5}
 
@@ -124,6 +122,7 @@
                 rtb_essais_prec.SelectionColor = Color.Blue
             End If
             rtb_essais_prec.AppendText(txt_box.Text)
+            rtb_essais_prec.SelectionColor = Color.Black
             rtb_essais_prec.AppendText(" ")
         Next
         rtb_essais_prec.AppendText(vbCrLf)
@@ -165,4 +164,5 @@
     Private Sub Form_Essais_Joueur_2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Form_Accueil.Show()
     End Sub
+
 End Class
