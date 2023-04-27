@@ -37,7 +37,7 @@
         If nb_coups_restants <= 0 Then
             MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text, vbOKOnly, "Perdu !")
             Me.Close()
-            Form_Accueil.Show()
+            Form_Faire_Deviner.Close()
         Else
             Me.Text = "Il vous reste " & nb_coups_restants & " coups"
             lbl_coups_restants.Text = nb_coups_restants & " coups restants"
@@ -55,7 +55,6 @@
             MsgBox("temps écoulé !")
             'TODO
             Me.Close()
-            Form_Accueil.Show()
         Else
             temps_restant = temps_restant.Add(UNE_SECONDE)
         End If
@@ -163,4 +162,7 @@
         Form_Accueil.Show()
     End Sub
 
+    Private Sub Form_Essais_Joueur_2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Form_Accueil.Show()
+    End Sub
 End Class

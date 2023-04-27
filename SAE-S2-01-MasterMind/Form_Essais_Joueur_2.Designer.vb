@@ -221,8 +221,10 @@ Partial Class Form_Essais_Joueur_2
         '
         'rtb_essais_prec
         '
+        Me.rtb_essais_prec.Enabled = False
         Me.rtb_essais_prec.Location = New System.Drawing.Point(16, 129)
         Me.rtb_essais_prec.Name = "rtb_essais_prec"
+        Me.rtb_essais_prec.ReadOnly = True
         Me.rtb_essais_prec.Size = New System.Drawing.Size(144, 263)
         Me.rtb_essais_prec.TabIndex = 19
         Me.rtb_essais_prec.Text = ""

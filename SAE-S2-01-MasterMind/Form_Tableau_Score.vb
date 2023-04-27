@@ -11,8 +11,7 @@
     End Sub
 
     Private Sub btn_Accueil_Click(sender As Object, e As EventArgs) Handles btn_Accueil.Click
-        Me.Hide()
-        Form_Accueil.Show()
+        Me.Close()
     End Sub
 
     Private Sub cbx_NomSelec_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_NomSelec.SelectedIndexChanged
@@ -37,5 +36,7 @@
         Next
     End Sub
 
-
+    Private Sub Form_Tableau_Score_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Form_Accueil.Show()
+    End Sub
 End Class
