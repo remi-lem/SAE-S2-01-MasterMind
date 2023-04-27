@@ -8,7 +8,9 @@
 
     Dim symbParDefaut As List(Of String) = New List(Of String) From {symbParDefaut1, symbParDefaut2, symbParDefaut3, symbParDefaut4, symbParDefaut5}
 
-    Private Sub txtSymb1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_Symb1.KeyPress, txt_Symb2.KeyPress, txt_Symb3.KeyPress, txt_Symb4.KeyPress, txt_Symb5.KeyPress
+    Private Sub txtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_Symb1.KeyPress, txt_Symb2.KeyPress, txt_Symb3.KeyPress, txt_Symb4.KeyPress, txt_Symb5.KeyPress
+        sender.Text = ""
+
         If e.KeyChar = vbBack Then
             Exit Sub
         End If
@@ -54,8 +56,17 @@
         End If
     End Sub
 
+    Private Sub txt_Symb_Click(sender As Object, e As EventArgs) Handles txt_Symb1.Click, txt_Symb2.Click, txt_Symb3.Click, txt_Symb4.Click, txt_Symb5.Click
+        sender.Text = ""
+    End Sub
+
+    Private Sub Form_Faire_Deviner_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Form_Accueil.Show()
+    End Sub
+
     Public Function get_choisi() As List(Of String)
         Dim symbChoisi As List(Of String) = New List(Of String) From {txt_Symb1.Text, txt_Symb2.Text, txt_Symb3.Text, txt_Symb4.Text, txt_Symb5.Text}
         Return symbChoisi
     End Function
+
 End Class

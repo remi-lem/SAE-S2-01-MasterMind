@@ -20,7 +20,7 @@
 
     Private Sub Form_Essais_Joueur_2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nb_coups_restants = MAX_NB_COUP_RESTANTS
-        temps_restant = New TimeSpan(MAX_TEMPS_COUP.Ticks)
+        temps_restant = New TimeSpan(0, 0, 0)
 
         'If DEBUG_MODE Then
         'temps_restant = New TimeSpan(UNE_SECONDE.Ticks)
@@ -45,22 +45,23 @@
     End Sub
 
     Private Sub recalc_temps_restant()
-        lbl_temps_restant.Text = temps_restant.Minutes & " minute et " & vbCrLf & temps_restant.Seconds & " secondes restantes"
+        lbl_temps_restant.Text = temps_restant.Minutes & " minute et " & vbCrLf & temps_restant.Seconds & " secondes écoulées" & vbCrLf & "Max : " & MAX_TEMPS_COUP.Minutes & ":" & MAX_TEMPS_COUP.Seconds
     End Sub
 
     Private Sub tmr_temps_restant_Tick(sender As Object, e As EventArgs) Handles tmr_temps_restant.Tick
-        If temps_restant.TotalSeconds <= 0 Then
+        If temps_restant.TotalSeconds >= MAX_TEMPS_COUP.TotalSeconds Then
             tmr_temps_restant.Stop()
             MsgBox("temps écoulé !")
-            'TODO                       'ça se Me.Close() mais faut pas en ouvrir un autre ?
+            'TODO
             Me.Close()
+            Form_Accueil.Show()
         Else
-            temps_restant = temps_restant.Subtract(UNE_SECONDE)
+            temps_restant = temps_restant.Add(UNE_SECONDE)
         End If
         recalc_temps_restant()
     End Sub
 
-    Private Sub txtSymb1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_symb1.KeyPress, txt_symb2.KeyPress, txt_symb3.KeyPress, txt_symb4.KeyPress, txt_symb5.KeyPress
+    Private Sub txtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_symb1.KeyPress, txt_symb2.KeyPress, txt_symb3.KeyPress, txt_symb4.KeyPress, txt_symb5.KeyPress
         sender.Text = ""
         sender.BackColor = Color.White
 
@@ -94,7 +95,7 @@
             verif_proposition()
             nb_coups_restants -= 1
             recalc_coups_restants()
-
+            txt_symb1.Focus()
         End If
     End Sub
 
@@ -143,6 +144,7 @@
         lbl_trouve.Visible = True
         btn_partir.Visible = True
         tmr_temps_restant.Stop()
+        btn_partir.Focus()
         'TODO
     End Sub
 
@@ -162,7 +164,7 @@
 
     Private Sub btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
         Me.Close()
-        Form_Faire_Deviner.Show()
+        Form_Accueil.Show()
     End Sub
 
 End Class
