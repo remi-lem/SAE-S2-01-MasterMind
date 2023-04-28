@@ -79,7 +79,6 @@
 
         If compteur >= joueurs.Length Then
             ReDim joueurs(compteur + pasExtension)
-
         End If
         joueurs(compteur) = j
         compteur += 1

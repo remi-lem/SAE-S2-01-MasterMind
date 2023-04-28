@@ -11,7 +11,7 @@
             MsgBox("Veuillez saisir un nom pour chaque joueur")
 
         ElseIf cbx_Joueur1.Text = cbx_Joueur2.Text Then
-            MsgBox("Les joueurs ne peuvent avoir le même nom")
+            MsgBox("Les joueurs ne peuvent pas avoir le même nom")
         Else
             Form_Faire_Deviner.Close()
             Form_Faire_Deviner.Show()
@@ -23,6 +23,7 @@
 
         If Not containsPlayer(joueurSelec1) Then
             ajouterJoueur(joueurSelec1)
+
         End If
 
         If Not containsPlayer(joueurSelec2) Then

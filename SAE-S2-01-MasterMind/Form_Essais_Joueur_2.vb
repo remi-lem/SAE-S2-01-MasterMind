@@ -146,6 +146,8 @@
         btn_partir.Visible = True
         tmr_temps_restant.Stop()
         Personne.AjouteUnPointA(Form_Accueil.cbx_Joueur2.Text)
+        Personne.ajouternBSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
+        Personne.ajouternBFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
     End Sub
 
     Private Sub a_perdu()
