@@ -34,6 +34,26 @@
             Return Me.nom
         End Function
 
+        Public Function getBestTime() As TimeSpan
+            Return Me.bestTime
+        End Function
+
+        Public Function getScore() As Integer
+            Return Me.score
+        End Function
+
+        Public Function getNbFirstPlayer() As Integer
+            Return Me.nbFirstPlayer
+        End Function
+
+        Public Function getNbSecondPlayer() As Integer
+            Return Me.nbSecondPlayer
+        End Function
+
+        Public Function getTimeCumulé() As TimeSpan
+            Return Me.timeCumulé
+        End Function
+
     End Structure
 
     Private Const pasExtension As Integer = 10
@@ -111,43 +131,24 @@
     End Sub
 
     Public Function getNomPlayer(i As Integer) As String
-        Return joueurs(i).nom
+        Return joueurs(i).getNom
     End Function
 
     Public Function getScorePlayer(i As Integer) As Integer
-        Return joueurs(i).score
+        Return joueurs(i).getScore
     End Function
     Public Function getBestTimePlayer(i As Integer) As TimeSpan
-        Return joueurs(i).bestTime
+        Return joueurs(i).getBestTime
     End Function
     Public Function getNbJ1Player(i As Integer) As Integer
-        Return joueurs(i).nbFirstPlayer
+        Return joueurs(i).getNbFirstPlayer
     End Function
     Public Function getNbJ2Player(i As Integer) As Integer
-        Return joueurs(i).nbSecondPlayer
+        Return joueurs(i).getNbSecondPlayer
     End Function
     Public Function getTimeCumulePlayer(i As Integer) As TimeSpan
-        Return joueurs(i).timeCumulé
+        Return joueurs(i).getTimeCumulé
     End Function
 
-
-
-
-    Public Function getPoints(nom As String) As Integer
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).nom = nom Then
-                Return joueurs(i).score
-            End If
-        Next
-    End Function
-    Public Function getBestTime(nom As String) As TimeSpan
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).nom = nom Then
-                Return joueurs(i).bestTime
-            End If
-        Next
-    End Function
 
 End Module
