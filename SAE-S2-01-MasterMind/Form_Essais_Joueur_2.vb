@@ -122,6 +122,7 @@
             End If
         Next
 
+        rtb_essais_prec.AppendText("    ")
         For Each txt_box As TextBox In lst_symb
             If txt_box.BackColor = Color.Green Then
                 rtb_essais_prec.SelectionColor = Color.Green
@@ -131,7 +132,7 @@
                 rtb_essais_prec.SelectionColor = Color.Black
             End If
             rtb_essais_prec.AppendText(txt_box.Text)
-            rtb_essais_prec.AppendText(" ")
+            rtb_essais_prec.AppendText("    ")
         Next
         rtb_essais_prec.AppendText(vbCrLf)
 
