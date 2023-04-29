@@ -1,7 +1,7 @@
 ﻿Public Class Form_Essais_Joueur_2
 
     Private nb_coups_restants As Integer
-    Private temps_restant As New TimeSpan()
+    Private temps_ecoule As New TimeSpan()
 
     Private Const MAX_NB_COUP_RESTANTS As Integer = 15
     Private ReadOnly MAX_TEMPS_COUP As New TimeSpan(0, 1, 30)
@@ -22,7 +22,7 @@
 
     Private Sub Form_Essais_Joueur_2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nb_coups_restants = MAX_NB_COUP_RESTANTS
-        temps_restant = New TimeSpan(0, 0, 0)
+        temps_ecoule = New TimeSpan(0, 0, 0)
 
         'If DEBUG_MODE Then
         'temps_restant = New TimeSpan(UNE_SECONDE.Ticks)
@@ -32,7 +32,7 @@
 
         init_char_jouables()
         recalc_coups_restants()
-        recalc_temps_restant()
+        recalc_temps_ecoule()
     End Sub
 
     Private Sub recalc_coups_restants()
@@ -48,20 +48,20 @@
 
     End Sub
 
-    Private Sub recalc_temps_restant()
-        lbl_temps_restant.Text = temps_restant.Minutes & " minute et " & vbCrLf & temps_restant.Seconds & " secondes écoulées" & vbCrLf & "Max : " & MAX_TEMPS_COUP.Minutes & ":" & MAX_TEMPS_COUP.Seconds
+    Private Sub recalc_temps_ecoule()
+        lbl_temps_ecoule.Text = temps_ecoule.Minutes & " minute et " & vbCrLf & temps_ecoule.Seconds & " secondes écoulées" & vbCrLf & "Max : " & MAX_TEMPS_COUP.Minutes & ":" & MAX_TEMPS_COUP.Seconds
     End Sub
 
     Private Sub tmr_temps_restant_Tick(sender As Object, e As EventArgs) Handles tmr_temps_restant.Tick
-        If temps_restant.TotalSeconds >= MAX_TEMPS_COUP.TotalSeconds Then
+        If temps_ecoule.TotalSeconds >= MAX_TEMPS_COUP.TotalSeconds Then
             tmr_temps_restant.Stop()
             MsgBox("temps écoulé !")
             a_perdu()
             Me.Close()
         Else
-            temps_restant = temps_restant.Add(UNE_SECONDE)
+            temps_ecoule = temps_ecoule.Add(UNE_SECONDE)
         End If
-        recalc_temps_restant()
+        recalc_temps_ecoule()
     End Sub
 
     Private Sub txtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_symb1.KeyPress, txt_symb2.KeyPress, txt_symb3.KeyPress, txt_symb4.KeyPress, txt_symb5.KeyPress
@@ -149,6 +149,7 @@
         Personne.AjouteUnPointA(Form_Accueil.cbx_Joueur2.Text)
         Personne.ajouternBSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
         Personne.ajouternBFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
+        Personne.AjouterTempsCumuleA(Form_Accueil.cbx_Joueur2.Text, temps_ecoule)
     End Sub
 
     Private Sub a_perdu()

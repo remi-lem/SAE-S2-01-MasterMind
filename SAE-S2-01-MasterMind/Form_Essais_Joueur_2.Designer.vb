@@ -39,7 +39,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_code_present = New System.Windows.Forms.Label()
         Me.lbl_code_present_bien_place = New System.Windows.Forms.Label()
         Me.lbl_coups_restants = New System.Windows.Forms.Label()
-        Me.lbl_temps_restant = New System.Windows.Forms.Label()
+        Me.lbl_temps_ecoule = New System.Windows.Forms.Label()
         Me.lbl_trouve = New System.Windows.Forms.Label()
         Me.btn_partir = New System.Windows.Forms.Button()
         Me.rtb_essais_prec = New System.Windows.Forms.RichTextBox()
@@ -190,14 +190,14 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_coups_restants.TabIndex = 14
         Me.lbl_coups_restants.Text = "coups restants ici"
         '
-        'lbl_temps_restant
+        'lbl_temps_ecoule
         '
-        Me.lbl_temps_restant.AutoSize = True
-        Me.lbl_temps_restant.Location = New System.Drawing.Point(217, 294)
-        Me.lbl_temps_restant.Name = "lbl_temps_restant"
-        Me.lbl_temps_restant.Size = New System.Drawing.Size(111, 17)
-        Me.lbl_temps_restant.TabIndex = 15
-        Me.lbl_temps_restant.Text = "temps restant ici"
+        Me.lbl_temps_ecoule.AutoSize = True
+        Me.lbl_temps_ecoule.Location = New System.Drawing.Point(217, 294)
+        Me.lbl_temps_ecoule.Name = "lbl_temps_ecoule"
+        Me.lbl_temps_ecoule.Size = New System.Drawing.Size(109, 17)
+        Me.lbl_temps_ecoule.TabIndex = 15
+        Me.lbl_temps_ecoule.Text = "temps ecoulé ici"
         '
         'lbl_trouve
         '
@@ -238,7 +238,7 @@ Partial Class Form_Essais_Joueur_2
         Me.Controls.Add(Me.rtb_essais_prec)
         Me.Controls.Add(Me.btn_partir)
         Me.Controls.Add(Me.lbl_trouve)
-        Me.Controls.Add(Me.lbl_temps_restant)
+        Me.Controls.Add(Me.lbl_temps_ecoule)
         Me.Controls.Add(Me.lbl_coups_restants)
         Me.Controls.Add(Me.lbl_code_present_bien_place)
         Me.Controls.Add(Me.lbl_code_present)
@@ -277,7 +277,7 @@ Partial Class Form_Essais_Joueur_2
     Friend WithEvents lbl_code_present As Label
     Friend WithEvents lbl_code_present_bien_place As Label
     Friend WithEvents lbl_coups_restants As Label
-    Friend WithEvents lbl_temps_restant As Label
+    Friend WithEvents lbl_temps_ecoule As Label
     Friend WithEvents lbl_trouve As Label
     Friend WithEvents btn_partir As Button
     Friend WithEvents rtb_essais_prec As RichTextBox

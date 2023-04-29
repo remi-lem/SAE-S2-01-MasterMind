@@ -15,7 +15,7 @@
         End Sub
 
         Public Sub AjouterTemps(temps As TimeSpan)
-            Me.timeCumulé.Add(temps)
+            Me.timeCumulé = Me.timeCumulé.Add(temps)
         End Sub
 
         Public Sub AjoutenbFirstPlayer()
@@ -125,6 +125,15 @@
         For i As Integer = 0 To getNb() - 1
             If joueurs(i).nom = nom Then
                 joueurs(i).AjoutenbSecondPlayer()
+            End If
+        Next
+    End Sub
+
+    Public Sub AjouterTempsCumuleA(nom As String, temps As TimeSpan)
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).nom = nom Then
+                joueurs(i).AjouterTemps(temps)
             End If
         Next
     End Sub
