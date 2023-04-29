@@ -97,7 +97,7 @@
     Public Function containsPlayer(nom As String) As Boolean
         Dim contient As Boolean = False
         For i As Integer = 0 To getNb() - 1
-            If getPlayer(i).nom = nom Then
+            If getPlayer(i).getNom = nom Then
                 contient = True
             End If
         Next
