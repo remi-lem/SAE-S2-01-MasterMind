@@ -222,13 +222,16 @@ Partial Class Form_Essais_Joueur_2
         '
         'rtb_essais_prec
         '
-        Me.rtb_essais_prec.Enabled = False
+        Me.rtb_essais_prec.Font = New System.Drawing.Font("Cascadia Mono", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtb_essais_prec.Location = New System.Drawing.Point(16, 129)
         Me.rtb_essais_prec.Name = "rtb_essais_prec"
         Me.rtb_essais_prec.ReadOnly = True
-        Me.rtb_essais_prec.Size = New System.Drawing.Size(144, 263)
+        Me.rtb_essais_prec.ShortcutsEnabled = False
+        Me.rtb_essais_prec.Size = New System.Drawing.Size(165, 263)
         Me.rtb_essais_prec.TabIndex = 19
+        Me.rtb_essais_prec.TabStop = False
         Me.rtb_essais_prec.Text = ""
+        Me.rtb_essais_prec.WordWrap = False
         '
         'Form_Essais_Joueur_2
         '

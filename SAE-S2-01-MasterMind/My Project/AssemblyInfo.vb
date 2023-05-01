@@ -1,5 +1,4 @@
-﻿Imports System
-Imports System.Reflection
+﻿Imports System.Reflection
 Imports System.Runtime.InteropServices
 
 ' Les informations générales relatives à un assembly dépendent de
@@ -10,9 +9,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("SAE-S2-01-MasterMind")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("HP")>
+<Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("SAE-S2-01-MasterMind")>
-<Assembly: AssemblyCopyright("Copyright © HP 2023")>
+<Assembly: AssemblyCopyright("")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

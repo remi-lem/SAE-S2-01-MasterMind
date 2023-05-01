@@ -9,11 +9,11 @@
     Private ReadOnly UNE_SECONDE As New TimeSpan(0, 0, 1)
     ' optimisation possible : mettre Const ou truc qui y ressemble
 
-    Dim symbParDefaut1 As String = "#"
-    Dim symbParDefaut2 As String = "$"
-    Dim symbParDefaut3 As String = "£"
-    Dim symbParDefaut4 As String = "%"
-    Dim symbParDefaut5 As String = "@"
+    Dim symbParDefaut1 As String = Symboles.getSymbDef1()
+    Dim symbParDefaut2 As String = Symboles.getSymbDef2()
+    Dim symbParDefaut3 As String = Symboles.getSymbDef3()
+    Dim symbParDefaut4 As String = Symboles.getSymbDef4()
+    Dim symbParDefaut5 As String = Symboles.getSymbDef5()
 
     Dim symbParDefaut As List(Of String) = New List(Of String) From {symbParDefaut1, symbParDefaut2, symbParDefaut3, symbParDefaut4, symbParDefaut5}
     ' TODO mettre en commun
@@ -36,16 +36,14 @@
     End Sub
 
     Private Sub recalc_coups_restants()
+        Me.Text = "Il vous reste " & nb_coups_restants & " coups"
+        lbl_coups_restants.Text = nb_coups_restants & " coups restants"
+
         If nb_coups_restants <= 0 Then
             MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text, vbOKOnly, "Perdu !")
             a_perdu()
             Me.Close()
-
-        Else
-            Me.Text = "Il vous reste " & nb_coups_restants & " coups"
-            lbl_coups_restants.Text = nb_coups_restants & " coups restants"
         End If
-
     End Sub
 
     Private Sub recalc_temps_ecoule()
@@ -122,7 +120,15 @@
             End If
         Next
 
-        rtb_essais_prec.AppendText("  ")
+        ajout_essai_liste_essais_prec(lst_symb)
+
+        If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
+            a_gagner()
+        End If
+    End Sub
+
+    Private Sub ajout_essai_liste_essais_prec(lst_symb As List(Of TextBox))
+        rtb_essais_prec.AppendText(" ")
         For Each txt_box As TextBox In lst_symb
             If txt_box.BackColor = Color.Green Then
                 rtb_essais_prec.SelectionColor = Color.Green
@@ -132,13 +138,9 @@
                 rtb_essais_prec.SelectionColor = Color.Black
             End If
             rtb_essais_prec.AppendText(txt_box.Text)
-            rtb_essais_prec.AppendText("  ")
+            rtb_essais_prec.AppendText(" ")
         Next
         rtb_essais_prec.AppendText(vbCrLf)
-
-        If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
-            a_gagner()
-        End If
     End Sub
 
     Private Sub a_gagner()
@@ -146,15 +148,15 @@
         lbl_trouve.Visible = True
         btn_partir.Visible = True
         tmr_temps_restant.Stop()
-        Personne.AjouteUnPointA(Form_Accueil.cbx_Joueur2.Text)
-        Personne.ajouternBSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
-        Personne.ajouternBFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
-        Personne.AjouterTempsCumuleA(Form_Accueil.cbx_Joueur2.Text, temps_ecoule)
+        LesJoueurs.AjouteUnPointA(Form_Accueil.cbx_Joueur2.Text)
+        LesJoueurs.ajouternBSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
+        LesJoueurs.ajouternBFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
+        LesJoueurs.AjouterTempsCumuleA(Form_Accueil.cbx_Joueur2.Text, temps_ecoule)
     End Sub
 
     Private Sub a_perdu()
         joueur_a_gagne = False
-        Personne.AjouteUnPointA(Form_Accueil.cbx_Joueur1.Text)
+        LesJoueurs.AjouteUnPointA(Form_Accueil.cbx_Joueur1.Text)
     End Sub
 
     Private Function InList(List As List(Of String), symbole As String) As Boolean
@@ -176,7 +178,7 @@
     End Sub
 
     Private Sub Form_Essais_Joueur_2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        tmr_temps_restant.Stop() ' utile ?
+        tmr_temps_restant.Stop()
         Form_Faire_Deviner.Close()
         Form_Accueil.inverser_joueurs()
         Form_Accueil.Show()

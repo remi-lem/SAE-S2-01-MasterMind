@@ -1,10 +1,10 @@
 ﻿Public Class Form_Faire_Deviner
 
-    Dim symbParDefaut1 As String = "#"
-    Dim symbParDefaut2 As String = "$"
-    Dim symbParDefaut3 As String = "£"
-    Dim symbParDefaut4 As String = "%"
-    Dim symbParDefaut5 As String = "@"
+    Dim symbParDefaut1 As String = Symboles.getSymbDef1()
+    Dim symbParDefaut2 As String = Symboles.getSymbDef2()
+    Dim symbParDefaut3 As String = Symboles.getSymbDef3()
+    Dim symbParDefaut4 As String = Symboles.getSymbDef4()
+    Dim symbParDefaut5 As String = Symboles.getSymbDef5()
 
     Dim symbParDefaut As List(Of String) = New List(Of String) From {symbParDefaut1, symbParDefaut2, symbParDefaut3, symbParDefaut4, symbParDefaut5}
 
@@ -24,11 +24,11 @@
         lbl_only_j1.Text = "ATTENTION : seul " & Form_Accueil.cbx_Joueur1.Text & " doit voir cet écran !"
 
         If DEBUG_MODE Then
-            txt_Symb1.Text = "#"
-            txt_Symb2.Text = "@"
-            txt_Symb3.Text = "%"
-            txt_Symb4.Text = "#"
-            txt_Symb5.Text = "#"
+            txt_Symb1.Text = symbParDefaut1
+            txt_Symb2.Text = symbParDefaut2
+            txt_Symb3.Text = symbParDefaut3
+            txt_Symb4.Text = symbParDefaut1
+            txt_Symb5.Text = symbParDefaut1
         End If
     End Sub
 

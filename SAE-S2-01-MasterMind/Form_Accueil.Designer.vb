@@ -33,6 +33,7 @@ Partial Class Form_Accueil
         Me.btn_Score = New System.Windows.Forms.Button()
         Me.lbl_NomJ2 = New System.Windows.Forms.Label()
         Me.pic_mastermind = New System.Windows.Forms.PictureBox()
+        Me.btn_modif_options = New System.Windows.Forms.Button()
         CType(Me.pic_mastermind, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -143,11 +144,21 @@ Partial Class Form_Accueil
         Me.pic_mastermind.TabIndex = 10
         Me.pic_mastermind.TabStop = False
         '
+        'btn_modif_options
+        '
+        Me.btn_modif_options.Location = New System.Drawing.Point(640, 312)
+        Me.btn_modif_options.Name = "btn_modif_options"
+        Me.btn_modif_options.Size = New System.Drawing.Size(121, 45)
+        Me.btn_modif_options.TabIndex = 11
+        Me.btn_modif_options.Text = "Modification des options"
+        Me.btn_modif_options.UseVisualStyleBackColor = True
+        '
         'Form_Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_modif_options)
         Me.Controls.Add(Me.pic_mastermind)
         Me.Controls.Add(Me.lbl_NomJ2)
         Me.Controls.Add(Me.btn_Score)
@@ -178,4 +189,5 @@ Partial Class Form_Accueil
     Friend WithEvents btn_Score As Button
     Friend WithEvents lbl_NomJ2 As Label
     Friend WithEvents pic_mastermind As PictureBox
+    Friend WithEvents btn_modif_options As Button
 End Class

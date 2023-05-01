@@ -30,18 +30,15 @@
             ajouterJoueur(joueurSelec2)
         End If
 
-
-
     End Sub
 
     Private Sub btn_Score_Click(sender As Object, e As EventArgs) Handles btn_Score.Click
         Me.Hide()
         Form_Tableau_Score.Show()
-
     End Sub
 
     Private Sub ajouterJoueur(nom As String)
-        Personne.AjoutJoueur(nom)
+        LesJoueurs.AjoutJoueur(nom)
     End Sub
 
     Private Sub Form_Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -53,7 +50,7 @@
         End If
 
         For i As Integer = 0 To getNb() - 1
-            nom_j_tmp = Personne.getNomPlayer(i)
+            nom_j_tmp = LesJoueurs.getNomPlayer(i)
             If Not cbx_Joueur1.Items.Contains(nom_j_tmp) Then
                 cbx_Joueur1.Items.Add(nom_j_tmp)
             End If
@@ -64,9 +61,14 @@
 
     End Sub
 
-    Public Function inverser_joueurs()
+    Public Sub inverser_joueurs()
         Dim tmp As String = cbx_Joueur1.Text
         cbx_Joueur1.Text = cbx_Joueur2.Text
         cbx_Joueur2.Text = tmp
-    End Function
+    End Sub
+
+    Private Sub btn_modif_options_Click(sender As Object, e As EventArgs) Handles btn_modif_options.Click
+        Me.Hide()
+        Form_Modif_Options.Show()
+    End Sub
 End Class

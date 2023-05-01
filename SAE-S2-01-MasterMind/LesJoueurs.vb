@@ -1,6 +1,4 @@
-﻿Module Personne
-
-    Public DEBUG_MODE = True ' METTRE FALSE AVANT DE RENDRE !!!!
+﻿Module LesJoueurs
 
     Private Structure Joueur
         Dim nom As String
@@ -58,14 +56,11 @@
 
     Private Const pasExtension As Integer = 10
     Private joueurs() As Joueur
-
-    Sub Main()
-        Dim nombre As Integer = 20
-        ReDim joueurs(nombre)
-        Application.Run(Form_Accueil)
-    End Sub
-
     Private compteur As Integer = 0
+
+    Public Sub ReDimJoueurs(nombre)
+        ReDim joueurs(nombre)
+    End Sub
 
     Sub AjoutJoueur(nom As String)
         Dim j As Joueur
