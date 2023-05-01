@@ -100,9 +100,10 @@
     End Function
 
     Public Sub AjouteUnPointA(nom As String)
+        Debug.Assert(containsPlayer(nom))
         For i As Integer = 0 To getNb() - 1
-            If getPlayer(i).nom = nom Then
-                getPlayer(i).AjouteUnPoint()
+            If joueurs(i).getNom = nom Then
+                joueurs(i).AjouteUnPoint()
             End If
         Next
     End Sub
@@ -110,7 +111,7 @@
     Public Sub ajouternBFirstPlayer(nom As String)
         Debug.Assert(containsPlayer(nom))
         For i As Integer = 0 To getNb() - 1
-            If joueurs(i).nom = nom Then
+            If joueurs(i).getNom = nom Then
                 joueurs(i).AjoutenbFirstPlayer()
             End If
         Next
@@ -118,7 +119,7 @@
     Public Sub ajouternBSecondPlayer(nom As String)
         Debug.Assert(containsPlayer(nom))
         For i As Integer = 0 To getNb() - 1
-            If joueurs(i).nom = nom Then
+            If joueurs(i).getNom = nom Then
                 joueurs(i).AjoutenbSecondPlayer()
             End If
         Next
@@ -127,11 +128,29 @@
     Public Sub AjouterTempsCumuleA(nom As String, temps As TimeSpan)
         Debug.Assert(containsPlayer(nom))
         For i As Integer = 0 To getNb() - 1
-            If joueurs(i).nom = nom Then
+            If joueurs(i).getNom = nom Then
                 joueurs(i).AjouterTemps(temps)
             End If
         Next
     End Sub
+
+    Public Function getScorePlayer(nom As String) As Integer
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).getNom = nom Then
+                Return joueurs(i).getScore()
+            End If
+        Next
+    End Function
+
+    Public Function getBestTimePlayer(nom As String) As TimeSpan
+        Debug.Assert(containsPlayer(nom))
+        For i As Integer = 0 To getNb() - 1
+            If joueurs(i).getNom = nom Then
+                Return joueurs(i).getBestTime()
+            End If
+        Next
+    End Function
 
     Public Function getNomPlayer(i As Integer) As String
         Return joueurs(i).getNom
@@ -152,6 +171,5 @@
     Public Function getTimeCumulePlayer(i As Integer) As TimeSpan
         Return joueurs(i).getTimeCumulé
     End Function
-
 
 End Module

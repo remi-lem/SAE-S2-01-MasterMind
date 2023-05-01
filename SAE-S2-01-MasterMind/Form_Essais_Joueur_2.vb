@@ -152,11 +152,14 @@
         LesJoueurs.ajouternBSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
         LesJoueurs.ajouternBFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
         LesJoueurs.AjouterTempsCumuleA(Form_Accueil.cbx_Joueur2.Text, temps_ecoule)
+        Ajouter_Noms_Aux_Combobox_Accueil()
+
     End Sub
 
     Private Sub a_perdu()
         joueur_a_gagne = False
         LesJoueurs.AjouteUnPointA(Form_Accueil.cbx_Joueur1.Text)
+        Ajouter_Noms_Aux_Combobox_Accueil()
     End Sub
 
     Private Function InList(List As List(Of String), symbole As String) As Boolean
@@ -182,6 +185,21 @@
         Form_Faire_Deviner.Close()
         Form_Accueil.inverser_joueurs()
         Form_Accueil.Show()
+    End Sub
+
+    Private Sub Ajouter_Noms_Aux_Combobox_Accueil()
+        If Not Form_Accueil.cbx_Joueur1.Items.Contains(Form_Accueil.cbx_Joueur1.Text) Then
+            Form_Accueil.cbx_Joueur1.Items.Add(Form_Accueil.cbx_Joueur1.Text)
+        End If
+        If Not Form_Accueil.cbx_Joueur2.Items.Contains(Form_Accueil.cbx_Joueur2.Text) Then
+            Form_Accueil.cbx_Joueur2.Items.Add(Form_Accueil.cbx_Joueur2.Text)
+        End If
+        If Not Form_Accueil.cbx_Joueur1.Items.Contains(Form_Accueil.cbx_Joueur2.Text) Then
+            Form_Accueil.cbx_Joueur1.Items.Add(Form_Accueil.cbx_Joueur2.Text)
+        End If
+        If Not Form_Accueil.cbx_Joueur2.Items.Contains(Form_Accueil.cbx_Joueur1.Text) Then
+            Form_Accueil.cbx_Joueur2.Items.Add(Form_Accueil.cbx_Joueur1.Text)
+        End If
     End Sub
 
 End Class

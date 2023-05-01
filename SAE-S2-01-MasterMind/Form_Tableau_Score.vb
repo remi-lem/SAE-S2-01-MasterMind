@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub cbx_NomSelec_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_NomSelec.SelectedIndexChanged
-        MsgBox("ok")
+        MsgBox("Le joueur " & cbx_NomSelec.Text & " a un total de " & getScorePlayer(cbx_NomSelec.Text) & " points et son meilleur temps est " & getBestTimePlayer(cbx_NomSelec.Text).Minutes & " minute et " & getBestTimePlayer(cbx_NomSelec.Text).Seconds & " secondes.")
     End Sub
 
     Private Sub Form_Tableau_Score_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -34,6 +34,11 @@
 
             End If
         Next
+
+        cbx_NomSelec.DropDownStyle = ComboBoxStyle.DropDown
+        cbx_NomSelec.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        cbx_NomSelec.AutoCompleteSource = AutoCompleteSource.ListItems
+
     End Sub
 
     Private Sub Form_Tableau_Score_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed

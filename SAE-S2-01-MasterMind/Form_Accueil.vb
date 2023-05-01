@@ -29,7 +29,6 @@
         If Not containsPlayer(joueurSelec2) Then
             ajouterJoueur(joueurSelec2)
         End If
-
     End Sub
 
     Private Sub btn_Score_Click(sender As Object, e As EventArgs) Handles btn_Score.Click
@@ -59,6 +58,7 @@
             End If
         Next
 
+
     End Sub
 
     Public Sub inverser_joueurs()
@@ -71,4 +71,17 @@
         Me.Hide()
         Form_Modif_Options.Show()
     End Sub
+
+    Private Sub Autocompletion()
+
+        cbx_Joueur1.DropDownStyle = ComboBoxStyle.DropDown
+        cbx_Joueur1.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        cbx_Joueur1.AutoCompleteSource = AutoCompleteSource.ListItems
+
+        cbx_Joueur2.DropDownStyle = ComboBoxStyle.DropDown
+        cbx_Joueur2.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        cbx_Joueur2.AutoCompleteSource = AutoCompleteSource.ListItems
+    End Sub
+
+
 End Class
