@@ -5,45 +5,45 @@
     Dim symbParDefaut4 As String
     Dim symbParDefaut5 As String
 
-    Public Function getSymbDef1()
+    Public Function GetSymbDef1()
         Return symbParDefaut1
     End Function
 
-    Public Function getSymbDef2()
+    Public Function GetSymbDef2()
         Return symbParDefaut2
     End Function
-    Public Function getSymbDef3()
+    Public Function GetSymbDef3()
         Return symbParDefaut3
     End Function
-    Public Function getSymbDef4()
+    Public Function GetSymbDef4()
         Return symbParDefaut4
     End Function
-    Public Function getSymbDef5()
+    Public Function GetSymbDef5()
         Return symbParDefaut5
     End Function
 
-    Public Sub setSymbDef1(symbDef1)
+    Public Sub SetSymbDef1(symbDef1)
         symbParDefaut1 = symbDef1
     End Sub
-    Public Sub setSymbDef2(symbDef2)
+    Public Sub SetSymbDef2(symbDef2)
         symbParDefaut2 = symbDef2
     End Sub
-    Public Sub setSymbDef3(symbDef3)
+    Public Sub SetSymbDef3(symbDef3)
         symbParDefaut3 = symbDef3
     End Sub
-    Public Sub setSymbDef4(symbDef4)
+    Public Sub SetSymbDef4(symbDef4)
         symbParDefaut4 = symbDef4
     End Sub
-    Public Sub setSymbDef5(symbDef5)
+    Public Sub SetSymbDef5(symbDef5)
         symbParDefaut5 = symbDef5
     End Sub
 
-    Public Sub initSymbolesDeBase()
-        symbParDefaut1 = "#"
-        symbParDefaut2 = "$"
-        symbParDefaut3 = "£"
-        symbParDefaut4 = "%"
-        symbParDefaut5 = "@"
+    Public Sub InitSymbolesDeBase()
+        SetSymbDef1("#")
+        SetSymbDef2("$")
+        SetSymbDef3("£")
+        SetSymbDef4("%")
+        SetSymbDef5("@")
     End Sub
 
 End Module

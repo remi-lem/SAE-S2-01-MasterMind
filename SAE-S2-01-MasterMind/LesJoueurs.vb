@@ -24,31 +24,31 @@
             Me.nbSecondPlayer += 1
         End Sub
 
-        Public Sub setBestTime(meilleurTemps As TimeSpan)
+        Public Sub SetBestTime(meilleurTemps As TimeSpan)
             Me.bestTime = meilleurTemps
         End Sub
 
-        Public Function getNom() As String
+        Public Function GetNom() As String
             Return Me.nom
         End Function
 
-        Public Function getBestTime() As TimeSpan
+        Public Function GetBestTime() As TimeSpan
             Return Me.bestTime
         End Function
 
-        Public Function getScore() As Integer
+        Public Function GetScore() As Integer
             Return Me.score
         End Function
 
-        Public Function getNbFirstPlayer() As Integer
+        Public Function GetNbFirstPlayer() As Integer
             Return Me.nbFirstPlayer
         End Function
 
-        Public Function getNbSecondPlayer() As Integer
+        Public Function GetNbSecondPlayer() As Integer
             Return Me.nbSecondPlayer
         End Function
 
-        Public Function getTimeCumulé() As TimeSpan
+        Public Function GetTimeCumulé() As TimeSpan
             Return Me.timeCumulé
         End Function
 
@@ -80,96 +80,107 @@
 
     End Sub
 
-    Public Function getNb() As Integer
+    Public Function GetNb() As Integer
         Return compteur
     End Function
 
-    Private Function getPlayer(i As Integer) As Joueur
-        Debug.Assert(i <= compteur)
-        Return joueurs(i)
-    End Function
-
-    Public Function containsPlayer(nom As String) As Boolean
-        Dim contient As Boolean = False
-        For i As Integer = 0 To getNb() - 1
-            If getPlayer(i).getNom = nom Then
-                contient = True
+    Public Function ContainsPlayer(nom As String) As Boolean
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                Return True
             End If
         Next
-        Return contient
+        Return False
     End Function
 
     Public Sub AjouteUnPointA(nom As String)
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).getNom = nom Then
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
                 joueurs(i).AjouteUnPoint()
+                Return
             End If
         Next
     End Sub
 
-    Public Sub ajouternBFirstPlayer(nom As String)
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).getNom = nom Then
+    Public Sub AjouterNbFirstPlayer(nom As String)
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
                 joueurs(i).AjoutenbFirstPlayer()
+                Return
             End If
         Next
     End Sub
-    Public Sub ajouternBSecondPlayer(nom As String)
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).getNom = nom Then
+    Public Sub AjouterNbSecondPlayer(nom As String)
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
                 joueurs(i).AjoutenbSecondPlayer()
+                Return
             End If
         Next
     End Sub
 
     Public Sub AjouterTempsCumuleA(nom As String, temps As TimeSpan)
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).getNom = nom Then
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
                 joueurs(i).AjouterTemps(temps)
+                Return
             End If
         Next
     End Sub
 
-    Public Function getScorePlayer(nom As String) As Integer
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).getNom = nom Then
-                Return joueurs(i).getScore()
+    Public Sub UpdateMeilleurTemps(nom As String, temps As TimeSpan)
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                If joueurs(i).GetBestTime > temps Then
+                    joueurs(i).SetBestTime(temps)
+                End If
+                Return
+            End If
+        Next
+    End Sub
+
+    Public Function GetScorePlayer(nom As String) As Integer
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                Return joueurs(i).GetScore()
+            End If
+        Next
+        Throw New Exception("Joueur inexistant")
+    End Function
+
+    Public Function GetBestTimePlayer(nom As String) As TimeSpan
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                Return joueurs(i).GetBestTime()
             End If
         Next
     End Function
 
-    Public Function getBestTimePlayer(nom As String) As TimeSpan
-        Debug.Assert(containsPlayer(nom))
-        For i As Integer = 0 To getNb() - 1
-            If joueurs(i).getNom = nom Then
-                Return joueurs(i).getBestTime()
-            End If
-        Next
+    Public Function GetNomPlayer(i As Integer) As String
+        Return joueurs(i).GetNom
     End Function
 
-    Public Function getNomPlayer(i As Integer) As String
-        Return joueurs(i).getNom
+    Public Function GetScorePlayer(i As Integer) As Integer
+        Return joueurs(i).GetScore
     End Function
-
-    Public Function getScorePlayer(i As Integer) As Integer
-        Return joueurs(i).getScore
+    Public Function GetBestTimePlayer(i As Integer) As TimeSpan
+        Return joueurs(i).GetBestTime
     End Function
-    Public Function getBestTimePlayer(i As Integer) As TimeSpan
-        Return joueurs(i).getBestTime
+    Public Function GetNbJ1Player(i As Integer) As Integer
+        Return joueurs(i).GetNbFirstPlayer
     End Function
-    Public Function getNbJ1Player(i As Integer) As Integer
-        Return joueurs(i).getNbFirstPlayer
+    Public Function GetNbJ2Player(i As Integer) As Integer
+        Return joueurs(i).GetNbSecondPlayer
     End Function
-    Public Function getNbJ2Player(i As Integer) As Integer
-        Return joueurs(i).getNbSecondPlayer
-    End Function
-    Public Function getTimeCumulePlayer(i As Integer) As TimeSpan
-        Return joueurs(i).getTimeCumulé
+    Public Function GetTimeCumulePlayer(i As Integer) As TimeSpan
+        Return joueurs(i).GetTimeCumulé
     End Function
 
 End Module

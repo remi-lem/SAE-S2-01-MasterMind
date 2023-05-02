@@ -1,12 +1,12 @@
 ﻿Public Class Form_Accueil
-    Private Sub btn_Quitter_Click(sender As Object, e As EventArgs) Handles btn_Quitter.Click
+    Private Sub Btn_Quitter_Click(sender As Object, e As EventArgs) Handles btn_Quitter.Click
         Dim choix As Integer = MsgBox("Voulez-vous vraiment quitter ?", MsgBoxStyle.YesNo)
         If choix = vbYes Then
             Me.Close()
         End If
     End Sub
 
-    Private Sub btn_Start_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
+    Private Sub Btn_Start_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
         If cbx_Joueur1.Text = "" Or cbx_Joueur2.Text = "" Then
             MsgBox("Veuillez saisir un nom pour chaque joueur")
 
@@ -21,22 +21,22 @@
         Dim joueurSelec1 As String = cbx_Joueur1.Text
         Dim joueurSelec2 As String = cbx_Joueur2.Text
 
-        If Not containsPlayer(joueurSelec1) Then
-            ajouterJoueur(joueurSelec1)
+        If Not ContainsPlayer(joueurSelec1) Then
+            AjouterJoueur(joueurSelec1)
 
         End If
 
-        If Not containsPlayer(joueurSelec2) Then
-            ajouterJoueur(joueurSelec2)
+        If Not ContainsPlayer(joueurSelec2) Then
+            AjouterJoueur(joueurSelec2)
         End If
     End Sub
 
-    Private Sub btn_Score_Click(sender As Object, e As EventArgs) Handles btn_Score.Click
+    Private Sub Btn_Score_Click(sender As Object, e As EventArgs) Handles btn_Score.Click
         Me.Hide()
         Form_Tableau_Score.Show()
     End Sub
 
-    Private Sub ajouterJoueur(nom As String)
+    Private Sub AjouterJoueur(nom As String)
         LesJoueurs.AjoutJoueur(nom)
     End Sub
 
@@ -48,8 +48,8 @@
             cbx_Joueur2.Text = "Tèk"
         End If
 
-        For i As Integer = 0 To getNb() - 1
-            nom_j_tmp = LesJoueurs.getNomPlayer(i)
+        For i As Integer = 0 To GetNb() - 1
+            nom_j_tmp = LesJoueurs.GetNomPlayer(i)
             If Not cbx_Joueur1.Items.Contains(nom_j_tmp) Then
                 cbx_Joueur1.Items.Add(nom_j_tmp)
             End If
@@ -57,23 +57,21 @@
                 cbx_Joueur2.Items.Add(nom_j_tmp)
             End If
         Next
-
-
     End Sub
 
-    Public Sub inverser_joueurs()
+    Public Sub Inverser_joueurs()
         Dim tmp As String = cbx_Joueur1.Text
         cbx_Joueur1.Text = cbx_Joueur2.Text
         cbx_Joueur2.Text = tmp
     End Sub
 
-    Private Sub btn_modif_options_Click(sender As Object, e As EventArgs) Handles btn_modif_options.Click
+    Private Sub Btn_modif_options_Click(sender As Object, e As EventArgs) Handles btn_modif_options.Click
         Me.Hide()
         Form_Modif_Options.Show()
     End Sub
 
     Private Sub Autocompletion()
-
+        ' TODO : A ENLEVER : MARCHE TRES BIEN SANS (oui Nadir t'a tres bien lu ce commentaire)
         cbx_Joueur1.DropDownStyle = ComboBoxStyle.DropDown
         cbx_Joueur1.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         cbx_Joueur1.AutoCompleteSource = AutoCompleteSource.ListItems
@@ -82,6 +80,5 @@
         cbx_Joueur2.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         cbx_Joueur2.AutoCompleteSource = AutoCompleteSource.ListItems
     End Sub
-
 
 End Class

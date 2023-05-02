@@ -5,7 +5,7 @@
         Dim nombre As Integer = 20
         LesJoueurs.ReDimJoueurs(nombre)
 
-        Symboles.initSymbolesDeBase()
+        Symboles.InitSymbolesDeBase()
 
         Application.Run(Form_Accueil)
     End Sub

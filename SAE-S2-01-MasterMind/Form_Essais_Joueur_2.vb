@@ -7,62 +7,55 @@
     Private ReadOnly MAX_TEMPS_COUP As New TimeSpan(0, 1, 30)
 
     Private ReadOnly UNE_SECONDE As New TimeSpan(0, 0, 1)
-    ' optimisation possible : mettre Const ou truc qui y ressemble
 
-    Dim symbParDefaut1 As String = Symboles.getSymbDef1()
-    Dim symbParDefaut2 As String = Symboles.getSymbDef2()
-    Dim symbParDefaut3 As String = Symboles.getSymbDef3()
-    Dim symbParDefaut4 As String = Symboles.getSymbDef4()
-    Dim symbParDefaut5 As String = Symboles.getSymbDef5()
+    ReadOnly symbParDefaut1 As String = Symboles.GetSymbDef1()
+    ReadOnly symbParDefaut2 As String = Symboles.GetSymbDef2()
+    ReadOnly symbParDefaut3 As String = Symboles.GetSymbDef3()
+    ReadOnly symbParDefaut4 As String = Symboles.GetSymbDef4()
+    ReadOnly symbParDefaut5 As String = Symboles.GetSymbDef5()
 
-    Dim symbParDefaut As List(Of String) = New List(Of String) From {symbParDefaut1, symbParDefaut2, symbParDefaut3, symbParDefaut4, symbParDefaut5}
-    ' TODO mettre en commun
-
+    ReadOnly symbParDefaut As New List(Of String) From {symbParDefaut1, symbParDefaut2, symbParDefaut3, symbParDefaut4, symbParDefaut5}
     Private joueur_a_gagne As Boolean = False
 
     Private Sub Form_Essais_Joueur_2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nb_coups_restants = MAX_NB_COUP_RESTANTS
         temps_ecoule = New TimeSpan(0, 0, 0)
 
-        'If DEBUG_MODE Then
-        'temps_restant = New TimeSpan(UNE_SECONDE.Ticks)
-        'End If
-
         tmr_temps_restant.Start()
 
-        init_char_jouables()
-        recalc_coups_restants()
-        recalc_temps_ecoule()
+        Init_char_jouables()
+        Recalc_coups_restants()
+        Recalc_temps_ecoule()
     End Sub
 
-    Private Sub recalc_coups_restants()
+    Private Sub Recalc_coups_restants()
         Me.Text = "Il vous reste " & nb_coups_restants & " coups"
         lbl_coups_restants.Text = nb_coups_restants & " coups restants"
 
         If nb_coups_restants <= 0 Then
             MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text, vbOKOnly, "Perdu !")
-            a_perdu()
+            A_perdu()
             Me.Close()
         End If
     End Sub
 
-    Private Sub recalc_temps_ecoule()
+    Private Sub Recalc_temps_ecoule()
         lbl_temps_ecoule.Text = temps_ecoule.Minutes & " minute et " & vbCrLf & temps_ecoule.Seconds & " secondes écoulées" & vbCrLf & "Max : " & MAX_TEMPS_COUP.Minutes & ":" & MAX_TEMPS_COUP.Seconds
     End Sub
 
-    Private Sub tmr_temps_restant_Tick(sender As Object, e As EventArgs) Handles tmr_temps_restant.Tick
+    Private Sub Tmr_temps_restant_Tick(sender As Object, e As EventArgs) Handles tmr_temps_restant.Tick
         If temps_ecoule.TotalSeconds >= MAX_TEMPS_COUP.TotalSeconds Then
             tmr_temps_restant.Stop()
             MsgBox("temps écoulé !")
-            a_perdu()
+            A_perdu()
             Me.Close()
         Else
             temps_ecoule = temps_ecoule.Add(UNE_SECONDE)
         End If
-        recalc_temps_ecoule()
+        Recalc_temps_ecoule()
     End Sub
 
-    Private Sub txtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_symb1.KeyPress, txt_symb2.KeyPress, txt_symb3.KeyPress, txt_symb4.KeyPress, txt_symb5.KeyPress
+    Private Sub TxtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_symb1.KeyPress, txt_symb2.KeyPress, txt_symb3.KeyPress, txt_symb4.KeyPress, txt_symb5.KeyPress
         sender.Text = ""
         sender.BackColor = Color.White
 
@@ -75,7 +68,7 @@
         End If
     End Sub
 
-    Private Sub init_char_jouables()
+    Private Sub Init_char_jouables()
         Dim str_char_jouables As String = ""
         Dim first As Boolean = True
         For Each charJouable As String In symbParDefaut
@@ -89,13 +82,13 @@
         lbl_char_jouables.Text = str_char_jouables
     End Sub
 
-    Private Sub btn_guess_Click(sender As Object, e As EventArgs) Handles btn_guess.Click
+    Private Sub Btn_guess_Click(sender As Object, e As EventArgs) Handles btn_guess.Click
         If txt_symb1.Text = "" Or txt_symb2.Text = "" Or txt_symb3.Text = "" Or txt_symb4.Text = "" Or txt_symb5.Text = "" Then
             MsgBox("Merci de remplir tous les caractères")
         Else
-            verif_proposition()
+            Verif_proposition()
             nb_coups_restants -= 1
-            recalc_coups_restants()
+            Recalc_coups_restants()
             If Not joueur_a_gagne Then
                 txt_symb1.Focus()
             Else
@@ -104,9 +97,13 @@
         End If
     End Sub
 
-    Private Sub verif_proposition()
-        Dim symbChoisi As List(Of String) = Form_Faire_Deviner.get_choisi()
-        Dim lst_symb As List(Of TextBox) = New List(Of TextBox) From {txt_symb1, txt_symb2, txt_symb3, txt_symb4, txt_symb5}
+    Private Sub Verif_proposition()
+
+        ' TODO : un symbole deja trouvé peut etre marqué comme existant mais pas a la bonne place, à corriger
+        ' idée : mettre un compteur du nombre de fois ou est le carctere en question
+
+        Dim symbChoisi As List(Of String) = Form_Faire_Deviner.Get_choisi()
+        Dim lst_symb As New List(Of TextBox) From {txt_symb1, txt_symb2, txt_symb3, txt_symb4, txt_symb5}
 
         For Each txt_box As TextBox In lst_symb
             txt_box.BackColor = Color.White
@@ -120,14 +117,14 @@
             End If
         Next
 
-        ajout_essai_liste_essais_prec(lst_symb)
+        Ajout_essai_liste_essais_prec(lst_symb)
 
         If Form_Faire_Deviner.txt_Symb1.Text = txt_symb1.Text And Form_Faire_Deviner.txt_Symb2.Text = txt_symb2.Text And Form_Faire_Deviner.txt_Symb3.Text = txt_symb3.Text And Form_Faire_Deviner.txt_Symb4.Text = txt_symb4.Text And Form_Faire_Deviner.txt_Symb5.Text = txt_symb5.Text Then
-            a_gagner()
+            A_gagne()
         End If
     End Sub
 
-    Private Sub ajout_essai_liste_essais_prec(lst_symb As List(Of TextBox))
+    Private Sub Ajout_essai_liste_essais_prec(lst_symb As List(Of TextBox))
         rtb_essais_prec.AppendText(" ")
         For Each txt_box As TextBox In lst_symb
             If txt_box.BackColor = Color.Green Then
@@ -143,22 +140,25 @@
         rtb_essais_prec.AppendText(vbCrLf)
     End Sub
 
-    Private Sub a_gagner()
+    Private Sub A_gagne()
         joueur_a_gagne = True
         lbl_trouve.Visible = True
         btn_partir.Visible = True
         tmr_temps_restant.Stop()
         LesJoueurs.AjouteUnPointA(Form_Accueil.cbx_Joueur2.Text)
-        LesJoueurs.ajouternBSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
-        LesJoueurs.ajouternBFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
+        LesJoueurs.AjouterNbSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
+        LesJoueurs.AjouterNbFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
         LesJoueurs.AjouterTempsCumuleA(Form_Accueil.cbx_Joueur2.Text, temps_ecoule)
+        LesJoueurs.UpdateMeilleurTemps(Form_Accueil.cbx_Joueur2.Text, temps_ecoule)
         Ajouter_Noms_Aux_Combobox_Accueil()
-
     End Sub
 
-    Private Sub a_perdu()
+    Private Sub A_perdu()
         joueur_a_gagne = False
         LesJoueurs.AjouteUnPointA(Form_Accueil.cbx_Joueur1.Text)
+        LesJoueurs.AjouterNbSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
+        LesJoueurs.AjouterNbFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
+        LesJoueurs.AjouterTempsCumuleA(Form_Accueil.cbx_Joueur2.Text, temps_ecoule)
         Ajouter_Noms_Aux_Combobox_Accueil()
     End Sub
 
@@ -171,12 +171,12 @@
         Return False
     End Function
 
-    Private Sub txt_symb_Click(sender As Object, e As EventArgs) Handles txt_symb1.Click, txt_symb2.Click, txt_symb3.Click, txt_symb4.Click, txt_symb5.Click
+    Private Sub Txt_symb_Click(sender As Object, e As EventArgs) Handles txt_symb1.Click, txt_symb2.Click, txt_symb3.Click, txt_symb4.Click, txt_symb5.Click
         sender.Text = ""
         sender.BackColor = Color.White
     End Sub
 
-    Private Sub btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
+    Private Sub Btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
         Me.Close()
     End Sub
 
