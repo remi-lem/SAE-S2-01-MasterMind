@@ -29,13 +29,15 @@ Partial Class Form_Modif_Options
         Me.btn_modif_symb_4 = New System.Windows.Forms.Button()
         Me.btn_modif_symb_5 = New System.Windows.Forms.Button()
         Me.lbl_modif_symb_def = New System.Windows.Forms.Label()
+        Me.Btn_modif_temps = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_quitter
         '
-        Me.btn_quitter.Location = New System.Drawing.Point(206, 325)
+        Me.btn_quitter.Location = New System.Drawing.Point(388, 15)
         Me.btn_quitter.Name = "btn_quitter"
-        Me.btn_quitter.Size = New System.Drawing.Size(75, 23)
+        Me.btn_quitter.Size = New System.Drawing.Size(103, 75)
         Me.btn_quitter.TabIndex = 0
         Me.btn_quitter.Text = "Quitter"
         Me.btn_quitter.UseVisualStyleBackColor = True
@@ -94,11 +96,31 @@ Partial Class Form_Modif_Options
         Me.lbl_modif_symb_def.TabIndex = 6
         Me.lbl_modif_symb_def.Text = "Modification des symboles par défaut"
         '
+        'Btn_modif_temps
+        '
+        Me.Btn_modif_temps.Location = New System.Drawing.Point(12, 206)
+        Me.Btn_modif_temps.Name = "Btn_modif_temps"
+        Me.Btn_modif_temps.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_modif_temps.TabIndex = 7
+        Me.Btn_modif_temps.Text = "Modifier"
+        Me.Btn_modif_temps.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 187)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(305, 16)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Modification du temps pour trouver la combinaison"
+        '
         'Form_Modif_Options
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(297, 380)
+        Me.ClientSize = New System.Drawing.Size(503, 438)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Btn_modif_temps)
         Me.Controls.Add(Me.lbl_modif_symb_def)
         Me.Controls.Add(Me.btn_modif_symb_5)
         Me.Controls.Add(Me.btn_modif_symb_4)
@@ -120,4 +142,6 @@ Partial Class Form_Modif_Options
     Friend WithEvents btn_modif_symb_4 As Button
     Friend WithEvents btn_modif_symb_5 As Button
     Friend WithEvents lbl_modif_symb_def As Label
+    Friend WithEvents Btn_modif_temps As Button
+    Friend WithEvents Label1 As Label
 End Class

@@ -7,6 +7,8 @@
 
         Symboles.InitSymbolesDeBase()
 
+        LeTemps.InitTempsDeBase()
+
         Application.Run(Form_Accueil)
     End Sub
 End Module

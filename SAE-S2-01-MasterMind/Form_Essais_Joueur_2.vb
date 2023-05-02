@@ -4,7 +4,7 @@
     Private temps_ecoule As New TimeSpan()
 
     Private Const MAX_NB_COUP_RESTANTS As Integer = 15
-    Private ReadOnly MAX_TEMPS_COUP As New TimeSpan(0, 1, 30)
+    Private ReadOnly MAX_TEMPS_COUP = LeTemps.GetTemps()
 
     Private ReadOnly UNE_SECONDE As New TimeSpan(0, 0, 1)
 
@@ -33,7 +33,7 @@
         lbl_coups_restants.Text = nb_coups_restants & " coups restants"
 
         If nb_coups_restants <= 0 Then
-            MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text, vbOKOnly, "Perdu !")
+            MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text & ".", vbOKOnly, "Perdu !")
             A_perdu()
             Me.Close()
         End If
@@ -46,7 +46,7 @@
     Private Sub Tmr_temps_restant_Tick(sender As Object, e As EventArgs) Handles tmr_temps_restant.Tick
         If temps_ecoule.TotalSeconds >= MAX_TEMPS_COUP.TotalSeconds Then
             tmr_temps_restant.Stop()
-            MsgBox("temps écoulé !")
+            MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text & " dans le temps prévu.", vbOKOnly, "Temps écoulé !")
             A_perdu()
             Me.Close()
         Else

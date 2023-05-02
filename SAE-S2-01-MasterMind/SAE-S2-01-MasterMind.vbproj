@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="LesJoueurs.vb" />
     <Compile Include="Symboles.vb" />
+    <Compile Include="LeTemps.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form_Accueil.resx">
