@@ -1,21 +1,12 @@
 ﻿Public Class Form_Faire_Deviner
-
-    ReadOnly symbParDefaut1 As String = Symboles.getSymbDef1()
-    ReadOnly symbParDefaut2 As String = Symboles.getSymbDef2()
-    ReadOnly symbParDefaut3 As String = Symboles.getSymbDef3()
-    ReadOnly symbParDefaut4 As String = Symboles.getSymbDef4()
-    ReadOnly symbParDefaut5 As String = Symboles.getSymbDef5()
-
-    ReadOnly symbParDefaut As New List(Of String) From {symbParDefaut1, symbParDefaut2, symbParDefaut3, symbParDefaut4, symbParDefaut5}
-
     Private Sub TxtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_Symb1.KeyPress, txt_Symb2.KeyPress, txt_Symb3.KeyPress, txt_Symb4.KeyPress, txt_Symb5.KeyPress
         sender.Text = ""
 
         If e.KeyChar = vbBack Then
             Exit Sub
         End If
-        e.KeyChar = UCase(e.KeyChar)
-        If e.KeyChar <> symbParDefaut1 And e.KeyChar <> symbParDefaut2 And e.KeyChar <> symbParDefaut3 And e.KeyChar <> symbParDefaut4 And e.KeyChar <> symbParDefaut5 Then
+
+        If e.KeyChar <> Symboles.GetSymbole(0) And e.KeyChar <> Symboles.GetSymbole(1) And e.KeyChar <> Symboles.GetSymbole(2) And e.KeyChar <> Symboles.GetSymbole(3) And e.KeyChar <> Symboles.GetSymbole(4) Then
             e.Handled = True
         End If
     End Sub
@@ -24,18 +15,18 @@
         lbl_only_j1.Text = "ATTENTION : seul " & Form_Accueil.cbx_Joueur1.Text & " doit voir cet écran !"
 
         If DEBUG_MODE Then
-            txt_Symb1.Text = symbParDefaut1
-            txt_Symb2.Text = symbParDefaut2
-            txt_Symb3.Text = symbParDefaut3
-            txt_Symb4.Text = symbParDefaut1
-            txt_Symb5.Text = symbParDefaut1
+            txt_Symb1.Text = Symboles.GetSymbole(0)
+            txt_Symb2.Text = Symboles.GetSymbole(1)
+            txt_Symb3.Text = Symboles.GetSymbole(2)
+            txt_Symb4.Text = Symboles.GetSymbole(3)
+            txt_Symb5.Text = Symboles.GetSymbole(4)
         End If
     End Sub
 
     Private Sub Init_char_jouables()
         Dim str_char_jouables As String = ""
         Dim first As Boolean = True
-        For Each charJouable As String In symbParDefaut
+        For Each charJouable As String In {Symboles.GetSymbole(0), Symboles.GetSymbole(1), Symboles.GetSymbole(2), Symboles.GetSymbole(3), Symboles.GetSymbole(4)}
             If Not first Then
                 str_char_jouables += " "
             Else

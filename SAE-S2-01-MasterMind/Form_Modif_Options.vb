@@ -1,4 +1,5 @@
 ﻿Public Class Form_Modif_Options
+    Private IsLoaded As Boolean = False
 
     Private Sub Change_Label_Temps()
         lbl_temps.Text = "Temps : " & GetTemps().Minutes & ":" & GetTemps().Seconds
@@ -8,12 +9,14 @@
     End Sub
 
     Private Sub Form_Modif_Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbl_symbole1.Text = "Symbole 1 : " & GetSymbDef1()
-        lbl_symbole2.Text = "Symbole 2 : " & GetSymbDef2()
-        lbl_symbole3.Text = "Symbole 3 : " & GetSymbDef3()
-        lbl_symbole5.Text = "Symbole 5 : " & GetSymbDef4()
-        lbl_symbole4.Text = "Symbole 4 : " & GetSymbDef5()
+        lbl_symbole1.Text = "Symbole 1 : " & Symboles.GetSymbole(0)
+        lbl_symbole2.Text = "Symbole 2 : " & Symboles.GetSymbole(1)
+        lbl_symbole3.Text = "Symbole 3 : " & Symboles.GetSymbole(2)
+        lbl_symbole5.Text = "Symbole 5 : " & Symboles.GetSymbole(3)
+        lbl_symbole4.Text = "Symbole 4 : " & Symboles.GetSymbole(4)
+        nud_propositions.Value = Get_Nb_Prop()
         Change_Label_Temps()
+        IsLoaded = True
     End Sub
     Private Sub Form_Modif_Options_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Form_Accueil.Show()
@@ -25,22 +28,22 @@
 
     ' TODO : VERIFIER QUE LE NOUVEAU SYMBOLE N'EST PAS UTILISE DANS LES *AUTRES* SYMBOLES
     Private Sub Btn_modif_symb_1_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_1.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbDef1)
+        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(0))
         If Not rep = "" Then
-            If rep.Length = 1 Then
-                Symboles.SetSymbDef1(rep)
-                lbl_symbole1.Text = "Symbole 1 : " & GetSymbDef1()
+            If rep.Length = 1 And Not AlreadyUsed(0, rep) Then
+                Symboles.SetSymbole(0, rep)
+                lbl_symbole1.Text = "Symbole 1 : " & Symboles.GetSymbole(0)
             Else
                 MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
             End If
         End If
     End Sub
     Private Sub Btn_modif_symb_2_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_2.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbDef2)
+        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(1))
         If Not rep = "" Then
-            If rep.Length = 1 Then
-                Symboles.SetSymbDef2(rep)
-                lbl_symbole2.Text = "Symbole 2 : " & GetSymbDef2()
+            If rep.Length = 1 And Not AlreadyUsed(1, rep) Then
+                Symboles.SetSymbole(1, rep)
+                lbl_symbole2.Text = "Symbole 2 : " & Symboles.GetSymbole(1)
             Else
                 MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
             End If
@@ -48,33 +51,33 @@
         End If
     End Sub
     Private Sub Btn_modif_symb_3_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_3.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbDef3)
+        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(2))
         If Not rep = "" Then
-            If rep.Length = 1 Then
-                Symboles.SetSymbDef3(rep)
-                lbl_symbole3.Text = "Symbole 3 : " & GetSymbDef3()
+            If rep.Length = 1 And Not AlreadyUsed(2, rep) Then
+                Symboles.SetSymbole(2, rep)
+                lbl_symbole3.Text = "Symbole 3 : " & Symboles.GetSymbole(2)
             Else
                 MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
             End If
         End If
     End Sub
     Private Sub Btn_modif_symb_4_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_4.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbDef4)
+        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(3))
         If Not rep = "" Then
-            If rep.Length = 1 Then
-                Symboles.SetSymbDef4(rep)
-                lbl_symbole4.Text = "Symbole 4 : " & GetSymbDef4()
+            If rep.Length = 1 And Not AlreadyUsed(3, rep) Then
+                Symboles.SetSymbole(3, rep)
+                lbl_symbole4.Text = "Symbole 4 : " & Symboles.GetSymbole(3)
             Else
                 MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
             End If
         End If
     End Sub
     Private Sub Btn_modif_symb_5_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_5.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbDef5)
+        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(4))
         If Not rep = "" Then
-            If rep.Length = 1 Then
-                Symboles.SetSymbDef5(rep)
-                lbl_symbole5.Text = "Symbole 5 : " & GetSymbDef5()
+            If rep.Length = 1 And Not AlreadyUsed(4, rep) Then
+                Symboles.SetSymbole(4, rep)
+                lbl_symbole5.Text = "Symbole 5 : " & Symboles.GetSymbole(4)
             Else
                 MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
             End If
@@ -91,6 +94,12 @@
             Dim temps As New TimeSpan(0, min, sec)
             LeTemps.UpdateTemps(temps)
             Change_Label_Temps()
+        End If
+    End Sub
+
+    Private Sub Nud_propositions_ValueChanged(sender As Object, e As EventArgs) Handles nud_propositions.ValueChanged
+        If IsLoaded Then
+            Set_Nb_Prop(nud_propositions.Value)
         End If
     End Sub
 End Class

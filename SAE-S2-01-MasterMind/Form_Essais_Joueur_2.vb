@@ -3,18 +3,17 @@
     Private nb_coups_restants As Integer
     Private temps_ecoule As New TimeSpan()
 
-    Private Const MAX_NB_COUP_RESTANTS As Integer = 15
+    Private ReadOnly MAX_NB_COUP_RESTANTS As Integer = Get_Nb_Prop()
     Private ReadOnly MAX_TEMPS_COUP = LeTemps.GetTemps()
-
     Private ReadOnly UNE_SECONDE As New TimeSpan(0, 0, 1)
 
-    ReadOnly symbParDefaut1 As String = Symboles.GetSymbDef1()
-    ReadOnly symbParDefaut2 As String = Symboles.GetSymbDef2()
-    ReadOnly symbParDefaut3 As String = Symboles.GetSymbDef3()
-    ReadOnly symbParDefaut4 As String = Symboles.GetSymbDef4()
-    ReadOnly symbParDefaut5 As String = Symboles.GetSymbDef5()
+    ReadOnly symbParDefaut1 As String = Symboles.GetSymbole(0)
+    ReadOnly symbParDefaut2 As String = Symboles.GetSymbole(1)
+    ReadOnly symbParDefaut3 As String = Symboles.GetSymbole(2)
+    ReadOnly symbParDefaut4 As String = Symboles.GetSymbole(3)
+    ReadOnly symbParDefaut5 As String = Symboles.GetSymbole(4)
 
-    ReadOnly symbParDefaut As New List(Of String) From {symbParDefaut1, symbParDefaut2, symbParDefaut3, symbParDefaut4, symbParDefaut5}
+    ReadOnly symbParDefaut As New List(Of String) From {Symboles.GetSymbole(0), Symboles.GetSymbole(1), Symboles.GetSymbole(2), Symboles.GetSymbole(3), Symboles.GetSymbole(4)}
     Private joueur_a_gagne As Boolean = False
 
     Private Sub Form_Essais_Joueur_2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -62,8 +61,8 @@
         If e.KeyChar = vbBack Then
             Exit Sub
         End If
-        e.KeyChar = UCase(e.KeyChar)
-        If e.KeyChar <> symbParDefaut1 And e.KeyChar <> symbParDefaut2 And e.KeyChar <> symbParDefaut3 And e.KeyChar <> symbParDefaut4 And e.KeyChar <> symbParDefaut5 Then
+        ' e.KeyChar = UCase(e.KeyChar) '
+        If e.KeyChar <> symbParDefaut(0) And e.KeyChar <> symbParDefaut(1) And e.KeyChar <> symbParDefaut(2) And e.KeyChar <> symbParDefaut(3) And e.KeyChar <> symbParDefaut(4) Then
             e.Handled = True
         End If
     End Sub

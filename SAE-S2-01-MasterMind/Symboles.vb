@@ -1,49 +1,22 @@
 ﻿Module Symboles
-    Dim symbParDefaut1 As String
-    Dim symbParDefaut2 As String
-    Dim symbParDefaut3 As String
-    Dim symbParDefaut4 As String
-    Dim symbParDefaut5 As String
+    Dim symboles As New List(Of String)({"#", "$", "£", "%", "@"})
 
-    Public Function GetSymbDef1()
-        Return symbParDefaut1
+    Public Function GetSymbole(index As Integer) As String
+        Debug.Assert(index < Symboles.Count And index >= 0)
+        Return symboles(index)
     End Function
 
-    Public Function GetSymbDef2()
-        Return symbParDefaut2
-    End Function
-    Public Function GetSymbDef3()
-        Return symbParDefaut3
-    End Function
-    Public Function GetSymbDef4()
-        Return symbParDefaut4
-    End Function
-    Public Function GetSymbDef5()
-        Return symbParDefaut5
-    End Function
-
-    Public Sub SetSymbDef1(symbDef1)
-        symbParDefaut1 = symbDef1
-    End Sub
-    Public Sub SetSymbDef2(symbDef2)
-        symbParDefaut2 = symbDef2
-    End Sub
-    Public Sub SetSymbDef3(symbDef3)
-        symbParDefaut3 = symbDef3
-    End Sub
-    Public Sub SetSymbDef4(symbDef4)
-        symbParDefaut4 = symbDef4
-    End Sub
-    Public Sub SetSymbDef5(symbDef5)
-        symbParDefaut5 = symbDef5
+    Public Sub SetSymbole(index As Integer, value As String)
+        Debug.Assert(index < symboles.Count And index >= 0)
+        symboles(index) = value
     End Sub
 
-    Public Sub InitSymbolesDeBase()
-        SetSymbDef1("#")
-        SetSymbDef2("$")
-        SetSymbDef3("£")
-        SetSymbDef4("%")
-        SetSymbDef5("@")
-    End Sub
+    Public Function AlreadyUsed(SymbNo As Integer, Symb As String) As Boolean
+        For Index As Integer = 0 To symboles.Count - 1
+            If SymbNo = Index Then Continue For
+            If symboles(Index).Equals(Symb) Then Return True
+        Next
+        Return False
+    End Function
 
 End Module

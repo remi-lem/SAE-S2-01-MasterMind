@@ -36,11 +36,14 @@ Partial Class Form_Modif_Options
         Me.lbl_symbole4 = New System.Windows.Forms.Label()
         Me.lbl_symbole5 = New System.Windows.Forms.Label()
         Me.lbl_temps = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.nud_propositions = New System.Windows.Forms.NumericUpDown()
+        CType(Me.nud_propositions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_quitter
         '
-        Me.btn_quitter.Location = New System.Drawing.Point(289, 121)
+        Me.btn_quitter.Location = New System.Drawing.Point(289, 157)
         Me.btn_quitter.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_quitter.Name = "btn_quitter"
         Me.btn_quitter.Size = New System.Drawing.Size(74, 24)
@@ -111,7 +114,7 @@ Partial Class Form_Modif_Options
         '
         'Btn_modif_temps
         '
-        Me.Btn_modif_temps.Location = New System.Drawing.Point(98, 121)
+        Me.Btn_modif_temps.Location = New System.Drawing.Point(98, 123)
         Me.Btn_modif_temps.Margin = New System.Windows.Forms.Padding(2)
         Me.Btn_modif_temps.Name = "Btn_modif_temps"
         Me.Btn_modif_temps.Size = New System.Drawing.Size(74, 24)
@@ -167,17 +170,37 @@ Partial Class Form_Modif_Options
         'lbl_temps
         '
         Me.lbl_temps.AutoSize = True
-        Me.lbl_temps.Location = New System.Drawing.Point(9, 127)
+        Me.lbl_temps.Location = New System.Drawing.Point(9, 129)
         Me.lbl_temps.Name = "lbl_temps"
         Me.lbl_temps.Size = New System.Drawing.Size(69, 13)
         Me.lbl_temps.TabIndex = 10
         Me.lbl_temps.Text = "Temps : 1:30"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(10, 155)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(63, 26)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Nombre de " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "propositions"
+        '
+        'nud_propositions
+        '
+        Me.nud_propositions.Location = New System.Drawing.Point(98, 161)
+        Me.nud_propositions.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nud_propositions.Name = "nud_propositions"
+        Me.nud_propositions.Size = New System.Drawing.Size(74, 20)
+        Me.nud_propositions.TabIndex = 13
+        Me.nud_propositions.Value = New Decimal(New Integer() {15, 0, 0, 0})
+        '
         'Form_Modif_Options
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(378, 161)
+        Me.ClientSize = New System.Drawing.Size(373, 191)
+        Me.Controls.Add(Me.nud_propositions)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbl_temps)
         Me.Controls.Add(Me.lbl_symbole5)
         Me.Controls.Add(Me.lbl_symbole4)
@@ -196,6 +219,7 @@ Partial Class Form_Modif_Options
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form_Modif_Options"
         Me.Text = "Modification des options"
+        CType(Me.nud_propositions, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -215,4 +239,6 @@ Partial Class Form_Modif_Options
     Friend WithEvents lbl_symbole4 As Label
     Friend WithEvents lbl_symbole5 As Label
     Friend WithEvents lbl_temps As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents nud_propositions As NumericUpDown
 End Class

@@ -5,6 +5,9 @@
     ReadOnly tempsDeBase As New TimeSpan(0, 1, 30)
     Public Sub UpdateTemps(tmps_arg As TimeSpan)
         temps = tmps_arg
+        If temps.TotalMinutes >= 60 Then
+            temps = New TimeSpan(0, 59, 59)
+        End If
     End Sub
 
     Friend Sub InitTempsDeBase()

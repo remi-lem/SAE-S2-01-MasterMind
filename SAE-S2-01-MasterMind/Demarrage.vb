@@ -5,8 +5,6 @@
         Dim nombre As Integer = 20
         LesJoueurs.ReDimJoueurs(nombre)
 
-        Symboles.InitSymbolesDeBase()
-
         LeTemps.InitTempsDeBase()
 
         Application.Run(Form_Accueil)
