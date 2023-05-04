@@ -134,9 +134,10 @@
 
     Public Sub UpdateMeilleurTemps(nom As String, temps As TimeSpan)
         Debug.Assert(ContainsPlayer(nom))
+        Dim t0 As TimeSpan = TimeSpan.Zero
         For i As Integer = 0 To GetNb() - 1
             If joueurs(i).GetNom = nom Then
-                If joueurs(i).GetBestTime > temps Then
+                If joueurs(i).GetBestTime > temps Xor TimeSpan.Compare(temps, t0) Then
                     joueurs(i).SetBestTime(temps)
                 End If
                 Return
@@ -181,6 +182,15 @@
     End Function
     Public Function GetTimeCumulePlayer(i As Integer) As TimeSpan
         Return joueurs(i).GetTimeCumulé
+    End Function
+
+    Public Function GetNbSecondPlayer(nom As String) As Integer
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                Return joueurs(i).GetNbSecondPlayer()
+            End If
+        Next
+        Return 0
     End Function
 
 End Module

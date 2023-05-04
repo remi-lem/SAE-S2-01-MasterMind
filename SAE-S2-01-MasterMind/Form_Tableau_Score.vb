@@ -15,7 +15,12 @@
     End Sub
 
     Private Sub Cbx_NomSelec_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_NomSelec.SelectedIndexChanged
-        MsgBox("Le joueur " & cbx_NomSelec.Text & " a un total de " & GetScorePlayer(cbx_NomSelec.Text) & " points et son meilleur temps est " & GetBestTimePlayer(cbx_NomSelec.Text).Minutes & " minute et " & GetBestTimePlayer(cbx_NomSelec.Text).Seconds & " secondes.")
+        Dim t0 As TimeSpan = TimeSpan.Zero
+        If GetNbSecondPlayer(cbx_NomSelec.Text) > 0 AndAlso Not TimeSpan.Compare(t0, GetBestTimePlayer(cbx_NomSelec.Text)) Then
+            MsgBox("Le joueur " & cbx_NomSelec.Text & " a un total de " & GetScorePlayer(cbx_NomSelec.Text) & " point et n'a pas encore gagné et eu de meilleur temps")
+        Else
+            MsgBox("Le joueur " & cbx_NomSelec.Text & " a un total de " & GetScorePlayer(cbx_NomSelec.Text) & " points et son meilleur temps est " & GetBestTimePlayer(cbx_NomSelec.Text).Minutes & " minute et " & GetBestTimePlayer(cbx_NomSelec.Text).Seconds & " secondes.")
+        End If
     End Sub
 
     Private Sub Form_Tableau_Score_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -45,4 +50,6 @@
     Private Sub Form_Tableau_Score_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Form_Accueil.Show()
     End Sub
+
+
 End Class
