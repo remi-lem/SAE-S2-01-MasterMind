@@ -22,38 +22,28 @@ Partial Class Form_Accueil
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lbl_Titre = New System.Windows.Forms.Label()
         Me.lbl_Joueur1 = New System.Windows.Forms.Label()
         Me.lbl_Joueur2 = New System.Windows.Forms.Label()
         Me.cbx_Joueur1 = New System.Windows.Forms.ComboBox()
         Me.cbx_Joueur2 = New System.Windows.Forms.ComboBox()
-        Me.lbl_NomJ1 = New System.Windows.Forms.Label()
         Me.btn_Start = New System.Windows.Forms.Button()
         Me.btn_Quitter = New System.Windows.Forms.Button()
         Me.btn_Score = New System.Windows.Forms.Button()
-        Me.lbl_NomJ2 = New System.Windows.Forms.Label()
         Me.pic_mastermind = New System.Windows.Forms.PictureBox()
         Me.btn_modif_options = New System.Windows.Forms.Button()
+        Me.lbl_titre = New System.Windows.Forms.Label()
+        Me.lbl_contre = New System.Windows.Forms.Label()
         CType(Me.pic_mastermind, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'lbl_Titre
-        '
-        Me.lbl_Titre.AutoSize = True
-        Me.lbl_Titre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Titre.Location = New System.Drawing.Point(277, 9)
-        Me.lbl_Titre.Name = "lbl_Titre"
-        Me.lbl_Titre.Size = New System.Drawing.Size(162, 25)
-        Me.lbl_Titre.TabIndex = 0
-        Me.lbl_Titre.Text = "MASTER MIND"
         '
         'lbl_Joueur1
         '
         Me.lbl_Joueur1.AutoSize = True
         Me.lbl_Joueur1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Joueur1.Location = New System.Drawing.Point(112, 86)
+        Me.lbl_Joueur1.Location = New System.Drawing.Point(119, 40)
+        Me.lbl_Joueur1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_Joueur1.Name = "lbl_Joueur1"
-        Me.lbl_Joueur1.Size = New System.Drawing.Size(66, 16)
+        Me.lbl_Joueur1.Size = New System.Drawing.Size(56, 13)
         Me.lbl_Joueur1.TabIndex = 1
         Me.lbl_Joueur1.Text = "Joueur 1"
         '
@@ -61,9 +51,10 @@ Partial Class Form_Accueil
         '
         Me.lbl_Joueur2.AutoSize = True
         Me.lbl_Joueur2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Joueur2.Location = New System.Drawing.Point(510, 86)
+        Me.lbl_Joueur2.Location = New System.Drawing.Point(219, 40)
+        Me.lbl_Joueur2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_Joueur2.Name = "lbl_Joueur2"
-        Me.lbl_Joueur2.Size = New System.Drawing.Size(66, 16)
+        Me.lbl_Joueur2.Size = New System.Drawing.Size(56, 13)
         Me.lbl_Joueur2.TabIndex = 2
         Me.lbl_Joueur2.Text = "Joueur 2"
         '
@@ -72,9 +63,10 @@ Partial Class Form_Accueil
         Me.cbx_Joueur1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cbx_Joueur1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbx_Joueur1.FormattingEnabled = True
-        Me.cbx_Joueur1.Location = New System.Drawing.Point(96, 125)
+        Me.cbx_Joueur1.Location = New System.Drawing.Point(83, 55)
+        Me.cbx_Joueur1.Margin = New System.Windows.Forms.Padding(2)
         Me.cbx_Joueur1.Name = "cbx_Joueur1"
-        Me.cbx_Joueur1.Size = New System.Drawing.Size(121, 24)
+        Me.cbx_Joueur1.Size = New System.Drawing.Size(92, 21)
         Me.cbx_Joueur1.TabIndex = 3
         '
         'cbx_Joueur2
@@ -82,94 +74,101 @@ Partial Class Form_Accueil
         Me.cbx_Joueur2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cbx_Joueur2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbx_Joueur2.FormattingEnabled = True
-        Me.cbx_Joueur2.Location = New System.Drawing.Point(484, 125)
+        Me.cbx_Joueur2.Location = New System.Drawing.Point(222, 55)
+        Me.cbx_Joueur2.Margin = New System.Windows.Forms.Padding(2)
         Me.cbx_Joueur2.Name = "cbx_Joueur2"
-        Me.cbx_Joueur2.Size = New System.Drawing.Size(121, 24)
+        Me.cbx_Joueur2.Size = New System.Drawing.Size(92, 21)
         Me.cbx_Joueur2.TabIndex = 4
-        '
-        'lbl_NomJ1
-        '
-        Me.lbl_NomJ1.AutoSize = True
-        Me.lbl_NomJ1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_NomJ1.Location = New System.Drawing.Point(21, 128)
-        Me.lbl_NomJ1.Name = "lbl_NomJ1"
-        Me.lbl_NomJ1.Size = New System.Drawing.Size(42, 16)
-        Me.lbl_NomJ1.TabIndex = 5
-        Me.lbl_NomJ1.Text = "Nom :"
         '
         'btn_Start
         '
-        Me.btn_Start.Location = New System.Drawing.Point(298, 312)
+        Me.btn_Start.Location = New System.Drawing.Point(11, 91)
+        Me.btn_Start.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Start.Name = "btn_Start"
-        Me.btn_Start.Size = New System.Drawing.Size(121, 45)
+        Me.btn_Start.Size = New System.Drawing.Size(91, 37)
         Me.btn_Start.TabIndex = 7
         Me.btn_Start.Text = "JOUER"
         Me.btn_Start.UseVisualStyleBackColor = True
         '
         'btn_Quitter
         '
-        Me.btn_Quitter.Location = New System.Drawing.Point(96, 312)
+        Me.btn_Quitter.Location = New System.Drawing.Point(296, 91)
+        Me.btn_Quitter.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Quitter.Name = "btn_Quitter"
-        Me.btn_Quitter.Size = New System.Drawing.Size(121, 45)
+        Me.btn_Quitter.Size = New System.Drawing.Size(91, 37)
         Me.btn_Quitter.TabIndex = 6
         Me.btn_Quitter.Text = "QUITTER"
         Me.btn_Quitter.UseVisualStyleBackColor = True
         '
         'btn_Score
         '
-        Me.btn_Score.Location = New System.Drawing.Point(484, 312)
+        Me.btn_Score.Location = New System.Drawing.Point(106, 91)
+        Me.btn_Score.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Score.Name = "btn_Score"
-        Me.btn_Score.Size = New System.Drawing.Size(121, 45)
+        Me.btn_Score.Size = New System.Drawing.Size(91, 37)
         Me.btn_Score.TabIndex = 8
         Me.btn_Score.Text = "Tableau des scores"
         Me.btn_Score.UseVisualStyleBackColor = True
         '
-        'lbl_NomJ2
-        '
-        Me.lbl_NomJ2.AutoSize = True
-        Me.lbl_NomJ2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_NomJ2.Location = New System.Drawing.Point(418, 128)
-        Me.lbl_NomJ2.Name = "lbl_NomJ2"
-        Me.lbl_NomJ2.Size = New System.Drawing.Size(42, 16)
-        Me.lbl_NomJ2.TabIndex = 9
-        Me.lbl_NomJ2.Text = "Nom :"
-        '
         'pic_mastermind
         '
         Me.pic_mastermind.Image = Global.SAE_S2_01_MasterMind.My.Resources.Resources.logo_mastermind
-        Me.pic_mastermind.Location = New System.Drawing.Point(661, 13)
+        Me.pic_mastermind.Location = New System.Drawing.Point(399, 257)
+        Me.pic_mastermind.Margin = New System.Windows.Forms.Padding(2)
         Me.pic_mastermind.Name = "pic_mastermind"
-        Me.pic_mastermind.Size = New System.Drawing.Size(127, 127)
+        Me.pic_mastermind.Size = New System.Drawing.Size(102, 103)
         Me.pic_mastermind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pic_mastermind.TabIndex = 10
         Me.pic_mastermind.TabStop = False
         '
         'btn_modif_options
         '
-        Me.btn_modif_options.Location = New System.Drawing.Point(640, 312)
+        Me.btn_modif_options.Location = New System.Drawing.Point(201, 91)
+        Me.btn_modif_options.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_modif_options.Name = "btn_modif_options"
-        Me.btn_modif_options.Size = New System.Drawing.Size(121, 45)
+        Me.btn_modif_options.Size = New System.Drawing.Size(91, 37)
         Me.btn_modif_options.TabIndex = 11
         Me.btn_modif_options.Text = "Modification des options"
         Me.btn_modif_options.UseVisualStyleBackColor = True
         '
+        'lbl_titre
+        '
+        Me.lbl_titre.AutoSize = True
+        Me.lbl_titre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_titre.Location = New System.Drawing.Point(134, 9)
+        Me.lbl_titre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_titre.Name = "lbl_titre"
+        Me.lbl_titre.Size = New System.Drawing.Size(132, 20)
+        Me.lbl_titre.TabIndex = 0
+        Me.lbl_titre.Text = "MASTER MIND"
+        '
+        'lbl_contre
+        '
+        Me.lbl_contre.AutoSize = True
+        Me.lbl_contre.Location = New System.Drawing.Point(180, 58)
+        Me.lbl_contre.Name = "lbl_contre"
+        Me.lbl_contre.Size = New System.Drawing.Size(37, 13)
+        Me.lbl_contre.TabIndex = 12
+        Me.lbl_contre.Text = "contre"
+        '
         'Form_Accueil
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(400, 139)
+        Me.Controls.Add(Me.lbl_contre)
         Me.Controls.Add(Me.btn_modif_options)
         Me.Controls.Add(Me.pic_mastermind)
-        Me.Controls.Add(Me.lbl_NomJ2)
         Me.Controls.Add(Me.btn_Score)
         Me.Controls.Add(Me.btn_Quitter)
         Me.Controls.Add(Me.btn_Start)
-        Me.Controls.Add(Me.lbl_NomJ1)
         Me.Controls.Add(Me.cbx_Joueur2)
         Me.Controls.Add(Me.cbx_Joueur1)
         Me.Controls.Add(Me.lbl_Joueur2)
         Me.Controls.Add(Me.lbl_Joueur1)
-        Me.Controls.Add(Me.lbl_Titre)
+        Me.Controls.Add(Me.lbl_titre)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form_Accueil"
         Me.Text = "Bienvenue !"
         CType(Me.pic_mastermind, System.ComponentModel.ISupportInitialize).EndInit()
@@ -177,17 +176,15 @@ Partial Class Form_Accueil
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lbl_Titre As Label
     Friend WithEvents lbl_Joueur1 As Label
     Friend WithEvents lbl_Joueur2 As Label
     Friend WithEvents cbx_Joueur1 As ComboBox
     Friend WithEvents cbx_Joueur2 As ComboBox
-    Friend WithEvents lbl_NomJ1 As Label
     Friend WithEvents btn_Start As Button
     Friend WithEvents btn_Quitter As Button
     Friend WithEvents btn_Score As Button
-    Friend WithEvents lbl_NomJ2 As Label
     Friend WithEvents pic_mastermind As PictureBox
     Friend WithEvents btn_modif_options As Button
+    Friend WithEvents lbl_titre As Label
+    Friend WithEvents lbl_contre As Label
 End Class
