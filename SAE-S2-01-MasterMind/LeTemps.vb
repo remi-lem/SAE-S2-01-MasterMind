@@ -11,7 +11,7 @@
         temps = tempsDeBase
     End Sub
 
-    Public Function GetTemps()
+    Public Function GetTemps() As TimeSpan
         Return temps
     End Function
 
