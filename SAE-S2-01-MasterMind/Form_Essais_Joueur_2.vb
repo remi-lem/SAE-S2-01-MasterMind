@@ -140,6 +140,9 @@
     End Sub
 
     Private Sub A_gagne()
+        If nb_coups_restants = LesPropo.Get_Nb_Prop Then
+            MsgBox("Du premier coup ! Trop fort !", vbOKOnly, "Bravo !")
+        End If
         joueur_a_gagne = True
         lbl_trouve.Visible = True
         btn_partir.Visible = True
@@ -201,4 +204,7 @@
         End If
     End Sub
 
+    Private Sub Btn_abandon_Click(sender As Object, e As EventArgs) Handles Btn_abandon.Click
+        Me.Close()
+    End Sub
 End Class
