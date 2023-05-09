@@ -81,4 +81,7 @@
         cbx_Joueur2.AutoCompleteSource = AutoCompleteSource.ListItems
     End Sub
 
+    Private Sub Form_Accueil_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        EcritureDuFichier()
+    End Sub
 End Class

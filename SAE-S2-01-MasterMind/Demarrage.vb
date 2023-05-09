@@ -7,6 +7,10 @@
 
         LeTemps.InitTempsDeBase()
 
+
+        LectureDuFichier()
+
+
         Application.Run(Form_Accueil)
     End Sub
 End Module
