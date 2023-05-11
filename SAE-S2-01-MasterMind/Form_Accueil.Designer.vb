@@ -64,7 +64,7 @@ Partial Class Form_Accueil
         Me.cbx_Joueur1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbx_Joueur1.FormattingEnabled = True
         Me.cbx_Joueur1.Location = New System.Drawing.Point(83, 55)
-        Me.cbx_Joueur1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbx_Joueur1.Margin = New System.Windows.Forms.Padding(2)
         Me.cbx_Joueur1.Name = "cbx_Joueur1"
         Me.cbx_Joueur1.Size = New System.Drawing.Size(92, 21)
         Me.cbx_Joueur1.TabIndex = 1
@@ -75,7 +75,7 @@ Partial Class Form_Accueil
         Me.cbx_Joueur2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbx_Joueur2.FormattingEnabled = True
         Me.cbx_Joueur2.Location = New System.Drawing.Point(222, 55)
-        Me.cbx_Joueur2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbx_Joueur2.Margin = New System.Windows.Forms.Padding(2)
         Me.cbx_Joueur2.Name = "cbx_Joueur2"
         Me.cbx_Joueur2.Size = New System.Drawing.Size(92, 21)
         Me.cbx_Joueur2.TabIndex = 2
@@ -83,7 +83,7 @@ Partial Class Form_Accueil
         'btn_Start
         '
         Me.btn_Start.Location = New System.Drawing.Point(11, 91)
-        Me.btn_Start.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_Start.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Start.Name = "btn_Start"
         Me.btn_Start.Size = New System.Drawing.Size(91, 37)
         Me.btn_Start.TabIndex = 3
@@ -93,7 +93,7 @@ Partial Class Form_Accueil
         'btn_Quitter
         '
         Me.btn_Quitter.Location = New System.Drawing.Point(296, 91)
-        Me.btn_Quitter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_Quitter.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Quitter.Name = "btn_Quitter"
         Me.btn_Quitter.Size = New System.Drawing.Size(91, 37)
         Me.btn_Quitter.TabIndex = 6
@@ -103,7 +103,7 @@ Partial Class Form_Accueil
         'btn_Score
         '
         Me.btn_Score.Location = New System.Drawing.Point(106, 91)
-        Me.btn_Score.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_Score.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Score.Name = "btn_Score"
         Me.btn_Score.Size = New System.Drawing.Size(91, 37)
         Me.btn_Score.TabIndex = 4
@@ -114,7 +114,7 @@ Partial Class Form_Accueil
         '
         Me.pic_mastermind.Image = Global.SAE_S2_01_MasterMind.My.Resources.Resources.logo_mastermind
         Me.pic_mastermind.Location = New System.Drawing.Point(399, 257)
-        Me.pic_mastermind.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pic_mastermind.Margin = New System.Windows.Forms.Padding(2)
         Me.pic_mastermind.Name = "pic_mastermind"
         Me.pic_mastermind.Size = New System.Drawing.Size(102, 103)
         Me.pic_mastermind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -124,7 +124,7 @@ Partial Class Form_Accueil
         'btn_modif_options
         '
         Me.btn_modif_options.Location = New System.Drawing.Point(201, 91)
-        Me.btn_modif_options.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_modif_options.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_modif_options.Name = "btn_modif_options"
         Me.btn_modif_options.Size = New System.Drawing.Size(91, 37)
         Me.btn_modif_options.TabIndex = 5
@@ -168,7 +168,7 @@ Partial Class Form_Accueil
         Me.Controls.Add(Me.lbl_Joueur1)
         Me.Controls.Add(Me.lbl_titre)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form_Accueil"
         Me.Text = "Bienvenue !"
         CType(Me.pic_mastermind, System.ComponentModel.ISupportInitialize).EndInit()

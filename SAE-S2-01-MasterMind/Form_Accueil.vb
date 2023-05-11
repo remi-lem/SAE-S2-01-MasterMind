@@ -84,4 +84,11 @@
     Private Sub Form_Accueil_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         EcritureDuFichier()
     End Sub
+
+    Private Sub cbx_Joueur1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbx_Joueur1.KeyPress, cbx_Joueur2.KeyPress
+        If e.KeyChar = vbBack Then Exit Sub
+        If e.KeyChar = "," Xor e.KeyChar = ";" Xor e.KeyChar = ":" Then
+            e.Handled = True
+        End If
+    End Sub
 End Class
