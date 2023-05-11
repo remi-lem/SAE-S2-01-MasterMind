@@ -10,7 +10,7 @@
     Public Sub LectureDuFichier()
         Dim ligne As String
         Dim num As Integer = FreeFile()
-        Dim chemin As String = "./registre_de_joueurs.txt"
+        Dim chemin As String = "../../registre_de_joueurs.txt"
         FileOpen(num, chemin, OpenMode.Input)
         Do Until EOF(num)
             ligne = LineInput(num)

@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_mastermind.ico" />
+    <Content Include="registre_de_joueurs.txt" />
     <None Include="Resources\logo_mastermind.jpeg" />
   </ItemGroup>
   <ItemGroup>
