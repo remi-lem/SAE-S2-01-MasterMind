@@ -10,7 +10,7 @@
     Public Sub LectureDuFichier()
         Dim ligne As String
         Dim num As Integer = FreeFile()
-        Dim chemin As String = "D:\IUT-cours\SEMESTRE 2\Parcours d\SAE\IHM\SAE-S2-01-MasterMind\SAE-S2-01-MasterMind\registre_de_joueurs.txt"
+        Dim chemin As String = "./registre_de_joueurs.txt"
         FileOpen(num, chemin, OpenMode.Input)
         Do Until EOF(num)
             ligne = LineInput(num)
@@ -39,7 +39,7 @@
 
     Public Sub EcritureDuFichier()
         Dim num As Integer = FreeFile()
-        Dim chemin As String = "D:\IUT-cours\SEMESTRE 2\Parcours d\SAE\IHM\SAE-S2-01-MasterMind\SAE-S2-01-MasterMind\registre_de_joueurs.txt"
+        Dim chemin As String = "./registre_de_joueurs.txt"
         FileOpen(num, chemin, OpenMode.Output)
         For i As Integer = 0 To GetNb() - 1
             Dim nom As String = GetNomPlayer(i)
