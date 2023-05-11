@@ -39,7 +39,7 @@
 
     Public Sub EcritureDuFichier()
         Dim num As Integer = FreeFile()
-        Dim chemin As String = "./registre_de_joueurs.txt"
+        Dim chemin As String = "../../registre_de_joueurs.txt"
         FileOpen(num, chemin, OpenMode.Output)
         For i As Integer = 0 To GetNb() - 1
             Dim nom As String = GetNomPlayer(i)
