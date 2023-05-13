@@ -147,10 +147,14 @@
     End Sub
 
     Private Sub A_gagne()
+        tmr_temps_restant.Stop()
+        If nb_coups_restants = LesPropo.Get_Nb_Prop Then
+            MsgBox("Du premier coup ! Trop fort !", vbOKOnly, "Bravo !")
+        End If
+        btn_guess.Enabled = False
         joueur_a_gagne = True
         lbl_trouve.Visible = True
         btn_partir.Visible = True
-        tmr_temps_restant.Stop()
         LesJoueurs.AjouteUnPointA(Form_Accueil.cbx_Joueur2.Text)
         LesJoueurs.AjouterNbSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
         LesJoueurs.AjouterNbFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
@@ -208,4 +212,7 @@
         End If
     End Sub
 
+    Private Sub Btn_abandon_Click(sender As Object, e As EventArgs) Handles Btn_abandon.Click
+        Me.Close()
+    End Sub
 End Class

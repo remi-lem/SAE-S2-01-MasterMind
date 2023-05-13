@@ -43,6 +43,7 @@ Partial Class Form_Essais_Joueur_2
         Me.lbl_trouve = New System.Windows.Forms.Label()
         Me.btn_partir = New System.Windows.Forms.Button()
         Me.rtb_essais_prec = New System.Windows.Forms.RichTextBox()
+        Me.Btn_abandon = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'tmr_temps_restant
@@ -229,6 +230,7 @@ Partial Class Form_Essais_Joueur_2
         '
         'btn_partir
         '
+        Me.btn_partir.Location = New System.Drawing.Point(319, 347)
         Me.btn_partir.Location = New System.Drawing.Point(221, 310)
         Me.btn_partir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_partir.Name = "btn_partir"
@@ -252,10 +254,21 @@ Partial Class Form_Essais_Joueur_2
         Me.rtb_essais_prec.Text = ""
         Me.rtb_essais_prec.WordWrap = False
         '
+        'Btn_abandon
+        '
+        Me.Btn_abandon.Location = New System.Drawing.Point(299, 388)
+        Me.Btn_abandon.Name = "Btn_abandon"
+        Me.Btn_abandon.Size = New System.Drawing.Size(112, 26)
+        Me.Btn_abandon.TabIndex = 20
+        Me.Btn_abandon.Text = "Abandonner"
+        Me.Btn_abandon.UseVisualStyleBackColor = True
+        '
         'Form_Essais_Joueur_2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(423, 426)
+        Me.Controls.Add(Me.Btn_abandon)
         Me.ClientSize = New System.Drawing.Size(317, 346)
         Me.Controls.Add(Me.rtb_essais_prec)
         Me.Controls.Add(Me.btn_partir)
@@ -304,4 +317,5 @@ Partial Class Form_Essais_Joueur_2
     Friend WithEvents lbl_trouve As Label
     Friend WithEvents btn_partir As Button
     Friend WithEvents rtb_essais_prec As RichTextBox
+    Friend WithEvents Btn_abandon As Button
 End Class

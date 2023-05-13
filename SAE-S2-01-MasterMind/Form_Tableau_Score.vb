@@ -40,6 +40,11 @@
             End If
         Next
 
+        Dim trisPar() As String = {"Temps", "Score", "Alphabétique"}
+        For Each elem As String In trisPar
+            cbx_tris.Items.Add(elem)
+        Next
+
         ' TODO
         'cbx_NomSelec.DropDownStyle = ComboBoxStyle.DropDown
         'cbx_NomSelec.AutoCompleteMode = AutoCompleteMode.SuggestAppend

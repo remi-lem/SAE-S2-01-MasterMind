@@ -67,7 +67,7 @@ Partial Class Form_Accueil
         Me.cbx_Joueur1.Margin = New System.Windows.Forms.Padding(2)
         Me.cbx_Joueur1.Name = "cbx_Joueur1"
         Me.cbx_Joueur1.Size = New System.Drawing.Size(92, 21)
-        Me.cbx_Joueur1.TabIndex = 3
+        Me.cbx_Joueur1.TabIndex = 1
         '
         'cbx_Joueur2
         '
@@ -78,7 +78,7 @@ Partial Class Form_Accueil
         Me.cbx_Joueur2.Margin = New System.Windows.Forms.Padding(2)
         Me.cbx_Joueur2.Name = "cbx_Joueur2"
         Me.cbx_Joueur2.Size = New System.Drawing.Size(92, 21)
-        Me.cbx_Joueur2.TabIndex = 4
+        Me.cbx_Joueur2.TabIndex = 2
         '
         'btn_Start
         '
@@ -86,7 +86,7 @@ Partial Class Form_Accueil
         Me.btn_Start.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Start.Name = "btn_Start"
         Me.btn_Start.Size = New System.Drawing.Size(91, 37)
-        Me.btn_Start.TabIndex = 7
+        Me.btn_Start.TabIndex = 3
         Me.btn_Start.Text = "JOUER"
         Me.btn_Start.UseVisualStyleBackColor = True
         '
@@ -106,7 +106,7 @@ Partial Class Form_Accueil
         Me.btn_Score.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Score.Name = "btn_Score"
         Me.btn_Score.Size = New System.Drawing.Size(91, 37)
-        Me.btn_Score.TabIndex = 8
+        Me.btn_Score.TabIndex = 4
         Me.btn_Score.Text = "Tableau des scores"
         Me.btn_Score.UseVisualStyleBackColor = True
         '
@@ -127,7 +127,7 @@ Partial Class Form_Accueil
         Me.btn_modif_options.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_modif_options.Name = "btn_modif_options"
         Me.btn_modif_options.Size = New System.Drawing.Size(91, 37)
-        Me.btn_modif_options.TabIndex = 11
+        Me.btn_modif_options.TabIndex = 5
         Me.btn_modif_options.Text = "Modification des options"
         Me.btn_modif_options.UseVisualStyleBackColor = True
         '

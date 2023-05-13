@@ -63,14 +63,27 @@
     End Sub
 
     Sub AjoutJoueur(nom As String)
+
+        Dim nomJoueur As String = nom
+        Dim score As Integer = 0
+        Dim BestTime As TimeSpan = New TimeSpan(0, 0, 0, 0, 0)
+        Dim nbFirst As Integer = 0
+        Dim nbSecond As Integer = 0
+        Dim Cumul As TimeSpan = New TimeSpan(0, 0, 0, 0, 0)
+
+        AjoutJoueurComplet(nomJoueur, score, BestTime, nbFirst, nbSecond, Cumul)
+
+    End Sub
+
+    Sub AjoutJoueurComplet(nom As String, score As Integer, bestTime As TimeSpan, nbFirst As Integer, nbSecond As Integer, timeCumul As TimeSpan)
         Dim j As Joueur
 
         j.nom = nom
-        j.score = 0
-        j.timeCumulé = New TimeSpan(0, 0, 0, 0, 0)
-        j.bestTime = New TimeSpan(0, 0, 0, 0, 0)
-        j.nbFirstPlayer = 0
-        j.nbSecondPlayer = 0
+        j.score = score
+        j.timeCumulé = timeCumul
+        j.bestTime = bestTime
+        j.nbFirstPlayer = nbFirst
+        j.nbSecondPlayer = nbSecond
 
         If compteur >= joueurs.Length Then
             ReDim joueurs(compteur + pasExtension)
@@ -79,6 +92,7 @@
         compteur += 1
 
     End Sub
+
 
     Public Function GetNb() As Integer
         Return compteur
