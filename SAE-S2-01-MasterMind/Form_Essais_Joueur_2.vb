@@ -25,6 +25,13 @@
         Init_char_jouables()
         Recalc_coups_restants()
         Recalc_temps_ecoule()
+        Init_Couleurs()
+    End Sub
+
+    Private Sub Init_Couleurs()
+        lbl_code_abs.ForeColor = LesCouleurs.GetAbsent()
+        lbl_code_present.ForeColor = LesCouleurs.GetPresent()
+        lbl_code_present_bien_place.ForeColor = LesCouleurs.GetPresentPlace()
     End Sub
 
     Private Sub Recalc_coups_restants()
@@ -107,12 +114,12 @@
         For Each txt_box As TextBox In lst_symb
             txt_box.BackColor = Color.White
             If InList(symbChoisi, txt_box.Text) Then
-                txt_box.BackColor = Color.Blue
+                txt_box.BackColor = LesCouleurs.GetPresent()
             End If
         Next
         For i As Integer = 0 To symbChoisi.Count - 1
             If lst_symb.Item(i).Text = symbChoisi.Item(i) Then
-                lst_symb.Item(i).BackColor = Color.Green
+                lst_symb.Item(i).BackColor = LesCouleurs.GetPresentPlace()
             End If
         Next
 
@@ -126,12 +133,12 @@
     Private Sub Ajout_essai_liste_essais_prec(lst_symb As List(Of TextBox))
         rtb_essais_prec.AppendText(" ")
         For Each txt_box As TextBox In lst_symb
-            If txt_box.BackColor = Color.Green Then
-                rtb_essais_prec.SelectionColor = Color.Green
-            ElseIf txt_box.BackColor = Color.Blue Then
-                rtb_essais_prec.SelectionColor = Color.Blue
+            If txt_box.BackColor = LesCouleurs.GetPresentPlace() Then
+                rtb_essais_prec.SelectionColor = LesCouleurs.GetPresentPlace()
+            ElseIf txt_box.BackColor = LesCouleurs.GetPresent() Then
+                rtb_essais_prec.SelectionColor = LesCouleurs.GetPresent()
             Else
-                rtb_essais_prec.SelectionColor = Color.Black
+                rtb_essais_prec.SelectionColor = LesCouleurs.GetAbsent()
             End If
             rtb_essais_prec.AppendText(txt_box.Text)
             rtb_essais_prec.AppendText(" ")

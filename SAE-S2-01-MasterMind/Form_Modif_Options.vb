@@ -14,6 +14,10 @@
         lbl_symbole3.Text = "Symbole 3 : " & Symboles.GetSymbole(2)
         lbl_symbole5.Text = "Symbole 5 : " & Symboles.GetSymbole(3)
         lbl_symbole4.Text = "Symbole 4 : " & Symboles.GetSymbole(4)
+
+        BtnColorPlace.BackColor = GetPresentPlace()
+        BtnColorPresent.BackColor = GetPresent()
+
         nud_propositions.Value = Get_Nb_Prop()
         Change_Label_Temps()
         IsLoaded = True
@@ -26,7 +30,6 @@
         Me.Close()
     End Sub
 
-    ' TODO : VERIFIER QUE LE NOUVEAU SYMBOLE N'EST PAS UTILISE DANS LES *AUTRES* SYMBOLES
     Private Sub Btn_modif_symb_1_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_1.Click
         Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(0))
         If Not rep = "" Then
@@ -100,6 +103,24 @@
     Private Sub Nud_propositions_ValueChanged(sender As Object, e As EventArgs) Handles nud_propositions.ValueChanged
         If IsLoaded Then
             Set_Nb_Prop(nud_propositions.Value)
+        End If
+    End Sub
+
+    Private Sub BtnColorPresent_Click(sender As Object, e As EventArgs) Handles BtnColorPresent.Click
+        Dim nouvelleCouleur As New ColorDialog()
+        nouvelleCouleur.Color = GetPresent()
+        If nouvelleCouleur.ShowDialog() = DialogResult.OK Then
+            SetPresent(nouvelleCouleur.Color)
+            BtnColorPresent.BackColor = nouvelleCouleur.Color
+        End If
+    End Sub
+
+    Private Sub BtnColorPlace_Click(sender As Object, e As EventArgs) Handles BtnColorPlace.Click
+        Dim nouvelleCouleur As New ColorDialog()
+        nouvelleCouleur.Color = GetPresent()
+        If nouvelleCouleur.ShowDialog() = DialogResult.OK Then
+            SetPresentPlace(nouvelleCouleur.Color)
+            BtnColorPlace.BackColor = nouvelleCouleur.Color
         End If
     End Sub
 End Class
