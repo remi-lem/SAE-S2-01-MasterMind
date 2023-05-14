@@ -125,6 +125,7 @@
     End Sub
 
     Private Sub Btn_modif_chemin_fic_svg_Click(sender As Object, e As EventArgs) Handles Btn_modif_chemin_fic_svg.Click
+        Gestion_fichier.EcritureDuFichier()
         Dim repChemin As String = InputBox("Nouveau chemin : ", "Changement du chemin", LeFichier.GetChemin())
         LeFichier.SetChemin(repChemin)
         LesJoueurs.FlushJoueurs()
