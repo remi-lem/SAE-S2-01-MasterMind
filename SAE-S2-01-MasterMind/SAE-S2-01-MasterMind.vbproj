@@ -126,6 +126,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gestion_fichier.vb" />
+    <Compile Include="LeFichier.vb" />
     <Compile Include="LesCouleurs.vb" />
     <Compile Include="LesPropo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -186,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_mastermind.ico" />
+    <Content Include="registre_de_joueurs2.txt" />
     <Content Include="registre_de_joueurs.txt" />
     <None Include="Resources\logo_mastermind.jpeg" />
   </ItemGroup>

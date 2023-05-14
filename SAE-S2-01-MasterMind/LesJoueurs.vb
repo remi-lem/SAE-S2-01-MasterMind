@@ -86,7 +86,7 @@
         j.nbSecondPlayer = nbSecond
 
         If compteur >= joueurs.Length Then
-            ReDim joueurs(compteur + pasExtension)
+            ReDim Preserve joueurs(compteur + pasExtension)
         End If
         joueurs(compteur) = j
         compteur += 1
@@ -206,5 +206,14 @@
         Next
         Return 0
     End Function
+
+    Public Sub FlushJoueurs()
+        Form_Accueil.cbx_Joueur1.Items.Clear()
+        Form_Accueil.cbx_Joueur2.Items.Clear()
+        Form_Accueil.cbx_Joueur1.Text = ""
+        Form_Accueil.cbx_Joueur2.Text = ""
+        ReDim joueurs(0) ' pas de preserve pour supprimmer
+        compteur = 0
+    End Sub
 
 End Module

@@ -41,13 +41,15 @@
     End Sub
 
     Private Sub Form_Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim nom_j_tmp As String
-
         If DEBUG_MODE Then
             cbx_Joueur1.Text = "Pass"
             cbx_Joueur2.Text = "Tèk"
         End If
+        Init_Joueurs_Acc()
+    End Sub
 
+    Public Sub Init_Joueurs_Acc()
+        Dim nom_j_tmp As String
         For i As Integer = 0 To GetNb() - 1
             nom_j_tmp = LesJoueurs.GetNomPlayer(i)
             If Not cbx_Joueur1.Items.Contains(nom_j_tmp) Then

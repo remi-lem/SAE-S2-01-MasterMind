@@ -123,4 +123,12 @@
             BtnColorPlace.BackColor = nouvelleCouleur.Color
         End If
     End Sub
+
+    Private Sub Btn_modif_chemin_fic_svg_Click(sender As Object, e As EventArgs) Handles Btn_modif_chemin_fic_svg.Click
+        Dim repChemin As String = InputBox("Nouveau chemin : ", "Changement du chemin", LeFichier.GetChemin())
+        LeFichier.SetChemin(repChemin)
+        LesJoueurs.FlushJoueurs()
+        Gestion_fichier.LectureDuFichier()
+        Form_Accueil.Init_Joueurs_Acc()
+    End Sub
 End Class
