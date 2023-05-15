@@ -1,4 +1,5 @@
 ﻿Public Class Form_Tableau_Score
+    Private trisPar() As String = {"Temps", "Score", "Alphabétique"}
     Private Sub LstNoms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lst_Nom.SelectedIndexChanged,
         lst_Score.SelectedIndexChanged, lst_BestTime.SelectedIndexChanged, lst_TempsCumulé.SelectedIndexChanged,
         lst_FirstPLayer.SelectedIndexChanged, lst_SecondPlayer.SelectedIndexChanged
@@ -47,7 +48,7 @@
             End If
         Next
 
-        Dim trisPar() As String = {"Temps", "Score", "Alphabétique"}
+
         For Each elem As String In trisPar
             cbx_tris.Items.Add(elem)
         Next
@@ -58,6 +59,65 @@
     End Sub
 
     Private Sub cbx_tris_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tris.SelectedIndexChanged
-        ' TODO ici faire le tri
+        Vider_lstBox()
+        If cbx_tris.Text = "Alphabétique" Then
+            Dim noms As List(Of String) = LesJoueurs.Recup_Noms()
+
+            Tri_Noms(noms)
+            For Each nom As String In noms
+                Ajout_Apres_Tri_Noms(nom)
+
+            Next
+
+        End If
+        If cbx_tris.Text = "Score" Then
+            Dim scores As List(Of Integer) = LesJoueurs.Recup_Scores()
+            Tri_Scores(scores)
+            For i As Integer = 0 To scores.Count - 1
+                Ajout_Apres_Tri_Scores(i)
+            Next
+
+        End If
+
     End Sub
+
+
+    Private Sub Vider_lstBox()
+        lst_Nom.Items.Clear()
+        lst_Score.Items.Clear()
+        lst_BestTime.Items.Clear()
+        lst_TempsCumulé.Items.Clear()
+        lst_FirstPLayer.Items.Clear()
+        lst_SecondPlayer.Items.Clear()
+    End Sub
+
+    Private Sub Tri_Noms(noms As List(Of String))
+        noms.Sort()
+    End Sub
+
+    Private Sub Tri_Scores(scores As List(Of Integer))
+        scores.Sort()
+    End Sub
+
+    Private Sub Ajout_Apres_Tri_Noms(nom As String)
+        lst_Nom.Items.Add(nom)
+        lst_Score.Items.Add(LesJoueurs.GetScorePlayer(nom))
+        lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(nom))
+        lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(nom))
+        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbFirstPlayer(nom))
+        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbSecondPlayer(nom))
+
+    End Sub
+
+    Private Sub Ajout_Apres_Tri_Scores(i As Integer)
+        lst_Nom.Items.Add(GetNomPlayer(i))
+        lst_Score.Items.Add(LesJoueurs.GetScorePlayer(i))
+        lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(i))
+        lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(i))
+        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbJ1Player(i))
+        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbJ2Player(i))
+
+    End Sub
+
 End Class
+

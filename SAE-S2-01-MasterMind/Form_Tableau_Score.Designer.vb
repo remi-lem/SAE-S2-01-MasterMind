@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form_Tableau_Score
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form_Tableau_Score
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lbl_Titre = New System.Windows.Forms.Label()
         Me.lst_Nom = New System.Windows.Forms.ListBox()
@@ -107,7 +107,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Score.AutoSize = True
         Me.lbl_Score.Location = New System.Drawing.Point(388, 108)
         Me.lbl_Score.Name = "lbl_Score"
-        Me.lbl_Score.Size = New System.Drawing.Size(43, 16)
+        Me.lbl_Score.Size = New System.Drawing.Size(45, 17)
         Me.lbl_Score.TabIndex = 6
         Me.lbl_Score.Text = "Score"
         '
@@ -116,7 +116,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_BestTime.AutoSize = True
         Me.lbl_BestTime.Location = New System.Drawing.Point(597, 108)
         Me.lbl_BestTime.Name = "lbl_BestTime"
-        Me.lbl_BestTime.Size = New System.Drawing.Size(100, 16)
+        Me.lbl_BestTime.Size = New System.Drawing.Size(104, 17)
         Me.lbl_BestTime.TabIndex = 7
         Me.lbl_BestTime.Text = "Meilleur Temps"
         '
@@ -125,7 +125,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_TempsCumulé.AutoSize = True
         Me.lbl_TempsCumulé.Location = New System.Drawing.Point(845, 108)
         Me.lbl_TempsCumulé.Name = "lbl_TempsCumulé"
-        Me.lbl_TempsCumulé.Size = New System.Drawing.Size(98, 16)
+        Me.lbl_TempsCumulé.Size = New System.Drawing.Size(102, 17)
         Me.lbl_TempsCumulé.TabIndex = 8
         Me.lbl_TempsCumulé.Text = "Temps Cumulé"
         '
@@ -134,7 +134,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Nom.AutoSize = True
         Me.lbl_Nom.Location = New System.Drawing.Point(140, 108)
         Me.lbl_Nom.Name = "lbl_Nom"
-        Me.lbl_Nom.Size = New System.Drawing.Size(36, 16)
+        Me.lbl_Nom.Size = New System.Drawing.Size(37, 17)
         Me.lbl_Nom.TabIndex = 9
         Me.lbl_Nom.Text = "Nom"
         '
@@ -175,7 +175,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_NbFoisJ1.Location = New System.Drawing.Point(108, 298)
         Me.lbl_NbFoisJ1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_NbFoisJ1.Name = "lbl_NbFoisJ1"
-        Me.lbl_NbFoisJ1.Size = New System.Drawing.Size(217, 16)
+        Me.lbl_NbFoisJ1.Size = New System.Drawing.Size(236, 17)
         Me.lbl_NbFoisJ1.TabIndex = 10
         Me.lbl_NbFoisJ1.Text = "Nombre de fois en tant que joueur 1"
         '
@@ -185,7 +185,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_NbFoisJ2.Location = New System.Drawing.Point(473, 298)
         Me.lbl_NbFoisJ2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_NbFoisJ2.Name = "lbl_NbFoisJ2"
-        Me.lbl_NbFoisJ2.Size = New System.Drawing.Size(217, 16)
+        Me.lbl_NbFoisJ2.Size = New System.Drawing.Size(236, 17)
         Me.lbl_NbFoisJ2.TabIndex = 11
         Me.lbl_NbFoisJ2.Text = "Nombre de fois en tant que joueur 2"
         '
@@ -195,7 +195,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Récap.Location = New System.Drawing.Point(760, 358)
         Me.lbl_Récap.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Récap.Name = "lbl_Récap"
-        Me.lbl_Récap.Size = New System.Drawing.Size(81, 16)
+        Me.lbl_Récap.Size = New System.Drawing.Size(86, 17)
         Me.lbl_Récap.TabIndex = 12
         Me.lbl_Récap.Text = "Récapitulatif"
         '
@@ -212,7 +212,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_tris.AutoSize = True
         Me.lbl_tris.Location = New System.Drawing.Point(1017, 258)
         Me.lbl_tris.Name = "lbl_tris"
-        Me.lbl_tris.Size = New System.Drawing.Size(52, 16)
+        Me.lbl_tris.Size = New System.Drawing.Size(58, 17)
         Me.lbl_tris.TabIndex = 14
         Me.lbl_tris.Text = "Tri par :"
         '

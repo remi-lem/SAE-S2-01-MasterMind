@@ -160,24 +160,7 @@
         Next
     End Sub
 
-    Public Function GetScorePlayer(nom As String) As Integer
-        Debug.Assert(ContainsPlayer(nom))
-        For i As Integer = 0 To GetNb() - 1
-            If joueurs(i).GetNom = nom Then
-                Return joueurs(i).GetScore()
-            End If
-        Next
-        Throw New Exception("Joueur inexistant")
-    End Function
 
-    Public Function GetBestTimePlayer(nom As String) As TimeSpan
-        Debug.Assert(ContainsPlayer(nom))
-        For i As Integer = 0 To GetNb() - 1
-            If joueurs(i).GetNom = nom Then
-                Return joueurs(i).GetBestTime()
-            End If
-        Next
-    End Function
 
     Public Function GetNomPlayer(i As Integer) As String
         Return joueurs(i).GetNom
@@ -199,6 +182,25 @@
         Return joueurs(i).GetTimeCumulé
     End Function
 
+    Public Function GetScorePlayer(nom As String) As Integer
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                Return joueurs(i).GetScore()
+            End If
+        Next
+        Throw New Exception("Joueur inexistant")
+    End Function
+
+    Public Function GetBestTimePlayer(nom As String) As TimeSpan
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                Return joueurs(i).GetBestTime()
+            End If
+        Next
+    End Function
+
     Public Function GetNbSecondPlayer(nom As String) As Integer
         For i As Integer = 0 To GetNb() - 1
             If joueurs(i).GetNom = nom Then
@@ -206,6 +208,41 @@
             End If
         Next
         Return 0
+    End Function
+
+    Public Function GetNbFirstPlayer(nom As String) As Integer
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                Return joueurs(i).GetNbFirstPlayer()
+            End If
+        Next
+        Return 0
+    End Function
+
+    Public Function GetTimeCumulePlayer(nom As String) As TimeSpan
+        Debug.Assert(ContainsPlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+            If joueurs(i).GetNom = nom Then
+                Return joueurs(i).GetTimeCumulé()
+            End If
+        Next
+    End Function
+
+
+    Public Function Recup_Noms() As List(Of String)
+        Dim noms As New List(Of String)
+        For i As Integer = 0 To GetNb() - 1
+            noms.Add(GetNomPlayer(i))
+        Next
+        Return noms
+    End Function
+
+    Public Function Recup_Scores() As List(Of Integer)
+        Dim scores As New List(Of Integer)
+        For i As Integer = 0 To GetNb() - 1
+            scores.Add(GetScorePlayer(i))
+        Next
+        Return scores
     End Function
 
     Public Sub FlushJoueurs()
@@ -216,5 +253,4 @@
         ReDim joueurs(0) ' pas de preserve pour supprimmer
         compteur = 0
     End Sub
-
 End Module
