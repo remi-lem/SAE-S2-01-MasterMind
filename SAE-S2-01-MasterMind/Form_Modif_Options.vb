@@ -30,61 +30,38 @@
         Me.Close()
     End Sub
 
-    Private Sub Btn_modif_symb_1_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_1.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(0))
-        If Not rep = "" Then
-            If rep.Length = 1 And Not AlreadyUsed(0, rep) Then
-                Symboles.SetSymbole(0, rep)
-                lbl_symbole1.Text = "Symbole 1 : " & Symboles.GetSymbole(0)
-            Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
-            End If
+    Private Sub Traitement_Caractere(IndexCharDeBase As Integer)
+        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(IndexCharDeBase))
+        If rep = "" Then
+            MsgBox("Merci de rentrer un charactère", vbOKOnly, "Erreur")
+        ElseIf Not rep.Length = 1 Then
+            MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
+        ElseIf AlreadyUsed(IndexCharDeBase, rep) Then
+            MsgBox("Le symbole renseigné est déjà uilisé. Merci d'en choisir un autre.", MsgBoxStyle.OkOnly, "Erreur")
+        Else
+            Symboles.SetSymbole(IndexCharDeBase, rep)
         End If
+    End Sub
+
+    Private Sub Btn_modif_symb_1_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_1.Click
+        Traitement_Caractere(0)
+        lbl_symbole1.Text = "Symbole 1 : " & Symboles.GetSymbole(0)
     End Sub
     Private Sub Btn_modif_symb_2_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_2.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(1))
-        If Not rep = "" Then
-            If rep.Length = 1 And Not AlreadyUsed(1, rep) Then
-                Symboles.SetSymbole(1, rep)
-                lbl_symbole2.Text = "Symbole 2 : " & Symboles.GetSymbole(1)
-            Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
-            End If
-
-        End If
+        Traitement_Caractere(1)
+        lbl_symbole2.Text = "Symbole 2 : " & Symboles.GetSymbole(1)
     End Sub
     Private Sub Btn_modif_symb_3_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_3.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(2))
-        If Not rep = "" Then
-            If rep.Length = 1 And Not AlreadyUsed(2, rep) Then
-                Symboles.SetSymbole(2, rep)
-                lbl_symbole3.Text = "Symbole 3 : " & Symboles.GetSymbole(2)
-            Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
-            End If
-        End If
+        Traitement_Caractere(2)
+        lbl_symbole3.Text = "Symbole 3 : " & Symboles.GetSymbole(2)
     End Sub
     Private Sub Btn_modif_symb_4_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_4.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(3))
-        If Not rep = "" Then
-            If rep.Length = 1 And Not AlreadyUsed(3, rep) Then
-                Symboles.SetSymbole(3, rep)
-                lbl_symbole4.Text = "Symbole 4 : " & Symboles.GetSymbole(3)
-            Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
-            End If
-        End If
+        Traitement_Caractere(3)
+        lbl_symbole4.Text = "Symbole 4 : " & Symboles.GetSymbole(3)
     End Sub
     Private Sub Btn_modif_symb_5_Click(sender As Object, e As EventArgs) Handles btn_modif_symb_5.Click
-        Dim rep As String = InputBox("Nouveau Symbole : ", "Changement de symbole", Symboles.GetSymbole(4))
-        If Not rep = "" Then
-            If rep.Length = 1 And Not AlreadyUsed(4, rep) Then
-                Symboles.SetSymbole(4, rep)
-                lbl_symbole5.Text = "Symbole 5 : " & Symboles.GetSymbole(4)
-            Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
-            End If
-        End If
+        Traitement_Caractere(4)
+        lbl_symbole5.Text = "Symbole 5 : " & Symboles.GetSymbole(4)
     End Sub
 
     Private Sub Btn_modif_temps_Click(sender As Object, e As EventArgs) Handles Btn_modif_temps.Click

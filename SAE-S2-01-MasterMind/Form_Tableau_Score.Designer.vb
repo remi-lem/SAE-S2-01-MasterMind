@@ -241,7 +241,7 @@ Partial Class Form_Tableau_Score
         Me.Controls.Add(Me.lbl_Titre)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form_Tableau_Score"
-        Me.Text = "Form_Tableau_Score"
+        Me.Text = "Tableau des scores"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
