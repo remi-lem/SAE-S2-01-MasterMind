@@ -13,7 +13,8 @@
     ReadOnly symbParDefaut4 As String = Symboles.GetSymbole(3)
     ReadOnly symbParDefaut5 As String = Symboles.GetSymbole(4)
 
-    ReadOnly symbParDefaut As New List(Of String) From {Symboles.GetSymbole(0), Symboles.GetSymbole(1), Symboles.GetSymbole(2), Symboles.GetSymbole(3), Symboles.GetSymbole(4)}
+    ReadOnly symbParDefaut As New List(Of String) From {Symboles.GetSymbole(0), Symboles.GetSymbole(1),
+        Symboles.GetSymbole(2), Symboles.GetSymbole(3), Symboles.GetSymbole(4)}
     Private joueur_a_gagne As Boolean = False
 
     Private Sub Form_Essais_Joueur_2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -39,20 +40,28 @@
         lbl_coups_restants.Text = nb_coups_restants & " coups restants"
 
         If nb_coups_restants <= 0 Then
-            MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text & ".", vbOKOnly, "Perdu !")
+            Dim message As String
+            message = Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text & "."
+            MsgBox(message, vbOKOnly, "Perdu !")
             A_perdu()
             Me.Close()
         End If
     End Sub
 
     Private Sub Recalc_temps_ecoule()
-        lbl_temps_ecoule.Text = temps_ecoule.Minutes & " minute et " & vbCrLf & temps_ecoule.Seconds & " secondes écoulées" & vbCrLf & "Max : " & MAX_TEMPS_COUP.Minutes & ":" & MAX_TEMPS_COUP.Seconds
+        Dim lblTmp As String
+        lblTmp = temps_ecoule.Minutes & " minute et " & vbCrLf & temps_ecoule.Seconds & " secondes écoulées"
+        lblTmp &= vbCrLf & "Max : " & MAX_TEMPS_COUP.Minutes & ":" & MAX_TEMPS_COUP.Seconds
+        lbl_temps_ecoule.Text = lblTmp
     End Sub
 
     Private Sub Tmr_temps_restant_Tick(sender As Object, e As EventArgs) Handles tmr_temps_restant.Tick
         If temps_ecoule.TotalSeconds >= MAX_TEMPS_COUP.TotalSeconds Then
+            Dim message As String
             tmr_temps_restant.Stop()
-            MsgBox(Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de " & Form_Accueil.cbx_Joueur1.Text & " dans le temps prévu.", vbOKOnly, "Temps écoulé !")
+            message = Form_Accueil.cbx_Joueur2.Text & " n'a pas trouvé le pattern de "
+            message &= Form_Accueil.cbx_Joueur1.Text & " dans le temps prévu."
+            MsgBox(message, vbOKOnly, "Temps écoulé !")
             A_perdu()
             Me.Close()
         Else
@@ -61,7 +70,8 @@
         Recalc_temps_ecoule()
     End Sub
 
-    Private Sub TxtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_symb1.KeyPress, txt_symb2.KeyPress, txt_symb3.KeyPress, txt_symb4.KeyPress, txt_symb5.KeyPress
+    Private Sub TxtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_symb1.KeyPress,
+        txt_symb2.KeyPress, txt_symb3.KeyPress, txt_symb4.KeyPress, txt_symb5.KeyPress
         sender.Text = ""
         sender.BackColor = Color.White
 
@@ -89,7 +99,7 @@
 
     Private Sub Btn_guess_Click(sender As Object, e As EventArgs) Handles btn_guess.Click
         If txt_symb1.Text = "" Or txt_symb2.Text = "" Or txt_symb3.Text = "" Or txt_symb4.Text = "" Or txt_symb5.Text = "" Then
-            MsgBox("Merci de remplir tous les caractères")
+            MsgBox("Merci de remplir tous les caractères", vbOKOnly, "Erreur")
         Else
             Verif_proposition()
             nb_coups_restants -= 1

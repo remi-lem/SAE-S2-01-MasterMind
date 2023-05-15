@@ -1,6 +1,6 @@
 ﻿Public Class Form_Accueil
     Private Sub Btn_Quitter_Click(sender As Object, e As EventArgs) Handles btn_Quitter.Click
-        Dim choix As Integer = MsgBox("Voulez-vous vraiment quitter ?", MsgBoxStyle.YesNo)
+        Dim choix As Integer = MsgBox("Voulez-vous vraiment quitter ?", MsgBoxStyle.YesNo, "Confirmation")
         If choix = vbYes Then
             Me.Close()
         End If
@@ -8,10 +8,10 @@
 
     Private Sub Btn_Start_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
         If cbx_Joueur1.Text = "" Or cbx_Joueur2.Text = "" Then
-            MsgBox("Veuillez saisir un nom pour chaque joueur")
+            MsgBox("Veuillez saisir un nom pour chaque joueur", vbOKOnly, "Erreur")
 
         ElseIf cbx_Joueur1.Text = cbx_Joueur2.Text Then
-            MsgBox("Les joueurs ne peuvent pas avoir le même nom")
+            MsgBox("Les joueurs ne peuvent pas avoir le même nom", vbOKOnly, "Erreur")
         Else
             Form_Faire_Deviner.Close()
             Form_Faire_Deviner.Show()

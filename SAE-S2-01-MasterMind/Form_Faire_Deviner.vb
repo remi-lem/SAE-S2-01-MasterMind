@@ -1,5 +1,6 @@
 ﻿Public Class Form_Faire_Deviner
-    Private Sub TxtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_Symb1.KeyPress, txt_Symb2.KeyPress, txt_Symb3.KeyPress, txt_Symb4.KeyPress, txt_Symb5.KeyPress
+    Private Sub TxtSymb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_Symb1.KeyPress,
+        txt_Symb2.KeyPress, txt_Symb3.KeyPress, txt_Symb4.KeyPress, txt_Symb5.KeyPress
         sender.Text = ""
 
         If e.KeyChar = vbBack Then
@@ -26,7 +27,8 @@
     Private Sub Init_char_jouables()
         Dim str_char_jouables As String = ""
         Dim first As Boolean = True
-        For Each charJouable As String In {Symboles.GetSymbole(0), Symboles.GetSymbole(1), Symboles.GetSymbole(2), Symboles.GetSymbole(3), Symboles.GetSymbole(4)}
+        For Each charJouable As String In {Symboles.GetSymbole(0), Symboles.GetSymbole(1),
+            Symboles.GetSymbole(2), Symboles.GetSymbole(3), Symboles.GetSymbole(4)}
             If Not first Then
                 str_char_jouables += " "
             Else
@@ -40,7 +42,7 @@
 
     Private Sub Btn_Ok_Click(sender As Object, e As EventArgs) Handles btn_Ok.Click
         If txt_Symb1.Text = "" Or txt_Symb2.Text = "" Or txt_Symb3.Text = "" Or txt_Symb4.Text = "" Or txt_Symb5.Text = "" Then
-            MsgBox("Merci de remplir tous les caractères")
+            MsgBox("Merci de remplir tous les caractères", vbOKOnly, "Erreur")
         Else
             Me.Hide()
             Form_Essais_Joueur_2.Show()

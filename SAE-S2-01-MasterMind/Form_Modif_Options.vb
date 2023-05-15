@@ -37,7 +37,7 @@
                 Symboles.SetSymbole(0, rep)
                 lbl_symbole1.Text = "Symbole 1 : " & Symboles.GetSymbole(0)
             Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
+                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
             End If
         End If
     End Sub
@@ -48,7 +48,7 @@
                 Symboles.SetSymbole(1, rep)
                 lbl_symbole2.Text = "Symbole 2 : " & Symboles.GetSymbole(1)
             Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
+                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
             End If
 
         End If
@@ -60,7 +60,7 @@
                 Symboles.SetSymbole(2, rep)
                 lbl_symbole3.Text = "Symbole 3 : " & Symboles.GetSymbole(2)
             Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
+                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
             End If
         End If
     End Sub
@@ -71,7 +71,7 @@
                 Symboles.SetSymbole(3, rep)
                 lbl_symbole4.Text = "Symbole 4 : " & Symboles.GetSymbole(3)
             Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
+                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
             End If
         End If
     End Sub
@@ -82,13 +82,16 @@
                 Symboles.SetSymbole(4, rep)
                 lbl_symbole5.Text = "Symbole 5 : " & Symboles.GetSymbole(4)
             Else
-                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly)
+                MsgBox("Le symbole renseigné est trop long. Il ne doit pas dépasser un caractère.", MsgBoxStyle.OkOnly, "Erreur")
             End If
         End If
     End Sub
 
     Private Sub Btn_modif_temps_Click(sender As Object, e As EventArgs) Handles Btn_modif_temps.Click
-        MsgBox("Vous allez devoir entrer les minutes puis les secondes" & vbCrLf & "Pour ne mettre aucune minute ou seconde, mettre '0'", vbOKOnly)
+        Dim message As String
+        message = "Vous allez devoir entrer les minutes puis les secondes"
+        message &= vbCrLf & "Pour ne mettre aucune minute ou seconde, mettre '0'"
+        MsgBox(message, vbOKOnly, "Changement du temps")
         Dim min As Integer = InputBox("Nombre de minutes : ", "Changement du temps (1/2)", LeTemps.GetMinutes())
         Dim sec As Integer = InputBox("Nombre de secondes : ", "Changement du temps (2/2)", LeTemps.GetSecondes())
         If min = 0 And sec = 0 Then

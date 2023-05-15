@@ -75,7 +75,8 @@
 
     End Sub
 
-    Sub AjoutJoueurComplet(nom As String, score As Integer, bestTime As TimeSpan, nbFirst As Integer, nbSecond As Integer, timeCumul As TimeSpan)
+    Sub AjoutJoueurComplet(nom As String, score As Integer, bestTime As TimeSpan,
+                           nbFirst As Integer, nbSecond As Integer, timeCumul As TimeSpan)
         Dim j As Joueur
 
         j.nom = nom
