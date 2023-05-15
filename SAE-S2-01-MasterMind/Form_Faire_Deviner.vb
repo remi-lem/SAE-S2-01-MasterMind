@@ -17,9 +17,9 @@
         If DEBUG_MODE Then
             txt_Symb1.Text = Symboles.GetSymbole(0)
             txt_Symb2.Text = Symboles.GetSymbole(1)
-            txt_Symb3.Text = Symboles.GetSymbole(2)
-            txt_Symb4.Text = Symboles.GetSymbole(3)
-            txt_Symb5.Text = Symboles.GetSymbole(4)
+            txt_Symb3.Text = Symboles.GetSymbole(0)
+            txt_Symb4.Text = Symboles.GetSymbole(0)
+            txt_Symb5.Text = Symboles.GetSymbole(0)
         End If
     End Sub
 

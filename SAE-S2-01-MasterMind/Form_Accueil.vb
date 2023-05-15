@@ -72,17 +72,6 @@
         Form_Modif_Options.Show()
     End Sub
 
-    Private Sub Autocompletion()
-        ' TODO : A ENLEVER : MARCHE TRES BIEN SANS (oui Nadir t'a tres bien lu ce commentaire)
-        cbx_Joueur1.DropDownStyle = ComboBoxStyle.DropDown
-        cbx_Joueur1.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        cbx_Joueur1.AutoCompleteSource = AutoCompleteSource.ListItems
-
-        cbx_Joueur2.DropDownStyle = ComboBoxStyle.DropDown
-        cbx_Joueur2.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        cbx_Joueur2.AutoCompleteSource = AutoCompleteSource.ListItems
-    End Sub
-
     Private Sub Form_Accueil_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         EcritureDuFichier()
     End Sub

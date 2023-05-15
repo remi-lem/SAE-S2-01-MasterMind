@@ -44,17 +44,13 @@
         For Each elem As String In trisPar
             cbx_tris.Items.Add(elem)
         Next
-
-        ' TODO
-        'cbx_NomSelec.DropDownStyle = ComboBoxStyle.DropDown
-        'cbx_NomSelec.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        'cbx_NomSelec.AutoCompleteSource = AutoCompleteSource.ListItems
-
     End Sub
 
     Private Sub Form_Tableau_Score_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Form_Accueil.Show()
     End Sub
 
-
+    Private Sub cbx_tris_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tris.SelectedIndexChanged
+        ' TODO ici faire le tri
+    End Sub
 End Class

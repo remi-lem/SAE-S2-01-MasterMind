@@ -68,7 +68,6 @@
         If e.KeyChar = vbBack Then
             Exit Sub
         End If
-        ' e.KeyChar = UCase(e.KeyChar) '
         If e.KeyChar <> symbParDefaut(0) And e.KeyChar <> symbParDefaut(1) And e.KeyChar <> symbParDefaut(2) And e.KeyChar <> symbParDefaut(3) And e.KeyChar <> symbParDefaut(4) Then
             e.Handled = True
         End If
@@ -105,8 +104,7 @@
 
     Private Sub Verif_proposition()
 
-        ' TODO : un symbole deja trouvé peut etre marqué comme existant mais pas a la bonne place, à corriger
-        ' idée : mettre un compteur du nombre de fois ou est le carctere en question
+        ' TODO : un symbole deja trouvé peut etre marqué comme existant mais pas a la bonne place
 
         Dim symbChoisi As List(Of String) = Form_Faire_Deviner.Get_choisi()
         Dim lst_symb As New List(Of TextBox) From {txt_symb1, txt_symb2, txt_symb3, txt_symb4, txt_symb5}
