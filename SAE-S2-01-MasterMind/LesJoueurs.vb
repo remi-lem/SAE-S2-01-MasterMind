@@ -182,7 +182,7 @@
         Return joueurs(i).GetTimeCumulé
     End Function
 
-    Public Function GetScorePlayer(nom As String) As Integer
+    Public Function getScorePlayer(nom As String) As Integer
         Debug.Assert(ContainsPlayer(nom))
         For i As Integer = 0 To GetNb() - 1
             If joueurs(i).GetNom = nom Then
@@ -238,10 +238,11 @@
     End Function
 
     Public Function Recup_Scores() As List(Of Integer)
-        Dim noms As List(Of String) = Recup_Noms()
+
         Dim scores As New List(Of Integer)
-        For Each nom As String In noms
-            scores.Add(GetScorePlayer(nom))
+        For i As Integer = 0 To GetNb() - 1
+
+            scores.Add(GetScorePlayer(i))
         Next
         Return scores
     End Function

@@ -40,6 +40,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Récap = New System.Windows.Forms.Label()
         Me.cbx_tris = New System.Windows.Forms.ComboBox()
         Me.lbl_tris = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'lbl_Titre
@@ -216,11 +217,21 @@ Partial Class Form_Tableau_Score
         Me.lbl_tris.TabIndex = 14
         Me.lbl_tris.Text = "Tri par :"
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 16
+        Me.ListBox1.Location = New System.Drawing.Point(30, 21)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(120, 84)
+        Me.ListBox1.TabIndex = 15
+        '
         'Form_Tableau_Score
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1189, 471)
+        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.lbl_tris)
         Me.Controls.Add(Me.cbx_tris)
         Me.Controls.Add(Me.lbl_Récap)
@@ -265,4 +276,5 @@ Partial Class Form_Tableau_Score
     Friend WithEvents lbl_Récap As Label
     Friend WithEvents cbx_tris As ComboBox
     Friend WithEvents lbl_tris As Label
+    Friend WithEvents ListBox1 As ListBox
 End Class

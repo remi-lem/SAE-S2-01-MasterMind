@@ -21,10 +21,10 @@
         Dim t0 As TimeSpan = TimeSpan.Zero
         Dim message As String = ""
         If GetNbSecondPlayer(cbx_NomSelec.Text) > 0 AndAlso Not TimeSpan.Compare(t0, GetBestTimePlayer(cbx_NomSelec.Text)) Then
-            message = "Le joueur " & cbx_NomSelec.Text & " a un total de " & GetScorePlayer(cbx_NomSelec.Text)
+            message = "Le joueur " & cbx_NomSelec.Text & " a un total de " & getScorePlayer(cbx_NomSelec.Text)
             message &= " point et n'a pas encore gagné et eu de meilleur temps"
         Else
-            message = "Le joueur " & cbx_NomSelec.Text & " a un total de " & GetScorePlayer(cbx_NomSelec.Text)
+            message = "Le joueur " & cbx_NomSelec.Text & " a un total de " & getScorePlayer(cbx_NomSelec.Text)
             message &= " points et son meilleur temps est " & GetBestTimePlayer(cbx_NomSelec.Text).Minutes
             message &= " minute et " & GetBestTimePlayer(cbx_NomSelec.Text).Seconds & " secondes."
         End If
@@ -73,8 +73,19 @@
         If cbx_tris.Text = "Score" Then
             Dim scores As List(Of Integer) = LesJoueurs.Recup_Scores()
             Tri_Scores(scores)
+            Dim noms As List(Of String) = LesJoueurs.Recup_Noms()
             For i As Integer = 0 To scores.Count - 1
-                Ajout_Apres_Tri_Scores(i)
+                For j As Integer = 0 To noms.Count - 1
+                    If getScorePlayer(noms(j)) = scores(i) And Not lst_Nom.Items.Contains(noms(j)) Then
+                        lst_Nom.Items.Add(noms(j))
+                        lst_Score.Items.Add(LesJoueurs.getScorePlayer(noms(j)))
+                        lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(noms(j)))
+                        lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(noms(j)))
+                        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbFirstPlayer(noms(j)))
+                        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbSecondPlayer(noms(j)))
+                    End If
+                Next
+                ListBox1.Items.Add(scores(i))
             Next
 
         End If
@@ -97,11 +108,12 @@
 
     Private Sub Tri_Scores(scores As List(Of Integer))
         scores.Sort()
+        scores.Reverse()
     End Sub
 
     Private Sub Ajout_Apres_Tri_Noms(nom As String)
         lst_Nom.Items.Add(nom)
-        lst_Score.Items.Add(LesJoueurs.GetScorePlayer(nom))
+        lst_Score.Items.Add(LesJoueurs.getScorePlayer(nom))
         lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(nom))
         lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(nom))
         lst_FirstPLayer.Items.Add(LesJoueurs.GetNbFirstPlayer(nom))
@@ -109,15 +121,6 @@
 
     End Sub
 
-    Private Sub Ajout_Apres_Tri_Scores(i As Integer)
-        lst_Nom.Items.Add(GetNomPlayer(i))
-        lst_Score.Items.Add(LesJoueurs.GetScorePlayer(i))
-        lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(i))
-        lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(i))
-        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbJ1Player(i))
-        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbJ2Player(i))
-
-    End Sub
 
 End Class
 

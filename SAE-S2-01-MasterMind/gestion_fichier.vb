@@ -43,7 +43,7 @@
         FileOpen(num, chemin, OpenMode.Output)
         For i As Integer = 0 To GetNb() - 1
             Dim nom As String = GetNomPlayer(i)
-            WriteLine(num, "," & nom & ";" & GetScorePlayer(nom) & ";" & GetBestTimePlayer(nom).ToString & ";" & GetNbJ1Player(i) & ";" & GetNbJ2Player(i) & ";" & GetTimeCumulePlayer(i).ToString & ",")
+            WriteLine(num, "," & nom & ";" & getScorePlayer(nom) & ";" & GetBestTimePlayer(nom).ToString & ";" & GetNbJ1Player(i) & ";" & GetNbJ2Player(i) & ";" & GetTimeCumulePlayer(i).ToString & ",")
         Next
         FileClose(num)
 
