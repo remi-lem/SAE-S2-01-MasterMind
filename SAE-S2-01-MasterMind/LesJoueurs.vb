@@ -238,9 +238,10 @@
     End Function
 
     Public Function Recup_Scores() As List(Of Integer)
+        Dim noms As List(Of String) = Recup_Noms()
         Dim scores As New List(Of Integer)
-        For i As Integer = 0 To GetNb() - 1
-            scores.Add(GetScorePlayer(i))
+        For Each nom As String In noms
+            scores.Add(GetScorePlayer(nom))
         Next
         Return scores
     End Function
