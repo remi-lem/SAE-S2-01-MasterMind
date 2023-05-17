@@ -42,8 +42,8 @@
                 lst_Score.Items.Add(LesJoueurs.GetScorePlayer(i))
                 lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(i))
                 lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(i))
-                lst_FirstPLayer.Items.Add(LesJoueurs.GetNbJ1Player(i))
-                lst_SecondPlayer.Items.Add(LesJoueurs.GetNbJ2Player(i))
+                lst_FirstPLayer.Items.Add(LesJoueurs.GetNbJ1Player(i) & " fois")
+                lst_SecondPlayer.Items.Add(LesJoueurs.GetNbJ2Player(i) & " fois")
 
             End If
         Next
@@ -81,11 +81,10 @@
                         lst_Score.Items.Add(LesJoueurs.getScorePlayer(noms(j)))
                         lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(noms(j)))
                         lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(noms(j)))
-                        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbFirstPlayer(noms(j)))
-                        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbSecondPlayer(noms(j)))
+                        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbFirstPlayer(noms(j)) & " fois")
+                        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbSecondPlayer(noms(j)) & " fois")
                     End If
                 Next
-                ListBox1.Items.Add(scores(i))
             Next
 
         End If
@@ -116,8 +115,8 @@
         lst_Score.Items.Add(LesJoueurs.getScorePlayer(nom))
         lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(nom))
         lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(nom))
-        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbFirstPlayer(nom))
-        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbSecondPlayer(nom))
+        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbFirstPlayer(nom) & " fois")
+        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbSecondPlayer(nom) & " fois")
 
     End Sub
 
