@@ -86,7 +86,23 @@
                     End If
                 Next
             Next
-
+        End If
+        If cbx_tris.Text = "Temps" Then
+            Dim times As List(Of TimeSpan) = LesJoueurs.Recup_Time()
+            Tri_Temps(times)
+            Dim noms As List(Of String) = LesJoueurs.Recup_Noms()
+            For i As Integer = 0 To times.Count - 1
+                For j As Integer = 0 To noms.Count - 1
+                    If GetBestTimePlayer(noms(j)) = times(i) And Not lst_Nom.Items.Contains(noms(j)) Then
+                        lst_Nom.Items.Add(noms(j))
+                        lst_Score.Items.Add(LesJoueurs.getScorePlayer(noms(j)))
+                        lst_BestTime.Items.Add(LesJoueurs.GetBestTimePlayer(noms(j)))
+                        lst_TempsCumulé.Items.Add(LesJoueurs.GetTimeCumulePlayer(noms(j)))
+                        lst_FirstPLayer.Items.Add(LesJoueurs.GetNbFirstPlayer(noms(j)) & " fois")
+                        lst_SecondPlayer.Items.Add(LesJoueurs.GetNbSecondPlayer(noms(j)) & " fois")
+                    End If
+                Next
+            Next
         End If
 
     End Sub
@@ -108,6 +124,10 @@
     Private Sub Tri_Scores(scores As List(Of Integer))
         scores.Sort()
         scores.Reverse()
+    End Sub
+
+    Private Sub Tri_Temps(times As List(Of TimeSpan))
+        times.Sort()
     End Sub
 
     Private Sub Ajout_Apres_Tri_Noms(nom As String)

@@ -247,6 +247,16 @@
         Return scores
     End Function
 
+    Public Function Recup_Time() As List(Of TimeSpan)
+
+        Dim times As New List(Of TimeSpan)
+        For i As Integer = 0 To GetNb() - 1
+
+            times.Add(GetBestTimePlayer(i))
+        Next
+        Return times
+    End Function
+
     Public Sub FlushJoueurs()
         Form_Accueil.cbx_Joueur1.Items.Clear()
         Form_Accueil.cbx_Joueur2.Items.Clear()
