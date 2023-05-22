@@ -22,6 +22,7 @@ Partial Class Form_Tableau_Score
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Tableau_Score))
         Me.lbl_Titre = New System.Windows.Forms.Label()
         Me.lst_Nom = New System.Windows.Forms.ListBox()
         Me.lst_Score = New System.Windows.Forms.ListBox()
@@ -107,7 +108,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Score.AutoSize = True
         Me.lbl_Score.Location = New System.Drawing.Point(139, 42)
         Me.lbl_Score.Name = "lbl_Score"
-        Me.lbl_Score.Size = New System.Drawing.Size(45, 17)
+        Me.lbl_Score.Size = New System.Drawing.Size(43, 16)
         Me.lbl_Score.TabIndex = 6
         Me.lbl_Score.Text = "Score"
         '
@@ -116,7 +117,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_BestTime.AutoSize = True
         Me.lbl_BestTime.Location = New System.Drawing.Point(265, 42)
         Me.lbl_BestTime.Name = "lbl_BestTime"
-        Me.lbl_BestTime.Size = New System.Drawing.Size(104, 17)
+        Me.lbl_BestTime.Size = New System.Drawing.Size(100, 16)
         Me.lbl_BestTime.TabIndex = 7
         Me.lbl_BestTime.Text = "Meilleur Temps"
         '
@@ -125,7 +126,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_TempsCumulé.AutoSize = True
         Me.lbl_TempsCumulé.Location = New System.Drawing.Point(392, 42)
         Me.lbl_TempsCumulé.Name = "lbl_TempsCumulé"
-        Me.lbl_TempsCumulé.Size = New System.Drawing.Size(102, 17)
+        Me.lbl_TempsCumulé.Size = New System.Drawing.Size(98, 16)
         Me.lbl_TempsCumulé.TabIndex = 8
         Me.lbl_TempsCumulé.Text = "Temps Cumulé"
         '
@@ -134,7 +135,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Nom.AutoSize = True
         Me.lbl_Nom.Location = New System.Drawing.Point(12, 42)
         Me.lbl_Nom.Name = "lbl_Nom"
-        Me.lbl_Nom.Size = New System.Drawing.Size(37, 17)
+        Me.lbl_Nom.Size = New System.Drawing.Size(36, 16)
         Me.lbl_Nom.TabIndex = 9
         Me.lbl_Nom.Text = "Nom"
         '
@@ -175,7 +176,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_NbFoisJ1.Location = New System.Drawing.Point(519, 42)
         Me.lbl_NbFoisJ1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_NbFoisJ1.Name = "lbl_NbFoisJ1"
-        Me.lbl_NbFoisJ1.Size = New System.Drawing.Size(91, 17)
+        Me.lbl_NbFoisJ1.Size = New System.Drawing.Size(84, 16)
         Me.lbl_NbFoisJ1.TabIndex = 10
         Me.lbl_NbFoisJ1.Text = "A fait deviner"
         '
@@ -185,7 +186,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_NbFoisJ2.Location = New System.Drawing.Point(645, 42)
         Me.lbl_NbFoisJ2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_NbFoisJ2.Name = "lbl_NbFoisJ2"
-        Me.lbl_NbFoisJ2.Size = New System.Drawing.Size(88, 17)
+        Me.lbl_NbFoisJ2.Size = New System.Drawing.Size(82, 16)
         Me.lbl_NbFoisJ2.TabIndex = 11
         Me.lbl_NbFoisJ2.Text = "A dû deviner"
         '
@@ -195,7 +196,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_Récap.Location = New System.Drawing.Point(13, 166)
         Me.lbl_Récap.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Récap.Name = "lbl_Récap"
-        Me.lbl_Récap.Size = New System.Drawing.Size(114, 17)
+        Me.lbl_Récap.Size = New System.Drawing.Size(106, 16)
         Me.lbl_Récap.TabIndex = 12
         Me.lbl_Récap.Text = "Récapitulatif de :"
         '
@@ -215,7 +216,7 @@ Partial Class Form_Tableau_Score
         Me.lbl_tris.AutoSize = True
         Me.lbl_tris.Location = New System.Drawing.Point(277, 166)
         Me.lbl_tris.Name = "lbl_tris"
-        Me.lbl_tris.Size = New System.Drawing.Size(58, 17)
+        Me.lbl_tris.Size = New System.Drawing.Size(52, 16)
         Me.lbl_tris.TabIndex = 14
         Me.lbl_tris.Text = "Tri par :"
         '
@@ -242,6 +243,7 @@ Partial Class Form_Tableau_Score
         Me.Controls.Add(Me.lbl_Score)
         Me.Controls.Add(Me.btn_Accueil)
         Me.Controls.Add(Me.lbl_Titre)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form_Tableau_Score"
         Me.Text = "Tableau des scores"

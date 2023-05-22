@@ -22,6 +22,7 @@ Partial Class Form_Faire_Deviner
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Faire_Deviner))
         Me.txt_Symb5 = New System.Windows.Forms.TextBox()
         Me.txt_Symb4 = New System.Windows.Forms.TextBox()
         Me.txt_Symb3 = New System.Windows.Forms.TextBox()
@@ -141,6 +142,7 @@ Partial Class Form_Faire_Deviner
         Me.Controls.Add(Me.txt_Symb3)
         Me.Controls.Add(Me.txt_Symb4)
         Me.Controls.Add(Me.txt_Symb5)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_Faire_Deviner"
         Me.Text = "Pattern à deviner"
         Me.ResumeLayout(False)

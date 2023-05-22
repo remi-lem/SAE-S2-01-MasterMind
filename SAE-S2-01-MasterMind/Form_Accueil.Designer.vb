@@ -22,6 +22,7 @@ Partial Class Form_Accueil
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Accueil))
         Me.lbl_Joueur1 = New System.Windows.Forms.Label()
         Me.lbl_Joueur2 = New System.Windows.Forms.Label()
         Me.cbx_Joueur1 = New System.Windows.Forms.ComboBox()
@@ -177,6 +178,7 @@ Partial Class Form_Accueil
         Me.Controls.Add(Me.lbl_Joueur1)
         Me.Controls.Add(Me.lbl_titre)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form_Accueil"
         Me.Text = "Bienvenue !"
