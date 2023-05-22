@@ -163,6 +163,8 @@
         joueur_a_gagne = True
         lbl_trouve.Visible = True
         btn_partir.Visible = True
+        btn_partir.TabStop = True
+        Btn_abandon.Visible = False
         LesJoueurs.AjouteUnPointA(Form_Accueil.cbx_Joueur2.Text)
         LesJoueurs.AjouterNbSecondPlayer(Form_Accueil.cbx_Joueur2.Text)
         LesJoueurs.AjouterNbFirstPlayer(Form_Accueil.cbx_Joueur1.Text)
@@ -195,7 +197,9 @@
     End Sub
 
     Private Sub Btn_partir_Click(sender As Object, e As EventArgs) Handles btn_partir.Click
-        Me.Close()
+        If joueur_a_gagne Then
+            Me.Close()
+        End If
     End Sub
 
     Private Sub Form_Essais_Joueur_2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed

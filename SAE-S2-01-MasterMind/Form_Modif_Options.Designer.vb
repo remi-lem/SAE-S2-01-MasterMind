@@ -60,7 +60,7 @@ Partial Class Form_Modif_Options
         Me.btn_quitter.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_quitter.Name = "btn_quitter"
         Me.btn_quitter.Size = New System.Drawing.Size(100, 30)
-        Me.btn_quitter.TabIndex = 0
+        Me.btn_quitter.TabIndex = 40
         Me.btn_quitter.Text = "Quitter"
         Me.btn_quitter.UseVisualStyleBackColor = True
         '
@@ -70,7 +70,7 @@ Partial Class Form_Modif_Options
         Me.btn_modif_symb_1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_modif_symb_1.Name = "btn_modif_symb_1"
         Me.btn_modif_symb_1.Size = New System.Drawing.Size(99, 30)
-        Me.btn_modif_symb_1.TabIndex = 1
+        Me.btn_modif_symb_1.TabIndex = 11
         Me.btn_modif_symb_1.Text = "Modifier"
         Me.btn_modif_symb_1.UseVisualStyleBackColor = True
         '
@@ -80,7 +80,7 @@ Partial Class Form_Modif_Options
         Me.btn_modif_symb_2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_modif_symb_2.Name = "btn_modif_symb_2"
         Me.btn_modif_symb_2.Size = New System.Drawing.Size(99, 30)
-        Me.btn_modif_symb_2.TabIndex = 2
+        Me.btn_modif_symb_2.TabIndex = 12
         Me.btn_modif_symb_2.Text = "Modifier"
         Me.btn_modif_symb_2.UseVisualStyleBackColor = True
         '
@@ -90,7 +90,7 @@ Partial Class Form_Modif_Options
         Me.btn_modif_symb_3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_modif_symb_3.Name = "btn_modif_symb_3"
         Me.btn_modif_symb_3.Size = New System.Drawing.Size(99, 30)
-        Me.btn_modif_symb_3.TabIndex = 3
+        Me.btn_modif_symb_3.TabIndex = 13
         Me.btn_modif_symb_3.Text = "Modifier"
         Me.btn_modif_symb_3.UseVisualStyleBackColor = True
         '
@@ -100,7 +100,7 @@ Partial Class Form_Modif_Options
         Me.btn_modif_symb_4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_modif_symb_4.Name = "btn_modif_symb_4"
         Me.btn_modif_symb_4.Size = New System.Drawing.Size(99, 30)
-        Me.btn_modif_symb_4.TabIndex = 4
+        Me.btn_modif_symb_4.TabIndex = 14
         Me.btn_modif_symb_4.Text = "Modifier"
         Me.btn_modif_symb_4.UseVisualStyleBackColor = True
         '
@@ -110,7 +110,7 @@ Partial Class Form_Modif_Options
         Me.btn_modif_symb_5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_modif_symb_5.Name = "btn_modif_symb_5"
         Me.btn_modif_symb_5.Size = New System.Drawing.Size(99, 30)
-        Me.btn_modif_symb_5.TabIndex = 5
+        Me.btn_modif_symb_5.TabIndex = 15
         Me.btn_modif_symb_5.Text = "Modifier"
         Me.btn_modif_symb_5.UseVisualStyleBackColor = True
         '
@@ -130,7 +130,7 @@ Partial Class Form_Modif_Options
         Me.Btn_modif_temps.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_modif_temps.Name = "Btn_modif_temps"
         Me.Btn_modif_temps.Size = New System.Drawing.Size(99, 30)
-        Me.Btn_modif_temps.TabIndex = 7
+        Me.Btn_modif_temps.TabIndex = 21
         Me.Btn_modif_temps.Text = "Modifier"
         Me.Btn_modif_temps.UseVisualStyleBackColor = True
         '
@@ -207,30 +207,30 @@ Partial Class Form_Modif_Options
         'nud_propositions
         '
         Me.nud_propositions.Location = New System.Drawing.Point(132, 84)
-        Me.nud_propositions.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.nud_propositions.Margin = New System.Windows.Forms.Padding(4)
         Me.nud_propositions.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nud_propositions.Name = "nud_propositions"
         Me.nud_propositions.Size = New System.Drawing.Size(99, 22)
-        Me.nud_propositions.TabIndex = 13
+        Me.nud_propositions.TabIndex = 22
         Me.nud_propositions.Value = New Decimal(New Integer() {15, 0, 0, 0})
         '
         'BtnColorPresent
         '
         Me.BtnColorPresent.Location = New System.Drawing.Point(8, 38)
-        Me.BtnColorPresent.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnColorPresent.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnColorPresent.Name = "BtnColorPresent"
         Me.BtnColorPresent.Size = New System.Drawing.Size(100, 28)
-        Me.BtnColorPresent.TabIndex = 15
+        Me.BtnColorPresent.TabIndex = 31
         Me.BtnColorPresent.Text = "Présent"
         Me.BtnColorPresent.UseVisualStyleBackColor = True
         '
         'BtnColorPlace
         '
         Me.BtnColorPlace.Location = New System.Drawing.Point(8, 73)
-        Me.BtnColorPlace.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnColorPlace.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnColorPlace.Name = "BtnColorPlace"
         Me.BtnColorPlace.Size = New System.Drawing.Size(100, 28)
-        Me.BtnColorPlace.TabIndex = 16
+        Me.BtnColorPlace.TabIndex = 32
         Me.BtnColorPlace.Text = "Bien placé"
         Me.BtnColorPlace.UseVisualStyleBackColor = True
         '
@@ -259,10 +259,10 @@ Partial Class Form_Modif_Options
         Me.Pnl_Symboles.Controls.Add(Me.lbl_symbole3)
         Me.Pnl_Symboles.Controls.Add(Me.lbl_symbole4)
         Me.Pnl_Symboles.Location = New System.Drawing.Point(1, 2)
-        Me.Pnl_Symboles.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Symboles.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Symboles.Name = "Pnl_Symboles"
         Me.Pnl_Symboles.Size = New System.Drawing.Size(259, 223)
-        Me.Pnl_Symboles.TabIndex = 18
+        Me.Pnl_Symboles.TabIndex = 10
         '
         'Pnl_Couleurs
         '
@@ -270,10 +270,10 @@ Partial Class Form_Modif_Options
         Me.Pnl_Couleurs.Controls.Add(Me.BtnColorPlace)
         Me.Pnl_Couleurs.Controls.Add(Me.BtnColorPresent)
         Me.Pnl_Couleurs.Location = New System.Drawing.Point(528, 2)
-        Me.Pnl_Couleurs.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Couleurs.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Couleurs.Name = "Pnl_Couleurs"
         Me.Pnl_Couleurs.Size = New System.Drawing.Size(121, 155)
-        Me.Pnl_Couleurs.TabIndex = 19
+        Me.Pnl_Couleurs.TabIndex = 30
         '
         'Pnl_Inclassables
         '
@@ -285,7 +285,7 @@ Partial Class Form_Modif_Options
         Me.Pnl_Inclassables.Controls.Add(Me.nud_propositions)
         Me.Pnl_Inclassables.Controls.Add(Me.Label1)
         Me.Pnl_Inclassables.Location = New System.Drawing.Point(268, 2)
-        Me.Pnl_Inclassables.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Pnl_Inclassables.Margin = New System.Windows.Forms.Padding(4)
         Me.Pnl_Inclassables.Name = "Pnl_Inclassables"
         Me.Pnl_Inclassables.Size = New System.Drawing.Size(252, 171)
         Me.Pnl_Inclassables.TabIndex = 20
@@ -296,7 +296,7 @@ Partial Class Form_Modif_Options
         Me.Btn_modif_chemin_fic_svg.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_modif_chemin_fic_svg.Name = "Btn_modif_chemin_fic_svg"
         Me.Btn_modif_chemin_fic_svg.Size = New System.Drawing.Size(99, 30)
-        Me.Btn_modif_chemin_fic_svg.TabIndex = 19
+        Me.Btn_modif_chemin_fic_svg.TabIndex = 23
         Me.Btn_modif_chemin_fic_svg.Text = "Modifier"
         Me.Btn_modif_chemin_fic_svg.UseVisualStyleBackColor = True
         '

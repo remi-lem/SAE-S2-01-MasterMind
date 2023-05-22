@@ -211,7 +211,7 @@ Partial Class Form_Essais_Joueur_2
         '
         Me.lbl_trouve.AutoSize = True
         Me.lbl_trouve.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_trouve.Location = New System.Drawing.Point(187, 341)
+        Me.lbl_trouve.Location = New System.Drawing.Point(187, 349)
         Me.lbl_trouve.Name = "lbl_trouve"
         Me.lbl_trouve.Size = New System.Drawing.Size(102, 29)
         Me.lbl_trouve.TabIndex = 17
@@ -224,7 +224,8 @@ Partial Class Form_Essais_Joueur_2
         Me.btn_partir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_partir.Name = "btn_partir"
         Me.btn_partir.Size = New System.Drawing.Size(75, 23)
-        Me.btn_partir.TabIndex = 18
+        Me.btn_partir.TabIndex = 11
+        Me.btn_partir.TabStop = False
         Me.btn_partir.Text = "Partir"
         Me.btn_partir.UseVisualStyleBackColor = True
         Me.btn_partir.Visible = False
@@ -245,11 +246,11 @@ Partial Class Form_Essais_Joueur_2
         '
         'Btn_abandon
         '
-        Me.Btn_abandon.Location = New System.Drawing.Point(399, 478)
-        Me.Btn_abandon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_abandon.Location = New System.Drawing.Point(188, 382)
+        Me.Btn_abandon.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_abandon.Name = "Btn_abandon"
-        Me.Btn_abandon.Size = New System.Drawing.Size(149, 32)
-        Me.Btn_abandon.TabIndex = 20
+        Me.Btn_abandon.Size = New System.Drawing.Size(101, 23)
+        Me.Btn_abandon.TabIndex = 10
         Me.Btn_abandon.Text = "Abandonner"
         Me.Btn_abandon.UseVisualStyleBackColor = True
         '
@@ -257,7 +258,7 @@ Partial Class Form_Essais_Joueur_2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(423, 426)
+        Me.ClientSize = New System.Drawing.Size(380, 418)
         Me.Controls.Add(Me.Btn_abandon)
         Me.Controls.Add(Me.rtb_essais_prec)
         Me.Controls.Add(Me.btn_partir)

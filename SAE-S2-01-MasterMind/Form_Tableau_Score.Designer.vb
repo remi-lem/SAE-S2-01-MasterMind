@@ -99,7 +99,7 @@ Partial Class Form_Tableau_Score
         Me.btn_Accueil.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Accueil.Name = "btn_Accueil"
         Me.btn_Accueil.Size = New System.Drawing.Size(124, 27)
-        Me.btn_Accueil.TabIndex = 8
+        Me.btn_Accueil.TabIndex = 9
         Me.btn_Accueil.Text = "Accueil"
         Me.btn_Accueil.UseVisualStyleBackColor = True
         '
@@ -209,7 +209,7 @@ Partial Class Form_Tableau_Score
         Me.cbx_tris.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbx_tris.Name = "cbx_tris"
         Me.cbx_tris.Size = New System.Drawing.Size(121, 24)
-        Me.cbx_tris.TabIndex = 13
+        Me.cbx_tris.TabIndex = 8
         '
         'lbl_tris
         '

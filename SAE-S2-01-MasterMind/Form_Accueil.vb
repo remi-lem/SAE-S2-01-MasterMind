@@ -9,25 +9,24 @@
     Private Sub Btn_Start_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
         If cbx_Joueur1.Text = "" Or cbx_Joueur2.Text = "" Then
             MsgBox("Veuillez saisir un nom pour chaque joueur", vbOKOnly, "Erreur")
-
         ElseIf cbx_Joueur1.Text = cbx_Joueur2.Text Then
             MsgBox("Les joueurs ne peuvent pas avoir le même nom", vbOKOnly, "Erreur")
         Else
             Form_Faire_Deviner.Close()
             Form_Faire_Deviner.Show()
             Me.Hide()
-        End If
 
-        Dim joueurSelec1 As String = cbx_Joueur1.Text
-        Dim joueurSelec2 As String = cbx_Joueur2.Text
 
-        If Not ContainsPlayer(joueurSelec1) Then
-            AjouterJoueur(joueurSelec1)
+            Dim joueurSelec1 As String = cbx_Joueur1.Text
+            Dim joueurSelec2 As String = cbx_Joueur2.Text
 
-        End If
+            If Not ContainsPlayer(joueurSelec1) Then
+                AjouterJoueur(joueurSelec1)
+            End If
 
-        If Not ContainsPlayer(joueurSelec2) Then
-            AjouterJoueur(joueurSelec2)
+            If Not ContainsPlayer(joueurSelec2) Then
+                AjouterJoueur(joueurSelec2)
+            End If
         End If
     End Sub
 
