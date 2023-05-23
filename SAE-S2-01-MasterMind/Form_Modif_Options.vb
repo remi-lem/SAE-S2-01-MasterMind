@@ -5,7 +5,9 @@
     Private Sub Change_Label_Temps()
         lbl_temps.Text = "Temps : " & GetTemps().Minutes & ":" & GetTemps().Seconds
         If (GetTemps().Seconds < TMP_10) Then
-            lbl_temps.Text = lbl_temps.Text & "0"
+            'lbl_temps.Text = lbl_temps.Text & "0"
+            ' String.Format(GetTemps(), "mm:ss")
+            ' TODO eva c'est par la
         End If
     End Sub
 
@@ -66,20 +68,29 @@
     End Sub
 
     Private Sub Btn_modif_temps_Click(sender As Object, e As EventArgs) Handles Btn_modif_temps.Click
+        Dim min As Integer
+        Dim sec As Integer
         Dim message As String
         message = "Vous allez devoir entrer les minutes puis les secondes"
         message &= vbCrLf & "Pour ne mettre aucune minute ou seconde, mettre '0'"
         MsgBox(message, vbOKOnly, "Changement du temps")
-        Dim min As Integer = InputBox("Nombre de minutes : ", "Changement du temps (1/2)", LeTemps.GetMinutes())
-        Dim sec As Integer = InputBox("Nombre de secondes : ", "Changement du temps (2/2)", LeTemps.GetSecondes())
-        If min = 0 And sec = 0 Then
-            MsgBox("0 secondes ? Cela ne fait pas beaucoup...", vbOKOnly, "Erreur")
-        ElseIf min < 0 Xor sec < 0 Then
-            MsgBox("Oula, un temps négatif ? Cela n'existe pas", vbOKOnly, "Erreur")
+        Dim minStr As String = InputBox("Nombre de minutes : ", "Changement du temps (1/2)", LeTemps.GetMinutes())
+        Dim secStr As String = InputBox("Nombre de secondes : ", "Changement du temps (2/2)", LeTemps.GetSecondes())
+        If Not (IsNumeric(minStr) And IsNumeric(secStr)) Then
+            MsgBox("Merci de rentrer uniquement des chiffres", vbOKOnly, "Erreur")
         Else
-            Dim temps As New TimeSpan(0, min, sec)
-            LeTemps.UpdateTemps(temps)
-            Change_Label_Temps()
+            min = minStr
+            sec = secStr
+
+            If min < 0 Or sec < 0 Then
+                MsgBox("Oula, un temps négatif ? Cela n'existe pas", vbOKOnly, "Erreur")
+            ElseIf min = 0 And sec = 0 Then
+                MsgBox("0 secondes ? Cela ne fait pas beaucoup...", vbOKOnly, "Erreur")
+            Else
+                Dim temps As New TimeSpan(0, min, sec)
+                LeTemps.UpdateTemps(temps)
+                Change_Label_Temps()
+            End If
         End If
     End Sub
 
@@ -120,9 +131,7 @@
         Gestion_fichier.EcritureDuFichier()
         Dim ancien_chemin As String = GetChemin()
         Dim repChemin As String = InputBox("Nouveau chemin : ", "Changement du chemin", LeFichier.GetChemin())
-        If repChemin = "" Then
-            LeFichier.SetChemin(ancien_chemin)
-        Else
+        If Not repChemin = "" Then
             LeFichier.SetChemin(repChemin)
         End If
         LesJoueurs.FlushJoueurs()
