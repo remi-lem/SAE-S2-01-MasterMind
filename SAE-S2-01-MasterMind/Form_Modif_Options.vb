@@ -12,8 +12,8 @@
         lbl_symbole1.Text = "Symbole 1 : " & Symboles.GetSymbole(0)
         lbl_symbole2.Text = "Symbole 2 : " & Symboles.GetSymbole(1)
         lbl_symbole3.Text = "Symbole 3 : " & Symboles.GetSymbole(2)
-        lbl_symbole5.Text = "Symbole 5 : " & Symboles.GetSymbole(3)
-        lbl_symbole4.Text = "Symbole 4 : " & Symboles.GetSymbole(4)
+        lbl_symbole4.Text = "Symbole 4 : " & Symboles.GetSymbole(3)
+        lbl_symbole5.Text = "Symbole 5 : " & Symboles.GetSymbole(4)
 
         BtnColorPlace.BackColor = GetPresentPlace()
         BtnColorPresent.BackColor = GetPresent()
@@ -73,6 +73,8 @@
         Dim sec As Integer = InputBox("Nombre de secondes : ", "Changement du temps (2/2)", LeTemps.GetSecondes())
         If min = 0 And sec = 0 Then
             MsgBox("0 secondes ? Cela ne fait pas beaucoup...", vbOKOnly, "Erreur")
+        ElseIf min < 0 Xor sec < 0 Then
+            MsgBox("Oula, un temps négatif ? Cela n'existe pas", vbOKOnly, "Erreur")
         Else
             Dim temps As New TimeSpan(0, min, sec)
             LeTemps.UpdateTemps(temps)
@@ -90,8 +92,12 @@
         Dim nouvelleCouleur As New ColorDialog()
         nouvelleCouleur.Color = GetPresent()
         If nouvelleCouleur.ShowDialog() = DialogResult.OK Then
-            SetPresent(nouvelleCouleur.Color)
-            BtnColorPresent.BackColor = nouvelleCouleur.Color
+            If Not nouvelleCouleur.Color = GetPresentPlace() Then
+                SetPresent(nouvelleCouleur.Color)
+                BtnColorPresent.BackColor = nouvelleCouleur.Color
+            Else
+                MsgBox("impossible de mettre la même couleur pour les deux")
+            End If
         End If
     End Sub
 
@@ -99,15 +105,25 @@
         Dim nouvelleCouleur As New ColorDialog()
         nouvelleCouleur.Color = GetPresent()
         If nouvelleCouleur.ShowDialog() = DialogResult.OK Then
-            SetPresentPlace(nouvelleCouleur.Color)
-            BtnColorPlace.BackColor = nouvelleCouleur.Color
+            If Not nouvelleCouleur.Color = GetPresent() Then
+                SetPresentPlace(nouvelleCouleur.Color)
+                BtnColorPlace.BackColor = nouvelleCouleur.Color
+            Else
+                MsgBox("impossible de mettre la même couleur pour les deux")
+            End If
+
         End If
     End Sub
 
     Private Sub Btn_modif_chemin_fic_svg_Click(sender As Object, e As EventArgs) Handles Btn_modif_chemin_fic_svg.Click
         Gestion_fichier.EcritureDuFichier()
+        Dim ancien_chemin As String = GetChemin()
         Dim repChemin As String = InputBox("Nouveau chemin : ", "Changement du chemin", LeFichier.GetChemin())
-        LeFichier.SetChemin(repChemin)
+        If repChemin = "" Then
+            LeFichier.SetChemin(ancien_chemin)
+        Else
+            LeFichier.SetChemin(repChemin)
+        End If
         LesJoueurs.FlushJoueurs()
         Gestion_fichier.LectureDuFichier()
         Form_Accueil.Init_Joueurs_Acc()

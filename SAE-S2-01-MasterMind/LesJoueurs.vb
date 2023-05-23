@@ -58,7 +58,7 @@
     Private joueurs() As Joueur
     Private compteur As Integer = 0
 
-    Public Sub ReDimJoueurs(nombre)
+    Public Sub ReDimJoueurs(nombre As Integer)
         ReDim joueurs(nombre)
     End Sub
 
