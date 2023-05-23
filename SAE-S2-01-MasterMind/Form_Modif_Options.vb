@@ -3,12 +3,7 @@
     Private Const TMP_10 As Integer = 10
 
     Private Sub Change_Label_Temps()
-        lbl_temps.Text = "Temps : " & GetTemps().Minutes & ":" & GetTemps().Seconds
-        If (GetTemps().Seconds < TMP_10) Then
-            'lbl_temps.Text = lbl_temps.Text & "0"
-            ' String.Format(GetTemps(), "mm:ss")
-            ' TODO eva c'est par la
-        End If
+        lbl_temps.Text = "Temps : " & GetTemps().ToString("mm") & ":" & GetTemps().ToString("ss")
     End Sub
 
     Private Sub Form_Modif_Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
