@@ -1,9 +1,10 @@
 ﻿Public Class Form_Modif_Options
     Private IsLoaded As Boolean = False
+    Private Const TMP_10 As Integer = 10
 
     Private Sub Change_Label_Temps()
         lbl_temps.Text = "Temps : " & GetTemps().Minutes & ":" & GetTemps().Seconds
-        If (GetTemps().Seconds < 10) Then
+        If (GetTemps().Seconds < TMP_10) Then
             lbl_temps.Text = lbl_temps.Text & "0"
         End If
     End Sub
