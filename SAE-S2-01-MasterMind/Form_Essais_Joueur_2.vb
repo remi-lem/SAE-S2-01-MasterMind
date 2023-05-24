@@ -51,7 +51,7 @@
     Private Sub Recalc_temps_ecoule()
         Dim lblTmp As String
         lblTmp = temps_ecoule.Minutes & " minute et " & vbCrLf & temps_ecoule.Seconds & " secondes écoulées"
-        lblTmp &= vbCrLf & "Max : " & MAX_TEMPS_COUP.Minutes & ":" & MAX_TEMPS_COUP.Seconds
+        lblTmp &= vbCrLf & "Max : " & MAX_TEMPS_COUP.ToString("mm") & ":" & MAX_TEMPS_COUP.ToString("ss")
         lbl_temps_ecoule.Text = lblTmp
     End Sub
 
