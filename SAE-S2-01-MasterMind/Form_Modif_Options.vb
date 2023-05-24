@@ -5,9 +5,7 @@
     Private Sub Change_Label_Temps()
         lbl_temps.Text = "Temps : " & GetTemps().Minutes & ":" & GetTemps().Seconds
         If (GetTemps().Seconds < TMP_10) Then
-            'lbl_temps.Text = lbl_temps.Text & "0"
-            ' String.Format(GetTemps(), "mm:ss")
-            ' TODO eva c'est par la
+            lbl_temps.Text = "Temps : " & GetTemps().ToString("mm") & ":" & GetTemps().ToString("ss")
         End If
     End Sub
 
