@@ -4,7 +4,7 @@
     Private temps_ecoule As New TimeSpan()
 
     Private ReadOnly MAX_NB_COUP_RESTANTS As Integer = Get_Nb_Prop()
-    Private ReadOnly MAX_TEMPS_COUP = LeTemps.GetTemps()
+    Private ReadOnly MAX_TEMPS_COUP As TimeSpan = LeTemps.GetTemps()
     Private ReadOnly UNE_SECONDE As New TimeSpan(0, 0, 1)
 
     ReadOnly symbParDefaut1 As String = Symboles.GetSymbole(0)
@@ -51,7 +51,7 @@
     Private Sub Recalc_temps_ecoule()
         Dim lblTmp As String
         lblTmp = temps_ecoule.Minutes & " minute et " & vbCrLf & temps_ecoule.Seconds & " secondes écoulées"
-        lblTmp &= vbCrLf & "Max : " & MAX_TEMPS_COUP.Minutes & ":" & MAX_TEMPS_COUP.Seconds
+        lblTmp &= vbCrLf & "Max : " & MAX_TEMPS_COUP.ToString("mm") & ":" & MAX_TEMPS_COUP.ToString("ss")
         lbl_temps_ecoule.Text = lblTmp
     End Sub
 
@@ -204,6 +204,11 @@
 
     Private Sub Form_Essais_Joueur_2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         tmr_temps_restant.Stop()
+
+        If (Not joueur_a_gagne) Then
+            A_perdu()
+        End If
+
         Form_Faire_Deviner.Close()
         Form_Accueil.inverser_joueurs()
         Form_Accueil.Show()
