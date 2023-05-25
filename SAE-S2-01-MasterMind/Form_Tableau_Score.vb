@@ -18,16 +18,14 @@
     End Sub
 
     Private Sub Cbx_NomSelec_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_NomSelec.SelectedIndexChanged
-        Dim t0 As TimeSpan = TimeSpan.Zero
-        Dim message As String = ""
-        If GetNbSecondPlayer(cbx_NomSelec.Text) > 0 AndAlso Not TimeSpan.Compare(t0, GetBestTimePlayer(cbx_NomSelec.Text)) Then
-            message = "Le joueur " & cbx_NomSelec.Text & " a un total de " & getScorePlayer(cbx_NomSelec.Text)
-            message &= " point et n'a pas encore gagné et eu de meilleur temps"
-        Else
-            message = "Le joueur " & cbx_NomSelec.Text & " a un total de " & getScorePlayer(cbx_NomSelec.Text)
-            message &= " points et son meilleur temps est " & GetBestTimePlayer(cbx_NomSelec.Text).Minutes
-            message &= " minute et " & GetBestTimePlayer(cbx_NomSelec.Text).Seconds & " secondes."
-        End If
+        Dim message As String
+        message = "Le joueur " & cbx_NomSelec.Text & " a un total de " & getScorePlayer(cbx_NomSelec.Text)
+        message &= " points et son meilleur temps est " & GetBestTimePlayer(cbx_NomSelec.Text).Minutes
+        message &= " minute et " & GetBestTimePlayer(cbx_NomSelec.Text).Seconds & " secondes." & vbCrLf
+        message &= "Son temps cumulé est de " & GetTimeCumulePlayer(cbx_NomSelec.Text).Minutes & " minutes"
+        message &= " et " & GetTimeCumulePlayer(cbx_NomSelec.Text).Seconds & " secondes." & vbCrLf
+        message &= "Il a fait deviner " & GetNbFirstPlayer(cbx_NomSelec.Text) & " fois et a dû deviner "
+        message &= GetNbSecondPlayer(cbx_NomSelec.Text) & " fois."
         MsgBox(message, vbOKOnly, "Informations sur le joueur")
     End Sub
 
